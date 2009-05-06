@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		77683DC80FB2346E003FD7B4 /* KCLoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77683DC70FB2346E003FD7B4 /* KCLoginWindowController.m */; };
+		77683DDE0FB2370C003FD7B4 /* LoginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77683DDC0FB2370C003FD7B4 /* LoginWindow.xib */; };
+		77683DF80FB23983003FD7B4 /* KCMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77683DF70FB23983003FD7B4 /* KCMainWindowController.m */; };
+		77683E070FB239F4003FD7B4 /* KCApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77683E060FB239F4003FD7B4 /* KCApplicationDelegate.m */; };
+		778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EF94B0FB23EDD00FE49FC /* MainWindow.xib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -22,6 +27,14 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Cuisine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cuisine_Prefix.pch; sourceTree = "<group>"; };
+		77683DC60FB2346E003FD7B4 /* KCLoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCLoginWindowController.h; sourceTree = "<group>"; };
+		77683DC70FB2346E003FD7B4 /* KCLoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCLoginWindowController.m; sourceTree = "<group>"; };
+		77683DDD0FB2370C003FD7B4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/LoginWindow.xib; sourceTree = "<group>"; };
+		77683DF60FB23983003FD7B4 /* KCMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMainWindowController.h; sourceTree = "<group>"; };
+		77683DF70FB23983003FD7B4 /* KCMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCMainWindowController.m; sourceTree = "<group>"; };
+		77683E050FB239F4003FD7B4 /* KCApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCApplicationDelegate.h; sourceTree = "<group>"; };
+		77683E060FB239F4003FD7B4 /* KCApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCApplicationDelegate.m; sourceTree = "<group>"; };
+		778EF9470FB23EB200FE49FC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Cuisine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuisine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -41,6 +54,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				77683DC20FB23426003FD7B4 /* gui */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -98,6 +112,8 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				77683DDC0FB2370C003FD7B4 /* LoginWindow.xib */,
+				778EF94B0FB23EDD00FE49FC /* MainWindow.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -109,6 +125,19 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77683DC20FB23426003FD7B4 /* gui */ = {
+			isa = PBXGroup;
+			children = (
+				77683DC60FB2346E003FD7B4 /* KCLoginWindowController.h */,
+				77683DC70FB2346E003FD7B4 /* KCLoginWindowController.m */,
+				77683DF60FB23983003FD7B4 /* KCMainWindowController.h */,
+				77683DF70FB23983003FD7B4 /* KCMainWindowController.m */,
+				77683E050FB239F4003FD7B4 /* KCApplicationDelegate.h */,
+				77683E060FB239F4003FD7B4 /* KCApplicationDelegate.m */,
+			);
+			path = gui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +185,8 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				77683DDE0FB2370C003FD7B4 /* LoginWindow.xib in Resources */,
+				778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				77683DC80FB2346E003FD7B4 /* KCLoginWindowController.m in Sources */,
+				77683DF80FB23983003FD7B4 /* KCMainWindowController.m in Sources */,
+				77683E070FB239F4003FD7B4 /* KCApplicationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +221,22 @@
 				1DDD58150DA1D0A300B32029 /* English */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		77683DDC0FB2370C003FD7B4 /* LoginWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77683DDD0FB2370C003FD7B4 /* English */,
+			);
+			name = LoginWindow.xib;
+			sourceTree = "<group>";
+		};
+		778EF94B0FB23EDD00FE49FC /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				778EF9470FB23EB200FE49FC /* English */,
+			);
+			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -228,6 +278,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -242,6 +293,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
