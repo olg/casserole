@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		77577DB20FB2FFF5000E2604 /* Registrations.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77577DB10FB2FFF5000E2604 /* Registrations.xib */; };
+		77577DB60FB3038C000E2604 /* KCRegistrationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77577DB50FB3038C000E2604 /* KCRegistrationsController.m */; };
 		77683DC80FB2346E003FD7B4 /* KCLoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77683DC70FB2346E003FD7B4 /* KCLoginWindowController.m */; };
 		77683DDE0FB2370C003FD7B4 /* LoginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77683DDC0FB2370C003FD7B4 /* LoginWindow.xib */; };
 		77683DF80FB23983003FD7B4 /* KCMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77683DF70FB23983003FD7B4 /* KCMainWindowController.m */; };
 		77683E070FB239F4003FD7B4 /* KCApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77683E060FB239F4003FD7B4 /* KCApplicationDelegate.m */; };
 		778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EF94B0FB23EDD00FE49FC /* MainWindow.xib */; };
 		778EFA300FB2563200FE49FC /* KCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 778EFA2F0FB2563200FE49FC /* KCNode.m */; };
+		77C484540FB309980098C82D /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C484530FB309980098C82D /* Search.xib */; };
+		77C484580FB309CB0098C82D /* KCSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C484570FB309CB0098C82D /* KCSearchController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -28,6 +32,9 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Cuisine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cuisine_Prefix.pch; sourceTree = "<group>"; };
+		77577DAF0FB2FFF1000E2604 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Registrations.xib; sourceTree = "<group>"; };
+		77577DB40FB3038C000E2604 /* KCRegistrationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRegistrationsController.h; sourceTree = "<group>"; };
+		77577DB50FB3038C000E2604 /* KCRegistrationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRegistrationsController.m; sourceTree = "<group>"; };
 		77683DC60FB2346E003FD7B4 /* KCLoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCLoginWindowController.h; sourceTree = "<group>"; };
 		77683DC70FB2346E003FD7B4 /* KCLoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCLoginWindowController.m; sourceTree = "<group>"; };
 		77683DDD0FB2370C003FD7B4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/LoginWindow.xib; sourceTree = "<group>"; };
@@ -38,6 +45,9 @@
 		778EF9470FB23EB200FE49FC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		778EFA2E0FB2563200FE49FC /* KCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNode.h; sourceTree = "<group>"; };
 		778EFA2F0FB2563200FE49FC /* KCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNode.m; sourceTree = "<group>"; };
+		77C484510FB309940098C82D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Search.xib; sourceTree = "<group>"; };
+		77C484560FB309CB0098C82D /* KCSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCSearchController.h; sourceTree = "<group>"; };
+		77C484570FB309CB0098C82D /* KCSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCSearchController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Cuisine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuisine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +128,8 @@
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				77683DDC0FB2370C003FD7B4 /* LoginWindow.xib */,
 				778EF94B0FB23EDD00FE49FC /* MainWindow.xib */,
+				77577DB10FB2FFF5000E2604 /* Registrations.xib */,
+				77C484530FB309980098C82D /* Search.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -140,6 +152,10 @@
 				77683DF70FB23983003FD7B4 /* KCMainWindowController.m */,
 				77683E050FB239F4003FD7B4 /* KCApplicationDelegate.h */,
 				77683E060FB239F4003FD7B4 /* KCApplicationDelegate.m */,
+				77577DB40FB3038C000E2604 /* KCRegistrationsController.h */,
+				77577DB50FB3038C000E2604 /* KCRegistrationsController.m */,
+				77C484560FB309CB0098C82D /* KCSearchController.h */,
+				77C484570FB309CB0098C82D /* KCSearchController.m */,
 			);
 			path = gui;
 			sourceTree = "<group>";
@@ -200,6 +216,8 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				77683DDE0FB2370C003FD7B4 /* LoginWindow.xib in Resources */,
 				778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */,
+				77577DB20FB2FFF5000E2604 /* Registrations.xib in Resources */,
+				77C484540FB309980098C82D /* Search.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +233,8 @@
 				77683DF80FB23983003FD7B4 /* KCMainWindowController.m in Sources */,
 				77683E070FB239F4003FD7B4 /* KCApplicationDelegate.m in Sources */,
 				778EFA300FB2563200FE49FC /* KCNode.m in Sources */,
+				77577DB60FB3038C000E2604 /* KCRegistrationsController.m in Sources */,
+				77C484580FB309CB0098C82D /* KCSearchController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +257,14 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
+		77577DB10FB2FFF5000E2604 /* Registrations.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77577DAF0FB2FFF1000E2604 /* English */,
+			);
+			name = Registrations.xib;
+			sourceTree = "<group>";
+		};
 		77683DDC0FB2370C003FD7B4 /* LoginWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -251,6 +279,14 @@
 				778EF9470FB23EB200FE49FC /* English */,
 			);
 			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		77C484530FB309980098C82D /* Search.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77C484510FB309940098C82D /* English */,
+			);
+			name = Search.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
