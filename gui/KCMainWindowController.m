@@ -10,6 +10,7 @@
 #import "KCNode.h"
 #import "KCRegistrationsController.h"
 #import "KCSearchController.h"
+#import "KCNodesController.h"
 
 
 @implementation KCMainWindowController
@@ -66,7 +67,7 @@
 	if ([currentViewController view] != nil)
 		[[currentViewController view] removeFromSuperview];	// remove the current view
 	
-	if ([title isEqualToString:@"Search"]) 
+	if ([title isEqualToString:@"Registrations"]) 
 	{
 		KCRegistrationsController* registrationsController =
 		[[KCRegistrationsController alloc] initWithNibName:@"Registrations" bundle:nil];
@@ -76,7 +77,7 @@
 			[currentViewController setTitle:@"Registrations table"];
 		}
 	}
-	else 
+	else if ([title isEqualToString:@"Search"]) 
 	{
 		KCSearchController* searchController =
 		[[KCSearchController alloc] initWithNibName:@"Search" bundle:nil];
@@ -86,7 +87,17 @@
 			[currentViewController setTitle:@"Search"];
 		}
 	}
-
+	else if ([title isEqualToString:@"Nodes"]) 
+	{
+		KCNodesController* nodesController =
+		[[KCNodesController alloc] initWithNibName:@"Nodes" bundle:nil];
+		if (nodesController != nil) 
+		{		
+			currentViewController = nodesController;	// keep track of the current view controller
+			[currentViewController setTitle:@"Nodes"];
+		}
+	}
+	
 			
 	[currentView addSubview: [currentViewController view]];
 

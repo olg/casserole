@@ -18,6 +18,8 @@
 		778EFA300FB2563200FE49FC /* KCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 778EFA2F0FB2563200FE49FC /* KCNode.m */; };
 		77C484540FB309980098C82D /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C484530FB309980098C82D /* Search.xib */; };
 		77C484580FB309CB0098C82D /* KCSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C484570FB309CB0098C82D /* KCSearchController.m */; };
+		77C5C2150FB34CA9006D6BC8 /* KCNodesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */; };
+		77C5C21C0FB34D6E006D6BC8 /* Nodes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C5C21B0FB34D6E006D6BC8 /* Nodes.xib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -48,6 +50,9 @@
 		77C484510FB309940098C82D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Search.xib; sourceTree = "<group>"; };
 		77C484560FB309CB0098C82D /* KCSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCSearchController.h; sourceTree = "<group>"; };
 		77C484570FB309CB0098C82D /* KCSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCSearchController.m; sourceTree = "<group>"; };
+		77C5C2130FB34CA9006D6BC8 /* KCNodesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNodesController.h; sourceTree = "<group>"; };
+		77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNodesController.m; sourceTree = "<group>"; };
+		77C5C2190FB34D68006D6BC8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Nodes.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Cuisine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuisine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,6 +135,7 @@
 				778EF94B0FB23EDD00FE49FC /* MainWindow.xib */,
 				77577DB10FB2FFF5000E2604 /* Registrations.xib */,
 				77C484530FB309980098C82D /* Search.xib */,
+				77C5C21B0FB34D6E006D6BC8 /* Nodes.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -156,6 +162,8 @@
 				77577DB50FB3038C000E2604 /* KCRegistrationsController.m */,
 				77C484560FB309CB0098C82D /* KCSearchController.h */,
 				77C484570FB309CB0098C82D /* KCSearchController.m */,
+				77C5C2130FB34CA9006D6BC8 /* KCNodesController.h */,
+				77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */,
 			);
 			path = gui;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 				778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */,
 				77577DB20FB2FFF5000E2604 /* Registrations.xib in Resources */,
 				77C484540FB309980098C82D /* Search.xib in Resources */,
+				77C5C21C0FB34D6E006D6BC8 /* Nodes.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +244,7 @@
 				778EFA300FB2563200FE49FC /* KCNode.m in Sources */,
 				77577DB60FB3038C000E2604 /* KCRegistrationsController.m in Sources */,
 				77C484580FB309CB0098C82D /* KCSearchController.m in Sources */,
+				77C5C2150FB34CA9006D6BC8 /* KCNodesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +297,14 @@
 				77C484510FB309940098C82D /* English */,
 			);
 			name = Search.xib;
+			sourceTree = "<group>";
+		};
+		77C5C21B0FB34D6E006D6BC8 /* Nodes.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77C5C2190FB34D68006D6BC8 /* English */,
+			);
+			name = Nodes.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

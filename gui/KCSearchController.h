@@ -10,7 +10,11 @@
 
 
 @interface KCSearchController : NSViewController {
-
+	NSString* query;
+	NSString* attributes;
+	NSMutableArray* results;
 }
+
+- (IBAction)search:(id)sender;
 
 @end
