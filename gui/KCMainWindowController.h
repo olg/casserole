@@ -12,8 +12,9 @@
 @interface KCMainWindowController : NSWindowController {
 	IBOutlet NSTreeController	*sourceController;
 	NSMutableArray				*sourceContents;
-	NSView						*currentView;
 	IBOutlet NSOutlineView		*sourceView;
+	NSView						*currentView;
+	NSViewController			*currentViewController;
 }
 
 @property (nonatomic, retain) IBOutlet NSTreeController *sourceController;

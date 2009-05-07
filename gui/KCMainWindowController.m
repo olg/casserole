@@ -8,6 +8,8 @@
 
 #import "KCMainWindowController.h"
 #import "KCNode.h"
+#import "KCRegistrationsController.h"
+#import "KCSearchController.h"
 
 
 @implementation KCMainWindowController
@@ -50,6 +52,53 @@
 	[self setSourceContents:a];
 }
 
+// -------------------------------------------------------------------------------
+//	outlineViewSelectionDidChange:notification
+// -------------------------------------------------------------------------------
 
+
+- (void)changeItemView
+{
+	NSArray		*selection = [sourceController selectedObjects];	
+	KCNode		*node = [selection objectAtIndex:0];
+	NSString	*title = [node nodeTitle];
+	
+	if ([currentViewController view] != nil)
+		[[currentViewController view] removeFromSuperview];	// remove the current view
+	
+	if ([title isEqualToString:@"Search"]) 
+	{
+		KCRegistrationsController* registrationsController =
+		[[KCRegistrationsController alloc] initWithNibName:@"Registrations" bundle:nil];
+		if (registrationsController != nil) 
+		{		
+			currentViewController = registrationsController;	// keep track of the current view controller
+			[currentViewController setTitle:@"Registrations table"];
+		}
+	}
+	else 
+	{
+		KCSearchController* searchController =
+		[[KCSearchController alloc] initWithNibName:@"Search" bundle:nil];
+		if (searchController != nil) 
+		{		
+			currentViewController = searchController;	// keep track of the current view controller
+			[currentViewController setTitle:@"Search"];
+		}
+	}
+
+			
+	[currentView addSubview: [currentViewController view]];
+
+	// make sure we automatically resize the controller's view to the current window size
+	[[currentViewController view] setFrame: [currentView bounds]];	
+}
+	
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification
+{
+	NSArray *selection = [sourceController selectedObjects];
+	if ([selection count] == 1)
+		[self changeItemView];
+}
 
 @end
