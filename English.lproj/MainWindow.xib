@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1" id="9"/>
+			<integer value="3"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -110,8 +110,8 @@
 																<string key="NSContents">Text Cell</string>
 																<object class="NSFont" key="NSSupport">
 																	<string key="NSName">LucidaGrande</string>
-																	<double key="NSSize">1.300000e+01</double>
-																	<int key="NSfFlags">1044</int>
+																	<double key="NSSize">1.100000e+01</double>
+																	<int key="NSfFlags">16</int>
 																</object>
 																<reference key="NSControlView" ref="592012809"/>
 																<object class="NSColor" key="NSBackgroundColor" id="668738836">
@@ -155,7 +155,7 @@
 															<bytes key="NSWhite">MC41AA</bytes>
 														</object>
 													</object>
-													<double key="NSRowHeight">2.000000e+01</double>
+													<double key="NSRowHeight">1.400000e+01</double>
 													<int key="NSTvFlags">-767557632</int>
 													<int key="NSColumnAutoresizingStyle">4</int>
 													<int key="NSDraggingSourceMaskForLocal">15</int>
@@ -200,7 +200,7 @@
 									<reference key="NSVScroller" ref="30509464"/>
 									<reference key="NSHScroller" ref="325037419"/>
 									<reference key="NSContentView" ref="513889271"/>
-									<bytes key="NSScrollAmts">QSAAAEEgAABBoAAAQaAAAA</bytes>
+									<bytes key="NSScrollAmts">QSAAAEEgAABBYAAAQWAAAA</bytes>
 								</object>
 								<object class="NSCustomView" id="137285647">
 									<reference key="NSNextResponder" ref="404890766"/>
@@ -429,7 +429,7 @@
 					<string>{{56, 555}, {798, 548}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{56, 555}, {798, 548}}</string>
-					<reference ref="9"/>
+					<integer value="1"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
