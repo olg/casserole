@@ -13,6 +13,7 @@
 		77683DF80FB23983003FD7B4 /* KCMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77683DF70FB23983003FD7B4 /* KCMainWindowController.m */; };
 		77683E070FB239F4003FD7B4 /* KCApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77683E060FB239F4003FD7B4 /* KCApplicationDelegate.m */; };
 		778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EF94B0FB23EDD00FE49FC /* MainWindow.xib */; };
+		778EFA300FB2563200FE49FC /* KCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 778EFA2F0FB2563200FE49FC /* KCNode.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -35,6 +36,8 @@
 		77683E050FB239F4003FD7B4 /* KCApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCApplicationDelegate.h; sourceTree = "<group>"; };
 		77683E060FB239F4003FD7B4 /* KCApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCApplicationDelegate.m; sourceTree = "<group>"; };
 		778EF9470FB23EB200FE49FC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		778EFA2E0FB2563200FE49FC /* KCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNode.h; sourceTree = "<group>"; };
+		778EFA2F0FB2563200FE49FC /* KCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNode.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Cuisine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuisine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -54,6 +57,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				778EFA290FB255A300FE49FC /* core */,
 				77683DC20FB23426003FD7B4 /* gui */,
 			);
 			name = Classes;
@@ -140,6 +144,15 @@
 			path = gui;
 			sourceTree = "<group>";
 		};
+		778EFA290FB255A300FE49FC /* core */ = {
+			isa = PBXGroup;
+			children = (
+				778EFA2E0FB2563200FE49FC /* KCNode.h */,
+				778EFA2F0FB2563200FE49FC /* KCNode.m */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,6 +214,7 @@
 				77683DC80FB2346E003FD7B4 /* KCLoginWindowController.m in Sources */,
 				77683DF80FB23983003FD7B4 /* KCMainWindowController.m in Sources */,
 				77683E070FB239F4003FD7B4 /* KCApplicationDelegate.m in Sources */,
+				778EFA300FB2563200FE49FC /* KCNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
