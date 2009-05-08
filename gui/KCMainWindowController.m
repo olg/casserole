@@ -10,7 +10,10 @@
 #import "KCNode.h"
 #import "KCRegistrationsController.h"
 #import "KCSearchController.h"
+#import "KCStatusController.h"
 #import "KCNodesController.h"
+#import "KCCookbookController.h"
+#import "KCImageAndTextCell.h"
 
 
 @implementation KCMainWindowController
@@ -20,19 +23,57 @@
 @synthesize currentView;
 @synthesize sourceView;
 
+#define COLUMNID_NAME @"NameColumn"
+
 - (void)awakeFromNib
 {
+	NSTableColumn *tableColumn = [sourceView tableColumnWithIdentifier:COLUMNID_NAME];
+	KCImageAndTextCell *imageAndTextCell = [[KCImageAndTextCell alloc] init];
+	[imageAndTextCell setEditable:NO];
+	[tableColumn setDataCell:imageAndTextCell];
+
+	[[self window] setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
+	[[self window] setContentBorderThickness:32 forEdge:NSMinYEdge];
+
 	NSMutableArray* a = [NSMutableArray array];
 	KCNode *node;
 	KCNode *child;
 	node = [[KCNode alloc] init];
-	[node setNodeTitle:@"Nodes"];
+	[node setNodeTitle:@"Status"];
 	[a addObject:node];
+	[node setIsLeaf:true];
+	node = [[KCNode alloc] init];
+	[node setNodeTitle:@"Nodes"];
 	[node setIsLeaf:false];
+	child = [[KCNode alloc] init];
+	[child setNodeTitle:@"test1.ftnx.net"];
+	[child setIsLeaf:true];
+	[node addObject:child];
+	child = [[KCNode alloc] init];
+	[child setNodeTitle:@"test2.ftnx.net"];
+	[child setIsLeaf:true];
+	[node addObject:child];
+	child = [[KCNode alloc] init];
+	[child setNodeTitle:@"test3.ftnx.net"];
+	[child setIsLeaf:true];
+	[node addObject:child];
+	child = [[KCNode alloc] init];
+	[child setNodeTitle:@"test4.ftnx.net"];
+	[child setIsLeaf:true];
+	[node addObject:child];
+	[a addObject:node];
 	node = [[KCNode alloc] init];
 	[node setNodeTitle:@"Cookbooks"];
-	[a addObject:node];
 	[node setIsLeaf:false];
+	child = [[KCNode alloc] init];
+	[child setNodeTitle:@"Apache2"];
+	[child setIsLeaf:true];
+	[node addObject:child];
+	child = [[KCNode alloc] init];
+	[child setNodeTitle:@"CouchDB"];
+	[child setIsLeaf:true];
+	[node addObject:child];
+	[a addObject:node];
 	node = [[KCNode alloc] init];
 	[node setNodeTitle:@"Registrations"];
 	[a addObject:node];
@@ -97,6 +138,26 @@
 			[currentViewController setTitle:@"Nodes"];
 		}
 	}
+	else if ([title isEqualToString:@"Apache2"]) 
+	{
+		KCCookbookController* cookbookController =
+		[[KCCookbookController alloc] initWithNibName:@"Cookbook" bundle:nil];
+		if (cookbookController != nil) 
+		{		
+			currentViewController = cookbookController;	// keep track of the current view controller
+			[currentViewController setTitle:@"Cookbook"];
+		}
+	}
+	else
+	{
+		KCStatusController* statusController =
+		[[KCStatusController alloc] initWithNibName:@"Status" bundle:nil];
+		if (statusController != nil) 
+		{		
+			currentViewController = statusController;	// keep track of the current view controller
+			[currentViewController setTitle:@"Status"];
+		}
+	}
 	
 			
 	[currentView addSubview: [currentViewController view]];
@@ -105,6 +166,46 @@
 	[[currentViewController view] setFrame: [currentView bounds]];	
 }
 	
+- (void)outlineView:(NSOutlineView *)olv willDisplayCell:(NSCell*)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+	[(KCImageAndTextCell*)cell setImage:nil];
+	if ([[tableColumn identifier] isEqualToString:COLUMNID_NAME])
+	{
+		if ([cell isKindOfClass:[KCImageAndTextCell class]])
+		{
+			item = [item representedObject];
+			if ([[item nodeTitle] isEqualToString:@"Nodes"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameNetwork]];
+			if ([[item nodeTitle] isEqualToString:@"Registrations"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameUserGroup]];
+			if ([[item nodeTitle] isEqualToString:@"All active"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameAdvanced]];
+			if ([[item nodeTitle] isEqualToString:@"Backend nodes"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameAdvanced]];
+			if ([[item nodeTitle] isEqualToString:@"Search"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"Spotlight"]];//NSImageNameAdvanced]];
+			if ([[item nodeTitle] isEqualToString:@"Cookbooks"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameMultipleDocuments]];
+			if ([[item nodeTitle] isEqualToString:@"Apache2"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
+			if ([[item nodeTitle] isEqualToString:@"test1.ftnx.net"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"ubuntu.gif"]];
+			if ([[item nodeTitle] isEqualToString:@"test2.ftnx.net"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"ubuntu"]];
+			if ([[item nodeTitle] isEqualToString:@"test3.ftnx.net"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"centos"]];
+			if ([[item nodeTitle] isEqualToString:@"test4.ftnx.net"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"linux"]];
+			if ([[item nodeTitle] isEqualToString:@"Passenger"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
+			if ([[item nodeTitle] isEqualToString:@"CouchDB"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
+			if ([[item nodeTitle] isEqualToString:@"Status"])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameInfo]];
+		}
+	}
+}
+
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification
 {
 	NSArray *selection = [sourceController selectedObjects];

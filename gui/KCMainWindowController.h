@@ -10,6 +10,7 @@
 
 
 @interface KCMainWindowController : NSWindowController {
+	NSString					*serverURL;
 	IBOutlet NSTreeController	*sourceController;
 	NSMutableArray				*sourceContents;
 	IBOutlet NSOutlineView		*sourceView;

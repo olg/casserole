@@ -16,6 +16,11 @@
 @dynamic isLeaf;  
 @dynamic children;  
 
+- (NSString*)description  
+{
+	return _nodeTitle;
+}
+
 - (void)setIsLeaf:(BOOL)flag;  
 {  
 	_isLeaf = flag;  
