@@ -2,7 +2,7 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">9G3553</string>
+		<string key="IBDocument.SystemVersion">9G55</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
 		<string key="IBDocument.AppKitVersion">949.43</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
@@ -43,7 +43,7 @@
 					<object class="NSButton" id="833034119">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{425, 337}, {96, 32}}</string>
+						<string key="NSFrame">{{425, 295}, {96, 32}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="826776804">
@@ -77,7 +77,7 @@
 									<object class="NSTableView" id="9193952">
 										<reference key="NSNextResponder" ref="666871608"/>
 										<int key="NSvFlags">256</int>
-										<string key="NSFrameSize">{518, 292}</string>
+										<string key="NSFrameSize">{518, 250}</string>
 										<reference key="NSSuperview" ref="666871608"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTableHeaderView" key="NSHeaderView" id="1028881947">
@@ -199,7 +199,7 @@
 										<bool key="NSAllowsTypeSelect">YES</bool>
 									</object>
 								</object>
-								<string key="NSFrame">{{1, 17}, {518, 292}}</string>
+								<string key="NSFrame">{{1, 17}, {518, 250}}</string>
 								<reference key="NSSuperview" ref="254897073"/>
 								<reference key="NSNextKeyView" ref="9193952"/>
 								<reference key="NSDocView" ref="9193952"/>
@@ -209,7 +209,7 @@
 							<object class="NSScroller" id="137176604">
 								<reference key="NSNextResponder" ref="254897073"/>
 								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{519, 17}, {15, 292}}</string>
+								<string key="NSFrame">{{519, 17}, {15, 250}}</string>
 								<reference key="NSSuperview" ref="254897073"/>
 								<reference key="NSTarget" ref="254897073"/>
 								<string key="NSAction">_doScroller:</string>
@@ -219,7 +219,7 @@
 							<object class="NSScroller" id="160050873">
 								<reference key="NSNextResponder" ref="254897073"/>
 								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{1, 309}, {518, 15}}</string>
+								<string key="NSFrame">{{1, 267}, {518, 15}}</string>
 								<reference key="NSSuperview" ref="254897073"/>
 								<int key="NSsFlags">1</int>
 								<reference key="NSTarget" ref="254897073"/>
@@ -242,7 +242,7 @@
 							</object>
 							<reference ref="283176077"/>
 						</object>
-						<string key="NSFrameSize">{535, 325}</string>
+						<string key="NSFrameSize">{535, 283}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSNextKeyView" ref="666871608"/>
 						<int key="NSsFlags">50</int>
@@ -255,8 +255,8 @@
 					</object>
 					<object class="NSTextField" id="363943015">
 						<reference key="NSNextResponder" ref="1005"/>
-						<int key="NSvFlags">270</int>
-						<string key="NSFrame">{{130, 375}, {293, 22}}</string>
+						<int key="NSvFlags">266</int>
+						<string key="NSFrame">{{130, 375}, {385, 22}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="896969134">
@@ -282,8 +282,8 @@
 					</object>
 					<object class="NSTextField" id="223826834">
 						<reference key="NSNextResponder" ref="1005"/>
-						<int key="NSvFlags">270</int>
-						<string key="NSFrame">{{130, 343}, {293, 22}}</string>
+						<int key="NSvFlags">266</int>
+						<string key="NSFrame">{{130, 343}, {385, 22}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="102413674">
@@ -503,12 +503,12 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="254897073"/>
-							<reference ref="977702845"/>
-							<reference ref="833034119"/>
-							<reference ref="363943015"/>
 							<reference ref="223826834"/>
 							<reference ref="822997285"/>
 							<reference ref="496955310"/>
+							<reference ref="977702845"/>
+							<reference ref="833034119"/>
+							<reference ref="363943015"/>
 						</object>
 						<reference key="parent" ref="1002"/>
 					</object>
