@@ -11,4 +11,8 @@
 
 @implementation KCSearchController
 
+- (IBAction)search:(id)sender;
+{
+}
+
 @end
