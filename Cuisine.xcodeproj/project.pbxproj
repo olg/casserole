@@ -30,6 +30,11 @@
 		779F7ECB0FB485BE00AF7A19 /* KCStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779F7ECA0FB485BE00AF7A19 /* KCStatusController.m */; };
 		779F7EDD0FB487E100AF7A19 /* KCCookbookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779F7EDC0FB487E100AF7A19 /* KCCookbookController.m */; };
 		779F7EE20FB4887600AF7A19 /* Cookbook.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779F7EE10FB4887600AF7A19 /* Cookbook.xib */; };
+		77A53AC00FB5916E00040FC6 /* KCNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53ABF0FB5916E00040FC6 /* KCNodeController.m */; };
+		77A53AE40FB594EB00040FC6 /* Node.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A53AE30FB594EB00040FC6 /* Node.xib */; };
+		77A53AF90FB5A40D00040FC6 /* Cookbooks.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A53AF80FB5A40D00040FC6 /* Cookbooks.xib */; };
+		77A53AFE0FB5A4E700040FC6 /* KCCookbooksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53AFD0FB5A4E700040FC6 /* KCCookbooksController.m */; };
+		77A53B260FB5A75600040FC6 /* KCChefConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53B250FB5A75600040FC6 /* KCChefConnection.m */; };
 		77C484540FB309980098C82D /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C484530FB309980098C82D /* Search.xib */; };
 		77C484580FB309CB0098C82D /* KCSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C484570FB309CB0098C82D /* KCSearchController.m */; };
 		77C5C2150FB34CA9006D6BC8 /* KCNodesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */; };
@@ -78,6 +83,14 @@
 		779F7EDB0FB487E100AF7A19 /* KCCookbookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCCookbookController.h; sourceTree = "<group>"; };
 		779F7EDC0FB487E100AF7A19 /* KCCookbookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCCookbookController.m; sourceTree = "<group>"; };
 		779F7EDF0FB4887000AF7A19 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Cookbook.xib; sourceTree = "<group>"; };
+		77A53ABE0FB5916E00040FC6 /* KCNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNodeController.h; sourceTree = "<group>"; };
+		77A53ABF0FB5916E00040FC6 /* KCNodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNodeController.m; sourceTree = "<group>"; };
+		77A53AE10FB594E600040FC6 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Node.xib; sourceTree = "<group>"; };
+		77A53AF60FB5A40700040FC6 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Cookbooks.xib; sourceTree = "<group>"; };
+		77A53AFC0FB5A4E700040FC6 /* KCCookbooksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCCookbooksController.h; sourceTree = "<group>"; };
+		77A53AFD0FB5A4E700040FC6 /* KCCookbooksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCCookbooksController.m; sourceTree = "<group>"; };
+		77A53B240FB5A75600040FC6 /* KCChefConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCChefConnection.h; sourceTree = "<group>"; };
+		77A53B250FB5A75600040FC6 /* KCChefConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCChefConnection.m; sourceTree = "<group>"; };
 		77C484510FB309940098C82D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Search.xib; sourceTree = "<group>"; };
 		77C484560FB309CB0098C82D /* KCSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCSearchController.h; sourceTree = "<group>"; };
 		77C484570FB309CB0098C82D /* KCSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCSearchController.m; sourceTree = "<group>"; };
@@ -170,6 +183,8 @@
 				77C5C21B0FB34D6E006D6BC8 /* Nodes.xib */,
 				779F7EC60FB483FA00AF7A19 /* Status.xib */,
 				779F7EE10FB4887600AF7A19 /* Cookbook.xib */,
+				77A53AE30FB594EB00040FC6 /* Node.xib */,
+				77A53AF80FB5A40D00040FC6 /* Cookbooks.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -214,12 +229,16 @@
 				77577DB50FB3038C000E2604 /* KCRegistrationsController.m */,
 				77C484560FB309CB0098C82D /* KCSearchController.h */,
 				77C484570FB309CB0098C82D /* KCSearchController.m */,
+				77A53ABE0FB5916E00040FC6 /* KCNodeController.h */,
+				77A53ABF0FB5916E00040FC6 /* KCNodeController.m */,
 				77C5C2130FB34CA9006D6BC8 /* KCNodesController.h */,
 				77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */,
 				779F7EC90FB485BE00AF7A19 /* KCStatusController.h */,
 				779F7ECA0FB485BE00AF7A19 /* KCStatusController.m */,
 				779F7EDB0FB487E100AF7A19 /* KCCookbookController.h */,
 				779F7EDC0FB487E100AF7A19 /* KCCookbookController.m */,
+				77A53AFC0FB5A4E700040FC6 /* KCCookbooksController.h */,
+				77A53AFD0FB5A4E700040FC6 /* KCCookbooksController.m */,
 			);
 			path = gui;
 			sourceTree = "<group>";
@@ -229,6 +248,8 @@
 			children = (
 				778EFA2E0FB2563200FE49FC /* KCNode.h */,
 				778EFA2F0FB2563200FE49FC /* KCNode.m */,
+				77A53B240FB5A75600040FC6 /* KCChefConnection.h */,
+				77A53B250FB5A75600040FC6 /* KCChefConnection.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -294,6 +315,8 @@
 				77423EAF0FB4F74100A39860 /* ubuntu.gif in Resources */,
 				77423EBE0FB4FA0300A39860 /* Delete.tiff in Resources */,
 				77423EBF0FB4FA0300A39860 /* reload.tiff in Resources */,
+				77A53AE40FB594EB00040FC6 /* Node.xib in Resources */,
+				77A53AF90FB5A40D00040FC6 /* Cookbooks.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +338,9 @@
 				779F7ECB0FB485BE00AF7A19 /* KCStatusController.m in Sources */,
 				779F7EDD0FB487E100AF7A19 /* KCCookbookController.m in Sources */,
 				77423DFD0FB49AA100A39860 /* KCImageAndTextCell.m in Sources */,
+				77A53AC00FB5916E00040FC6 /* KCNodeController.m in Sources */,
+				77A53AFE0FB5A4E700040FC6 /* KCCookbooksController.m in Sources */,
+				77A53B260FB5A75600040FC6 /* KCChefConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +401,22 @@
 				779F7EDF0FB4887000AF7A19 /* English */,
 			);
 			name = Cookbook.xib;
+			sourceTree = "<group>";
+		};
+		77A53AE30FB594EB00040FC6 /* Node.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77A53AE10FB594E600040FC6 /* English */,
+			);
+			name = Node.xib;
+			sourceTree = "<group>";
+		};
+		77A53AF80FB5A40D00040FC6 /* Cookbooks.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77A53AF60FB5A40700040FC6 /* English */,
+			);
+			name = Cookbooks.xib;
 			sourceTree = "<group>";
 		};
 		77C484530FB309980098C82D /* Search.xib */ = {

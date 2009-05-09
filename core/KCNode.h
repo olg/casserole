@@ -12,10 +12,12 @@
 @interface KCNode : NSObject {
 	KCNode *_parent;  
 	NSString *_nodeTitle;  
+	NSString *_nodeValue;  
 	NSMutableArray *_children;  
 	BOOL _isLeaf;  
 }  
 
+@property(copy) NSString *nodeValue;  
 @property(copy) NSString *nodeTitle;  
 @property(copy) NSMutableArray *children;  
 @property(assign) KCNode *parent;  

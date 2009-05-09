@@ -17,7 +17,10 @@
 
 -(void)connect:(id)sender
 {
+	KCChefConnection* chef = [[KCChefConnection alloc] init];
+	chef.serverURL = @"https://chef.ftnx.net";
 	KCMainWindowController *c = [[KCMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
+	[c setChefConnection:chef];
 	[c showWindow:self];
 	[self close];
 }

@@ -11,6 +11,7 @@
 
 @implementation KCNode
 
+@synthesize nodeValue = _nodeValue;  
 @synthesize nodeTitle = _nodeTitle;  
 @synthesize parent = _parent;  
 @dynamic isLeaf;  

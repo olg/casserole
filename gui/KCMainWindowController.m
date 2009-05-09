@@ -12,6 +12,8 @@
 #import "KCSearchController.h"
 #import "KCStatusController.h"
 #import "KCNodesController.h"
+#import "KCNodeController.h"
+#import "KCCookbooksController.h"
 #import "KCCookbookController.h"
 #import "KCImageAndTextCell.h"
 
@@ -20,13 +22,14 @@
 
 @synthesize sourceController;
 @synthesize sourceContents;
+@synthesize chefConnection;
 @synthesize currentView;
 @synthesize sourceView;
 
 #define COLUMNID_NAME @"NameColumn"
 
 - (void)awakeFromNib
-{
+{	
 	NSTableColumn *tableColumn = [sourceView tableColumnWithIdentifier:COLUMNID_NAME];
 	KCImageAndTextCell *imageAndTextCell = [[KCImageAndTextCell alloc] init];
 	[imageAndTextCell setEditable:NO];
@@ -77,20 +80,21 @@
 	node = [[KCNode alloc] init];
 	[node setNodeTitle:@"Registrations"];
 	[a addObject:node];
-	[node setIsLeaf:false];
+	[node setIsLeaf:true];
 	node = [[KCNode alloc] init];
 	[node setNodeTitle:@"Search"];
 	[node setIsLeaf:false];
 	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"All active"];
+	[child setNodeTitle:@"Rails nodes"];
 	[child setIsLeaf:true];
 	[node addObject:child];
 	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"Backend nodes"];
+	[child setNodeTitle:@"Ubuntu nodes"];
 	[child setIsLeaf:true];
 	[node addObject:child];
 	[a addObject:node];
 
+	
 	[self setSourceContents:a];
 }
 
@@ -126,6 +130,26 @@
 		{		
 			currentViewController = searchController;	// keep track of the current view controller
 			[currentViewController setTitle:@"Search"];
+		}
+	}
+	else if ([title isEqualToString:@"test1.ftnx.net"]) 
+	{
+		KCNodeController* nodeController =
+		[[KCNodeController alloc] initWithNibName:@"Node" bundle:nil];
+		if (nodeController != nil) 
+		{		
+			currentViewController = nodeController;	// keep track of the current view controller
+			[currentViewController setTitle:@"Node"];
+		}
+	}
+	else if ([title isEqualToString:@"Cookbooks"]) 
+	{
+		KCCookbooksController* cookbooksController =
+		[[KCCookbooksController alloc] initWithNibName:@"Cookbooks" bundle:nil];
+		if (cookbooksController != nil) 
+		{		
+			currentViewController = cookbooksController;	// keep track of the current view controller
+			[currentViewController setTitle:@"Cookbooks"];
 		}
 	}
 	else if ([title isEqualToString:@"Nodes"]) 
@@ -178,9 +202,9 @@
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameNetwork]];
 			if ([[item nodeTitle] isEqualToString:@"Registrations"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameUserGroup]];
-			if ([[item nodeTitle] isEqualToString:@"All active"])
+			if ([[item nodeTitle] isEqualToString:@"Rails nodes"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameAdvanced]];
-			if ([[item nodeTitle] isEqualToString:@"Backend nodes"])
+			if ([[item nodeTitle] isEqualToString:@"Ubuntu nodes"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameAdvanced]];
 			if ([[item nodeTitle] isEqualToString:@"Search"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"Spotlight"]];//NSImageNameAdvanced]];
