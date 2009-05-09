@@ -10,8 +10,11 @@
 
 
 @interface KCChefConnection : NSObject {
-	NSString* serverURL;
+	NSString* serverURL; // https://chef.example.com
 }
 
 @property (nonatomic, retain) NSString* serverURL;
+
+-(void)initialFetch;
+
 @end
