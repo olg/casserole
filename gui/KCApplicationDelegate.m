@@ -11,9 +11,11 @@
 
 
 @implementation KCApplicationDelegate
+@synthesize queue;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+	[self setQueue:[[NSOperationQueue alloc] init]];
 	KCLoginWindowController *c = [[KCLoginWindowController alloc] initWithWindowNibName:@"LoginWindow"];
 	[c showWindow:self];
 }

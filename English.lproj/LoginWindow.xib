@@ -149,6 +149,13 @@
 				<string key="NSMinSize">{465, 146}</string>
 				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
 			</object>
+			<object class="NSUserDefaultsController" id="919473415">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>defaultServer</string>
+				</object>
+				<bool key="NSSharedInstance">YES</bool>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -168,6 +175,30 @@
 						<reference key="destination" ref="1005"/>
 					</object>
 					<int key="connectionID">13</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">urlField</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="270198673"/>
+					</object>
+					<int key="connectionID">19</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.defaultServer</string>
+						<reference key="source" ref="270198673"/>
+						<reference key="destination" ref="919473415"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="270198673"/>
+							<reference key="NSDestination" ref="919473415"/>
+							<string key="NSLabel">value: values.defaultServer</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.defaultServer</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">21</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -214,8 +245,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="46080984"/>
-							<reference ref="270198673"/>
 							<reference ref="697515764"/>
+							<reference ref="270198673"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -260,6 +291,11 @@
 						<int key="objectID">8</int>
 						<reference key="object" ref="513079397"/>
 						<reference key="parent" ref="697515764"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">20</int>
+						<reference key="object" ref="919473415"/>
+						<reference key="parent" ref="1002"/>
 					</object>
 				</object>
 			</object>
@@ -336,7 +372,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">13</int>
+			<int key="maxID">21</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -349,8 +385,17 @@
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">defaultButton</string>
-						<string key="NS.object.0">NSButton</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>defaultButton</string>
+							<string>urlField</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSButton</string>
+							<string>NSTextField</string>
+						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>

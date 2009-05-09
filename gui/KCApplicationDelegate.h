@@ -10,8 +10,11 @@
 
 
 @interface KCApplicationDelegate : NSObject {
-
+	NSOperationQueue* queue;
 }
+
+@property (nonatomic, retain) NSOperationQueue* queue;
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
 

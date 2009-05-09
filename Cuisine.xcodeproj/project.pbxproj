@@ -35,6 +35,8 @@
 		77A53AF90FB5A40D00040FC6 /* Cookbooks.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A53AF80FB5A40D00040FC6 /* Cookbooks.xib */; };
 		77A53AFE0FB5A4E700040FC6 /* KCCookbooksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53AFD0FB5A4E700040FC6 /* KCCookbooksController.m */; };
 		77A53B260FB5A75600040FC6 /* KCChefConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53B250FB5A75600040FC6 /* KCChefConnection.m */; };
+		77A53B910FB5B48500040FC6 /* KCNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53B900FB5B48500040FC6 /* KCNetworkOperation.m */; };
+		77A53BBB0FB5C10D00040FC6 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A53BBA0FB5C10D00040FC6 /* JSON.framework */; };
 		77C484540FB309980098C82D /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C484530FB309980098C82D /* Search.xib */; };
 		77C484580FB309CB0098C82D /* KCSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C484570FB309CB0098C82D /* KCSearchController.m */; };
 		77C5C2150FB34CA9006D6BC8 /* KCNodesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */; };
@@ -91,6 +93,9 @@
 		77A53AFD0FB5A4E700040FC6 /* KCCookbooksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCCookbooksController.m; sourceTree = "<group>"; };
 		77A53B240FB5A75600040FC6 /* KCChefConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCChefConnection.h; sourceTree = "<group>"; };
 		77A53B250FB5A75600040FC6 /* KCChefConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCChefConnection.m; sourceTree = "<group>"; };
+		77A53B8F0FB5B48500040FC6 /* KCNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNetworkOperation.h; sourceTree = "<group>"; };
+		77A53B900FB5B48500040FC6 /* KCNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNetworkOperation.m; sourceTree = "<group>"; };
+		77A53BBA0FB5C10D00040FC6 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = ../../Library/Frameworks/JSON.framework; sourceTree = SOURCE_ROOT; };
 		77C484510FB309940098C82D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Search.xib; sourceTree = "<group>"; };
 		77C484560FB309CB0098C82D /* KCSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCSearchController.h; sourceTree = "<group>"; };
 		77C484570FB309CB0098C82D /* KCSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCSearchController.m; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				77A53BBB0FB5C10D00040FC6 /* JSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +139,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				77A53BBA0FB5C10D00040FC6 /* JSON.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -250,6 +257,8 @@
 				778EFA2F0FB2563200FE49FC /* KCNode.m */,
 				77A53B240FB5A75600040FC6 /* KCChefConnection.h */,
 				77A53B250FB5A75600040FC6 /* KCChefConnection.m */,
+				77A53B8F0FB5B48500040FC6 /* KCNetworkOperation.h */,
+				77A53B900FB5B48500040FC6 /* KCNetworkOperation.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 				77A53AC00FB5916E00040FC6 /* KCNodeController.m in Sources */,
 				77A53AFE0FB5A4E700040FC6 /* KCCookbooksController.m in Sources */,
 				77A53B260FB5A75600040FC6 /* KCChefConnection.m in Sources */,
+				77A53B910FB5B48500040FC6 /* KCNetworkOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +453,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -460,6 +474,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/Frameworks\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Cuisine_Prefix.pch;

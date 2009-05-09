@@ -11,6 +11,7 @@
 
 @interface KCLoginWindowController : NSWindowController {
 	IBOutlet NSButton *defaultButton;
+	IBOutlet NSTextField *urlField;
 }
 
 @property (nonatomic, retain) IBOutlet NSButton *defaultButton;
