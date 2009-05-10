@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="35"/>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -75,10 +75,9 @@
 								<string key="NSToolbarItemPaletteLabel">Custom View</string>
 								<nil key="NSToolbarItemToolTip"/>
 								<object class="NSSearchField" key="NSToolbarItemView" id="511756035">
-									<reference key="NSNextResponder"/>
+									<nil key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{0, 14}, {96, 22}}</string>
-									<reference key="NSSuperview"/>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSSearchFieldCell" key="NSCell" id="62715571">
 										<int key="NSCellFlags">343014976</int>
@@ -590,6 +589,16 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 							<bool key="NSIsVertical">YES</bool>
 							<int key="NSDividerStyle">2</int>
 						</object>
+						<object class="NSProgressIndicator" id="667760481">
+							<reference key="NSNextResponder" ref="1006"/>
+							<int key="NSvFlags">1292</int>
+							<object class="NSPSMatrix" key="NSDrawMatrix"/>
+							<string key="NSFrame">{{20, 6}, {16, 16}}</string>
+							<reference key="NSSuperview" ref="1006"/>
+							<int key="NSpiFlags">28938</int>
+							<double key="NSMinValue">2.000000e+01</double>
+							<double key="NSMaxValue">1.000000e+02</double>
+						</object>
 					</object>
 					<string key="NSFrameSize">{798, 548}</string>
 					<reference key="NSSuperview"/>
@@ -705,6 +714,30 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					</object>
 					<int key="connectionID">51</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">refresh:</string>
+						<reference key="source" ref="1003"/>
+						<reference key="destination" ref="614875617"/>
+					</object>
+					<int key="connectionID">56</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">animate: delegate.queue.operations.@count</string>
+						<reference key="source" ref="667760481"/>
+						<reference key="destination" ref="1004"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="667760481"/>
+							<reference key="NSDestination" ref="1004"/>
+							<string key="NSLabel">animate: delegate.queue.operations.@count</string>
+							<string key="NSBinding">animate</string>
+							<string key="NSKeyPath">delegate.queue.operations.@count</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">59</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -751,6 +784,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="404890766"/>
+							<reference ref="667760481"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -889,6 +923,11 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						<reference key="object" ref="970600393"/>
 						<reference key="parent" ref="797830450"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">57</int>
+						<reference key="object" ref="667760481"/>
+						<reference key="parent" ref="1006"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -923,6 +962,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>48.IBPluginDependency</string>
 					<string>49.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
+					<string>57.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
 				</object>
@@ -931,9 +971,9 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilderKit</string>
 					<string>com.apple.InterfaceBuilderKit</string>
-					<string>{{55, 227}, {798, 548}}</string>
+					<string>{{100, 426}, {798, 548}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{55, 227}, {798, 548}}</string>
+					<string>{{100, 426}, {798, 548}}</string>
 					<reference ref="9"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
@@ -944,7 +984,8 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{146, 548}, {616, 227}}</string>
+					<string>{{191, 974}, {616, 0}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -980,11 +1021,47 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">51</int>
+			<int key="maxID">59</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">FirstResponder</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">refresh:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBUserSource</string>
+						<string key="minorKey"/>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">KCAbstractNode</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">refresh:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">core/KCAbstractNode.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">KCChefConnection</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">refresh:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">core/KCChefConnection.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">KCMainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
@@ -1008,6 +1085,18 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">gui/KCMainWindowController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">KCNode</string>
+					<string key="superclassName">KCAbstractNode</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">refresh:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">core/KCNode.h</string>
 					</object>
 				</object>
 			</object>
