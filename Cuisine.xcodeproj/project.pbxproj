@@ -30,6 +30,7 @@
 		776BFEB30FB5F59700F0EC94 /* KCRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 776BFEB20FB5F59700F0EC94 /* KCRegistration.m */; };
 		778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EF94B0FB23EDD00FE49FC /* MainWindow.xib */; };
 		778EFA300FB2563200FE49FC /* KCAbstractNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 778EFA2F0FB2563200FE49FC /* KCAbstractNode.m */; };
+		779EF7BA0FB7391D000C014B /* Cuisine.icns in Resources */ = {isa = PBXBuildFile; fileRef = 779EF7B90FB7391D000C014B /* Cuisine.icns */; };
 		779F7EC70FB483FA00AF7A19 /* Status.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779F7EC60FB483FA00AF7A19 /* Status.xib */; };
 		779F7ECB0FB485BE00AF7A19 /* KCStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779F7ECA0FB485BE00AF7A19 /* KCStatusController.m */; };
 		779F7EDD0FB487E100AF7A19 /* KCCookbookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779F7EDC0FB487E100AF7A19 /* KCCookbookController.m */; };
@@ -91,6 +92,7 @@
 		778EF9470FB23EB200FE49FC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		778EFA2E0FB2563200FE49FC /* KCAbstractNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCAbstractNode.h; sourceTree = "<group>"; };
 		778EFA2F0FB2563200FE49FC /* KCAbstractNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCAbstractNode.m; sourceTree = "<group>"; };
+		779EF7B90FB7391D000C014B /* Cuisine.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Cuisine.icns; sourceTree = "<group>"; };
 		779F7EC40FB483F600AF7A19 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Status.xib; sourceTree = "<group>"; };
 		779F7EC90FB485BE00AF7A19 /* KCStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCStatusController.h; sourceTree = "<group>"; };
 		779F7ECA0FB485BE00AF7A19 /* KCStatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCStatusController.m; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		77423E980FB4F63B00A39860 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				779EF7B90FB7391D000C014B /* Cuisine.icns */,
 				77423EBC0FB4FA0300A39860 /* Delete.tiff */,
 				77423EBD0FB4FA0300A39860 /* reload.tiff */,
 				77423EA20FB4F74100A39860 /* centos.gif */,
@@ -350,6 +353,7 @@
 				77A53AE40FB594EB00040FC6 /* Node.xib in Resources */,
 				77A53AF90FB5A40D00040FC6 /* Cookbooks.xib in Resources */,
 				775C57CC0FB6E43E002BA3BB /* Credits.rtf in Resources */,
+				779EF7BA0FB7391D000C014B /* Cuisine.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
