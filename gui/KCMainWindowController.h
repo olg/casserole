@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "KCChefConnection.h"
+#import "KCViewController.h"
 
 @interface KCMainWindowController : NSWindowController {
 	NSString					*serverURL;
@@ -15,14 +15,14 @@
 	NSMutableArray				*sourceContents;
 	IBOutlet NSOutlineView		*sourceView;
 	NSView						*currentView;
-	NSViewController			*currentViewController;
+	KCViewController			*currentViewController;
 	KCChefConnection			*chefConnection;
 }
 
-@property (nonatomic, retain) KCChefConnection *chefConnection;
-@property (nonatomic, retain) IBOutlet NSTreeController *sourceController;
-@property (nonatomic, retain) IBOutlet NSMutableArray *sourceContents;
-@property (nonatomic, retain) IBOutlet NSView *currentView;
-@property (nonatomic, retain) IBOutlet NSOutlineView *sourceView;
+@property (retain) KCChefConnection *chefConnection;
+@property (retain) IBOutlet NSTreeController *sourceController;
+@property (retain) IBOutlet NSMutableArray *sourceContents;
+@property (retain) IBOutlet NSView *currentView;
+@property (retain) IBOutlet NSOutlineView *sourceView;
 
 @end

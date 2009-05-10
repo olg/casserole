@@ -11,10 +11,14 @@
 
 @interface KCChefConnection : NSObject {
 	NSString* serverURL; // https://chef.example.com
+	NSMutableArray* nodes;
+	NSMutableArray* registrations;
 }
 
-@property (nonatomic, retain) NSString* serverURL;
+@property (retain) NSString* serverURL;
+@property (retain) NSMutableArray* registrations;
+@property (retain) NSMutableArray* nodes;
 
--(void)initialFetch;
+-(void)refresh:(id)sender;
 
 @end

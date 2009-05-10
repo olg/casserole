@@ -16,16 +16,19 @@
 
 
 @implementation KCNetworkOperation
+@synthesize callback;
 @synthesize result;
 @synthesize data;
 @synthesize url;
 @synthesize error;
+@synthesize summary;
+@synthesize type;
 
 -(void)main
 {
-	NSError *e;
+	NSError *e = nil;
 	NSData *d;
-	NSHTTPURLResponse *response;
+	NSHTTPURLResponse *response = nil;
 
 	[NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[[self url] host]];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[self url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
@@ -40,7 +43,13 @@
 		[self setResult:r];
 	}
 	if (e!=nil)
-		[self setError:e];
+		NSLog(@"error %@ %@",self.url,e);
+	[self setError:e];
+}
+
+-(void)finalize
+{
+    [super finalize];
 }
 
 @end

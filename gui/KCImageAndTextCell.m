@@ -7,7 +7,7 @@
 //
 
 #import "KCImageAndTextCell.h"
-#import "KCNode.h"
+#import "KCAbstractNode.h"
 
 
 @implementation KCImageAndTextCell
@@ -200,7 +200,7 @@
 	if (hostingOutlineView)
 	{
 //		NSInteger selectedRow = [hostingOutlineView selectedRow];
-//		KCNode* node = [[hostingOutlineView itemAtRow:selectedRow] representedObject];
+//		KCAbstractNode* node = [[hostingOutlineView itemAtRow:selectedRow] representedObject];
 		
 //		if (![node isDraggable])	// is the node isDraggable (i.e. non-file system based objects)
 			result = NSCellHitTrackableArea;

@@ -7,12 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KCViewController.h"
 
 
-@interface KCNodesController : NSViewController {
+@interface KCNodesController : KCViewController {
 	NSMutableArray* nodes;
 }
 
-@property (nonatomic, retain) IBOutlet NSMutableArray* nodes;
+@property (retain) IBOutlet NSMutableArray* nodes;
 
 @end

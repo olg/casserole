@@ -7,16 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KCViewController.h"
 
-
-@interface KCStatusController : NSViewController {
+@interface KCStatusController : KCViewController {
 	NSMutableArray* nodes;
 	NSString* serverURL;
 	NSString* cookbooks;
 }
 
-@property (nonatomic, retain) NSMutableArray *nodes;
-@property (nonatomic, retain) NSString *serverURL;
-@property (nonatomic, retain) NSString *cookbooks;
+@property (retain) NSMutableArray *nodes;
+@property (retain) NSString *serverURL;
+@property (retain) NSString *cookbooks;
 
 @end

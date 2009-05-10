@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KCViewController.h"
 
-
-@interface KCCookbookController : NSViewController {
+@interface KCCookbookController : KCViewController {
 	NSMutableArray				*cookbookContents;
 	NSString					*cookbookName;
 	NSString					*sourceText;
@@ -17,7 +17,8 @@
 	NSTextView					*textView;
 }
 
-@property (nonatomic, retain) IBOutlet NSMutableArray *cookbookContents;
-@property (nonatomic, retain) IBOutlet NSTextView *textView;
+@property (retain) IBOutlet NSMutableArray *cookbookContents;
+@property (retain) IBOutlet NSString *sourceText;
+@property (retain) IBOutlet NSTextView *textView;
 
 @end

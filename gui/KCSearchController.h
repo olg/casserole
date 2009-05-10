@@ -7,13 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KCViewController.h"
 
 
-@interface KCSearchController : NSViewController {
+@interface KCSearchController : KCViewController {
 	NSString* query;
 	NSString* attributes;
-	NSMutableArray* results;
+	NSDictionary* results;
 }
+
+@property (retain) NSDictionary* results;
 
 - (IBAction)search:(id)sender;
 

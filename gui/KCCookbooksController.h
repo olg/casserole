@@ -7,12 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KCViewController.h"
 
 
-@interface KCCookbooksController : NSViewController {
+@interface KCCookbooksController : KCViewController {
 	NSMutableArray* cookbooks;
 }
 
-@property (nonatomic, retain) NSMutableArray* cookbooks;
+@property (retain) NSMutableArray* cookbooks;
 
 @end

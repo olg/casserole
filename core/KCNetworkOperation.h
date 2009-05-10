@@ -14,11 +14,17 @@
 	NSData *data;
 	NSURL *url;
 	NSError *error;
+	NSString* type;
+	NSString* summary;
+	NSObject* callback;
 }
 
-@property (nonatomic, retain) NSObject *result;
-@property (nonatomic, retain) NSData *data;
-@property (nonatomic, retain) NSError *error;
-@property (nonatomic, retain) NSURL *url;
+@property (retain) NSObject *callback;
+@property (retain) NSString *summary;
+@property (retain) NSString *type;
+@property (retain) NSObject *result;
+@property (retain) NSData *data;
+@property (retain) NSError *error;
+@property (retain) NSURL *url;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "KCMainWindowController.h"
-#import "KCNode.h"
+#import "KCAbstractNode.h"
 #import "KCRegistrationsController.h"
 #import "KCSearchController.h"
 #import "KCStatusController.h"
@@ -39,59 +39,39 @@
 	[[self window] setContentBorderThickness:32 forEdge:NSMinYEdge];
 
 	NSMutableArray* a = [NSMutableArray array];
-	KCNode *node;
-	KCNode *child;
-	node = [[KCNode alloc] init];
+	KCAbstractNode *node;
+	KCAbstractNode *child;
+	node = [[KCAbstractNode alloc] init];
 	[node setNodeTitle:@"Status"];
 	[a addObject:node];
 	[node setIsLeaf:true];
-	node = [[KCNode alloc] init];
+	node = [[KCNodesProxy alloc] init];
+	node.connection = self.chefConnection;
 	[node setNodeTitle:@"Nodes"];
-	[node setIsLeaf:false];
-	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"test1.ftnx.net"];
-	[child setIsLeaf:true];
-	[node addObject:child];
-	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"test2.ftnx.net"];
-	[child setIsLeaf:true];
-	[node addObject:child];
-	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"test3.ftnx.net"];
-	[child setIsLeaf:true];
-	[node addObject:child];
-	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"test4.ftnx.net"];
-	[child setIsLeaf:true];
-	[node addObject:child];
 	[a addObject:node];
-	node = [[KCNode alloc] init];
+	node = [[KCAbstractNode alloc] init];
 	[node setNodeTitle:@"Cookbooks"];
 	[node setIsLeaf:false];
-	child = [[KCNode alloc] init];
+	child = [[KCAbstractNode alloc] init];
 	[child setNodeTitle:@"Apache2"];
 	[child setIsLeaf:true];
 	[node addObject:child];
-	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"CouchDB"];
-	[child setIsLeaf:true];
-	[node addObject:child];
 	[a addObject:node];
-	node = [[KCNode alloc] init];
+	node = [[KCAbstractNode alloc] init];
 	[node setNodeTitle:@"Registrations"];
 	[a addObject:node];
 	[node setIsLeaf:true];
-	node = [[KCNode alloc] init];
+	node = [[KCAbstractNode alloc] init];
 	[node setNodeTitle:@"Search"];
 	[node setIsLeaf:false];
-	child = [[KCNode alloc] init];
+/*	child = [[KCAbstractNode alloc] init];
 	[child setNodeTitle:@"Rails nodes"];
 	[child setIsLeaf:true];
 	[node addObject:child];
-	child = [[KCNode alloc] init];
+	child = [[KCAbstractNode alloc] init];
 	[child setNodeTitle:@"Ubuntu nodes"];
 	[child setIsLeaf:true];
-	[node addObject:child];
+	[node addObject:child];*/
 	[a addObject:node];
 
 	
@@ -106,7 +86,7 @@
 - (void)changeItemView
 {
 	NSArray		*selection = [sourceController selectedObjects];	
-	KCNode		*node = [selection objectAtIndex:0];
+	KCAbstractNode		*node = [selection objectAtIndex:0];
 	NSString	*title = [node nodeTitle];
 	
 	if ([currentViewController view] != nil)
@@ -116,6 +96,7 @@
 	{
 		KCRegistrationsController* registrationsController =
 		[[KCRegistrationsController alloc] initWithNibName:@"Registrations" bundle:nil];
+		registrationsController.chefConnection = self.chefConnection;
 		if (registrationsController != nil) 
 		{		
 			currentViewController = registrationsController;	// keep track of the current view controller
@@ -126,16 +107,19 @@
 	{
 		KCSearchController* searchController =
 		[[KCSearchController alloc] initWithNibName:@"Search" bundle:nil];
+		searchController.chefConnection = self.chefConnection;
 		if (searchController != nil) 
 		{		
 			currentViewController = searchController;	// keep track of the current view controller
 			[currentViewController setTitle:@"Search"];
 		}
 	}
-	else if ([title isEqualToString:@"test1.ftnx.net"]) 
+	else if ([title isEqualToString:@"jaunty-2.no-distance.net"]) 
 	{
 		KCNodeController* nodeController =
 		[[KCNodeController alloc] initWithNibName:@"Node" bundle:nil];
+		nodeController.chefConnection = self.chefConnection;
+		nodeController.node = node;
 		if (nodeController != nil) 
 		{		
 			currentViewController = nodeController;	// keep track of the current view controller
@@ -146,6 +130,7 @@
 	{
 		KCCookbooksController* cookbooksController =
 		[[KCCookbooksController alloc] initWithNibName:@"Cookbooks" bundle:nil];
+		cookbooksController.chefConnection = self.chefConnection;
 		if (cookbooksController != nil) 
 		{		
 			currentViewController = cookbooksController;	// keep track of the current view controller
@@ -156,6 +141,7 @@
 	{
 		KCNodesController* nodesController =
 		[[KCNodesController alloc] initWithNibName:@"Nodes" bundle:nil];
+		nodesController.chefConnection = self.chefConnection;
 		if (nodesController != nil) 
 		{		
 			currentViewController = nodesController;	// keep track of the current view controller
@@ -166,6 +152,7 @@
 	{
 		KCCookbookController* cookbookController =
 		[[KCCookbookController alloc] initWithNibName:@"Cookbook" bundle:nil];
+		cookbookController.chefConnection = self.chefConnection;
 		if (cookbookController != nil) 
 		{		
 			currentViewController = cookbookController;	// keep track of the current view controller
@@ -176,6 +163,7 @@
 	{
 		KCStatusController* statusController =
 		[[KCStatusController alloc] initWithNibName:@"Status" bundle:nil];
+		statusController.chefConnection = self.chefConnection;
 		if (statusController != nil) 
 		{		
 			currentViewController = statusController;	// keep track of the current view controller
@@ -198,33 +186,30 @@
 		if ([cell isKindOfClass:[KCImageAndTextCell class]])
 		{
 			item = [item representedObject];
+			
+			if ([item isKindOfClass:[KCNode class]])
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:[[((KCNode*)item).attributes objectForKey:@"attributes"] objectForKey:@"platform"]]];
 			if ([[item nodeTitle] isEqualToString:@"Nodes"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameNetwork]];
-			if ([[item nodeTitle] isEqualToString:@"Registrations"])
+			else if ([[item nodeTitle] isEqualToString:@"Registrations"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameUserGroup]];
-			if ([[item nodeTitle] isEqualToString:@"Rails nodes"])
+			else if ([[item nodeTitle] isEqualToString:@"Rails nodes"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameAdvanced]];
-			if ([[item nodeTitle] isEqualToString:@"Ubuntu nodes"])
+			else if ([[item nodeTitle] isEqualToString:@"Ubuntu nodes"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameAdvanced]];
-			if ([[item nodeTitle] isEqualToString:@"Search"])
+			else if ([[item nodeTitle] isEqualToString:@"Search"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"Spotlight"]];//NSImageNameAdvanced]];
-			if ([[item nodeTitle] isEqualToString:@"Cookbooks"])
+			else if ([[item nodeTitle] isEqualToString:@"Cookbooks"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameMultipleDocuments]];
-			if ([[item nodeTitle] isEqualToString:@"Apache2"])
+			else if ([[item nodeTitle] isEqualToString:@"Apache2"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
-			if ([[item nodeTitle] isEqualToString:@"test1.ftnx.net"])
+			else if ([[item nodeTitle] isEqualToString:@"test1.ftnx.net"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"ubuntu.gif"]];
-			if ([[item nodeTitle] isEqualToString:@"test2.ftnx.net"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"ubuntu"]];
-			if ([[item nodeTitle] isEqualToString:@"test3.ftnx.net"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"centos"]];
-			if ([[item nodeTitle] isEqualToString:@"test4.ftnx.net"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"linux"]];
-			if ([[item nodeTitle] isEqualToString:@"Passenger"])
+			else if ([[item nodeTitle] isEqualToString:@"Passenger"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
-			if ([[item nodeTitle] isEqualToString:@"CouchDB"])
+			else if ([[item nodeTitle] isEqualToString:@"CouchDB"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
-			if ([[item nodeTitle] isEqualToString:@"Status"])
+			else if ([[item nodeTitle] isEqualToString:@"Status"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameInfo]];
 		}
 	}
@@ -235,6 +220,11 @@
 	NSArray *selection = [sourceController selectedObjects];
 	if ([selection count] == 1)
 		[self changeItemView];
+}
+
+-(void)refresh:(id)sender
+{
+	[chefConnection refresh:sender];
 }
 
 @end

@@ -7,12 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KCViewController.h"
 
-
-@interface KCRegistrationsController : NSViewController {
+@interface KCRegistrationsController : KCViewController {
 	NSMutableArray* registrations;
 }
 
-@property (nonatomic, retain) IBOutlet NSMutableArray* registrations;
+@property (retain) IBOutlet NSMutableArray* registrations;
 
 @end

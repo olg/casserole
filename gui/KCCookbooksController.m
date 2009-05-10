@@ -7,7 +7,7 @@
 //
 
 #import "KCCookbooksController.h"
-#import "KCNode.h"
+#import "KCAbstractNode.h"
 
 
 @implementation KCCookbooksController
@@ -16,16 +16,16 @@
 - (void)awakeFromNib
 {
 	NSMutableArray* a = [NSMutableArray array];
-	KCNode *node;
-	node = [[KCNode alloc] init];
+	KCAbstractNode *node;
+	node = [[KCAbstractNode alloc] init];
 	[node setNodeTitle:@"CouchDB"];
 	[node setIsLeaf:true];
 	[a addObject:node];
-	node = [[KCNode alloc] init];
+	node = [[KCAbstractNode alloc] init];
 	[node setNodeTitle:@"Apache"];
 	[node setIsLeaf:true];
 	[a addObject:node];
-	node = [[KCNode alloc] init];
+	node = [[KCAbstractNode alloc] init];
 	[node setNodeTitle:@"Passenger"];
 	[node setIsLeaf:true];
 	[a addObject:node];	

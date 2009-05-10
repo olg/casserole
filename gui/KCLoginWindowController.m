@@ -13,17 +13,7 @@
 
 
 @implementation KCLoginWindowController
-
 @synthesize defaultButton;
-
-
--(void)awakeFromNib
-{
-}
-
--(void)operationSuccess
-{
-}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context 
 { 
@@ -37,12 +27,13 @@
 		else {
 			KCChefConnection* chef = [[KCChefConnection alloc] init];
 			chef.serverURL = [urlField stringValue];
-			[chef initialFetch];
+			[chef refresh:self];
 			
+			[self close];
 			KCMainWindowController *c = [[KCMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
 			[c setChefConnection:chef];
 			[c showWindow:self];
-			[self close];
+			[[c window] makeKeyAndOrderFront:self];
 		}
 	} else { 
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context]; 
@@ -62,5 +53,6 @@
 	[op addObserver:self forKeyPath:@"isFinished" options:0 context:nil]; 
 	[queue addOperation:op];
 }
+
 
 @end

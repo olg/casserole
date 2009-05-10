@@ -1,23 +1,18 @@
 //
-//  KCNode.m
+//  KCRegistration.m
 //  Cuisine
 //
-//  Created by Olivier Gutknecht on 5/9/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by Olivier Gutknecht on 09/05/09.
+//  Copyright 2009 Fotonauts. All rights reserved.
 //
 
-#import "KCNode.h"
+#import "KCRegistration.h"
 #import "KCApplicationDelegate.h"
 #import "KCNetworkOperation.h"
 #import "KCChefConnection.h"
 
-@implementation KCNode
-@synthesize attributes;
-
-- (BOOL)isLeaf;  
-{  
-	return true;  
-} 
+@implementation KCRegistration
+@synthesize content;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
 					  ofObject:(id)object
@@ -32,7 +27,7 @@
 		}
 		else {
 			if ([op.result isKindOfClass:[NSDictionary class]])
-				[self setAttributes:(NSDictionary*)op.result];
+				[self setContent:(NSDictionary*)op.result];
 		}
     }
 }
@@ -42,13 +37,14 @@
 {
 	NSOperationQueue* queue = [(KCApplicationDelegate*)[NSApp delegate] queue];	
 	KCNetworkOperation* op = [[KCNetworkOperation alloc] init];
-
+	
 	NSString* urlID = [self.nodeTitle stringByReplacingOccurrencesOfString:@"." withString:@"_"]; 
-	op.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/nodes/%@.json", self.connection.serverURL, urlID]];
+	op.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/registrations/%@.json", self.connection.serverURL, urlID]];
 	op.type = @"get.node";
-	op.summary = [NSString stringWithFormat:@"Refreshing node %@",self.nodeTitle];
+	op.summary = [NSString stringWithFormat:@"Refreshing registration %@",self.nodeTitle];
 	[op addObserver:self forKeyPath:@"isFinished" options:0 context:nil]; 
 	[queue addOperation:op];
 }
+
 
 @end

@@ -14,7 +14,7 @@
 	IBOutlet NSTextField *urlField;
 }
 
-@property (nonatomic, retain) IBOutlet NSButton *defaultButton;
+@property (retain) IBOutlet NSButton *defaultButton;
 
 - (IBAction)connect:(id)sender;
 

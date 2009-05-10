@@ -7,50 +7,90 @@
 //
 
 #import "KCCookbookController.h"
-#import "KCNode.h"
+#import "KCAbstractNode.h"
 
 @implementation KCCookbookController
+@synthesize sourceText;
 @synthesize cookbookContents;
 @synthesize textView;
 
 - (void)awakeFromNib
 {
 	NSMutableArray* a = [NSMutableArray array];
-	KCNode *node;
-	KCNode *child;
-	node = [[KCNode alloc] init];
-	[node setNodeTitle:@"Status"];
-	[a addObject:node];
-	[node setIsLeaf:true];
-	node = [[KCNode alloc] init];
-	[node setNodeTitle:@"Nodes"];
-	[a addObject:node];
+	KCAbstractNode *node;
+	KCAbstractNode *child;
+	node = [[KCAbstractNode alloc] init];
+	[node setNodeTitle:@"Attributes"];
 	[node setIsLeaf:false];
-	node = [[KCNode alloc] init];
-	[node setNodeTitle:@"Cookbooks"];
-	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"Apache2"];
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"apache.rb"];
 	[child setIsLeaf:true];
-	[node setIsLeaf:false];
-	[node addObject:child];
+	[node addObject:child];	
 	[a addObject:node];
-	node = [[KCNode alloc] init];
-	[node setNodeTitle:@"Registrations"];
+
+	node = [[KCAbstractNode alloc] init];
+	[node setNodeTitle:@"Definitions"];
+	[node setIsLeaf:false];
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"apache_module.rb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"web_app.rb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"apache_site.rb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
 	[a addObject:node];
+
+	
+	node = [[KCAbstractNode alloc] init];
+	[node setNodeTitle:@"Recipes"];
 	[node setIsLeaf:false];
-	node = [[KCNode alloc] init];
-	[node setNodeTitle:@"Search"];
-	[node setIsLeaf:false];
-	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"All active"];
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"default.rb"];
 	[child setIsLeaf:true];
-	[node addObject:child];
-	child = [[KCNode alloc] init];
-	[child setNodeTitle:@"Backend nodes"];
+	[node addObject:child];	
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"mod_dir.rb"];
 	[child setIsLeaf:true];
-	[node addObject:child];
+	[node addObject:child];	
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"mod_headers.rb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"mod_proxy.rb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
 	[a addObject:node];
 	
+	node = [[KCAbstractNode alloc] init];
+	[node setNodeTitle:@"Templates"];
+	[node setIsLeaf:false];
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"apache2.conf.erb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"ports.conf.erb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"web_app.conf.erb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
+	child = [[KCAbstractNode alloc] init];
+	[child setNodeTitle:@"default_site.erb"];
+	[child setIsLeaf:true];
+	[node addObject:child];	
+	[a addObject:node];
+	
+	NSString* source = @"#\n# Cookbook Name:: apache2\n# Recipe:: default\n#\n\npackage \"apache2\" do\n	action :install\nend\n\n";
+
+	[self setSourceText:source];
 	[self setCookbookContents:a];
 }
 

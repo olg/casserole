@@ -2,27 +2,19 @@
 //  KCNode.h
 //  Cuisine
 //
-//  Created by Olivier Gutknecht on 07/05/09.
-//  Copyright 2009 Fotonauts. All rights reserved.
+//  Created by Olivier Gutknecht on 5/9/09.
+//  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KCAbstractNode.h"
 
+@interface KCNode : KCAbstractNode {
+	NSDictionary* attributes;
+}
 
-@interface KCNode : NSObject {
-	KCNode *_parent;  
-	NSString *_nodeTitle;  
-	NSString *_nodeValue;  
-	NSMutableArray *_children;  
-	BOOL _isLeaf;  
-}  
+@property (retain) NSDictionary* attributes;
 
-@property(copy) NSString *nodeValue;  
-@property(copy) NSString *nodeTitle;  
-@property(copy) NSMutableArray *children;  
-@property(assign) KCNode *parent;  
-@property(assign) BOOL isLeaf;  
-
--(void)addObject:(id)o;
+-(void)refresh:(id)sender;
 
 @end

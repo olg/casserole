@@ -7,18 +7,21 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "KCViewController.h"
+#import "KCNode.h"
 
-
-@interface KCNodeController : NSViewController {
+@interface KCNodeController : KCViewController {
 	NSString* recipes;
 	NSString* tags;
 	NSMutableArray* attributes;
 	NSString* name;
+	KCNode* node;
 }
 
-@property (nonatomic, retain) IBOutlet NSString* recipes;
-@property (nonatomic, retain) IBOutlet NSString* name;
-@property (nonatomic, retain) IBOutlet NSString* tags;
-@property (nonatomic, retain) IBOutlet NSMutableArray* attributes;
+@property (retain) KCNode* node;
+@property (retain) IBOutlet NSString* recipes;
+@property (retain) IBOutlet NSString* name;
+@property (retain) IBOutlet NSString* tags;
+@property (retain) IBOutlet NSMutableArray* attributes;
 
 @end

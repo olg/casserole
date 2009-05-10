@@ -17,8 +17,13 @@
 -(void)awakeFromNib
 {
 	[self setNodes:[NSArray arrayWithObjects:@"1", @"1", @"1", @"1", nil]];
-	[self setServerURL:@"https://chef.ftnx.net"];
+	[self setServerURL:@"https://chef.ftnx.next"];
 	[self setCookbooks:@"2 (apache2, couchdb)"];
 }
+
+
+-(void)refresh:(id)sender
+{
+			}
 
 @end
