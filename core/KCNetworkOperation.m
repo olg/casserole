@@ -7,7 +7,7 @@
 //
 
 #import "KCNetworkOperation.h"
-#import "JSON/JSON.h"
+#import "JSON.h"
 
 @interface NSURLRequest (SomePrivateAPIs)
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)fp8;

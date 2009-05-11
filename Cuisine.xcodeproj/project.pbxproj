@@ -41,11 +41,13 @@
 		77A53AFE0FB5A4E700040FC6 /* KCCookbooksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53AFD0FB5A4E700040FC6 /* KCCookbooksController.m */; };
 		77A53B260FB5A75600040FC6 /* KCChefConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53B250FB5A75600040FC6 /* KCChefConnection.m */; };
 		77A53B910FB5B48500040FC6 /* KCNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53B900FB5B48500040FC6 /* KCNetworkOperation.m */; };
-		77A53BBB0FB5C10D00040FC6 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A53BBA0FB5C10D00040FC6 /* JSON.framework */; };
 		77C484540FB309980098C82D /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C484530FB309980098C82D /* Search.xib */; };
 		77C484580FB309CB0098C82D /* KCSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C484570FB309CB0098C82D /* KCSearchController.m */; };
 		77C5C2150FB34CA9006D6BC8 /* KCNodesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */; };
 		77C5C21C0FB34D6E006D6BC8 /* Nodes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C5C21B0FB34D6E006D6BC8 /* Nodes.xib */; };
+		77CC5CAB0FB805AC0080386C /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CC5CA60FB805AC0080386C /* NSObject+SBJSON.m */; };
+		77CC5CAC0FB805AC0080386C /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CC5CA80FB805AC0080386C /* NSString+SBJSON.m */; };
+		77CC5CAD0FB805AC0080386C /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CC5CAA0FB805AC0080386C /* SBJSON.m */; };
 		77D4397A0FB5E6DD00F7867F /* KCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D439790FB5E6DD00F7867F /* KCNode.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -109,13 +111,19 @@
 		77A53B250FB5A75600040FC6 /* KCChefConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCChefConnection.m; sourceTree = "<group>"; };
 		77A53B8F0FB5B48500040FC6 /* KCNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNetworkOperation.h; sourceTree = "<group>"; };
 		77A53B900FB5B48500040FC6 /* KCNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNetworkOperation.m; sourceTree = "<group>"; };
-		77A53BBA0FB5C10D00040FC6 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = ../../Library/Frameworks/JSON.framework; sourceTree = SOURCE_ROOT; };
 		77C484510FB309940098C82D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Search.xib; sourceTree = "<group>"; };
 		77C484560FB309CB0098C82D /* KCSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCSearchController.h; sourceTree = "<group>"; };
 		77C484570FB309CB0098C82D /* KCSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCSearchController.m; sourceTree = "<group>"; };
 		77C5C2130FB34CA9006D6BC8 /* KCNodesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNodesController.h; sourceTree = "<group>"; };
 		77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNodesController.m; sourceTree = "<group>"; };
 		77C5C2190FB34D68006D6BC8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Nodes.xib; sourceTree = "<group>"; };
+		77CC5CA40FB805AC0080386C /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		77CC5CA50FB805AC0080386C /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		77CC5CA60FB805AC0080386C /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		77CC5CA70FB805AC0080386C /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		77CC5CA80FB805AC0080386C /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		77CC5CA90FB805AC0080386C /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		77CC5CAA0FB805AC0080386C /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
 		77D439780FB5E6DD00F7867F /* KCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNode.h; sourceTree = "<group>"; };
 		77D439790FB5E6DD00F7867F /* KCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNode.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				77A53BBB0FB5C10D00040FC6 /* JSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			children = (
 				778EFA290FB255A300FE49FC /* core */,
 				77683DC20FB23426003FD7B4 /* gui */,
+				77CC5CA20FB805AC0080386C /* third-party */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -155,7 +163,6 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				77A53BBA0FB5C10D00040FC6 /* JSON.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -289,6 +296,28 @@
 			path = core;
 			sourceTree = "<group>";
 		};
+		77CC5CA20FB805AC0080386C /* third-party */ = {
+			isa = PBXGroup;
+			children = (
+				77CC5CA30FB805AC0080386C /* JSON */,
+			);
+			path = "third-party";
+			sourceTree = "<group>";
+		};
+		77CC5CA30FB805AC0080386C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				77CC5CA40FB805AC0080386C /* JSON.h */,
+				77CC5CA50FB805AC0080386C /* NSObject+SBJSON.h */,
+				77CC5CA60FB805AC0080386C /* NSObject+SBJSON.m */,
+				77CC5CA70FB805AC0080386C /* NSString+SBJSON.h */,
+				77CC5CA80FB805AC0080386C /* NSString+SBJSON.m */,
+				77CC5CA90FB805AC0080386C /* SBJSON.h */,
+				77CC5CAA0FB805AC0080386C /* SBJSON.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,6 +412,9 @@
 				776BFEB30FB5F59700F0EC94 /* KCRegistration.m in Sources */,
 				776B00FC0FB6180F00F0EC94 /* KCViewController.m in Sources */,
 				776B01620FB626EE00F0EC94 /* KCValueTransformers.m in Sources */,
+				77CC5CAB0FB805AC0080386C /* NSObject+SBJSON.m in Sources */,
+				77CC5CAC0FB805AC0080386C /* NSString+SBJSON.m in Sources */,
+				77CC5CAD0FB805AC0080386C /* SBJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
