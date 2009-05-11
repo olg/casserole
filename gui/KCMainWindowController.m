@@ -114,12 +114,12 @@
 			[currentViewController setTitle:@"Search"];
 		}
 	}
-	else if ([title isEqualToString:@"jaunty-2.no-distance.net"]) 
+	else if ([node isKindOfClass:[KCNode class]]) 
 	{
 		KCNodeController* nodeController =
 		[[KCNodeController alloc] initWithNibName:@"Node" bundle:nil];
 		nodeController.chefConnection = self.chefConnection;
-		nodeController.node = node;
+		nodeController.node = (KCNode*)node;
 		if (nodeController != nil) 
 		{		
 			currentViewController = nodeController;	// keep track of the current view controller
