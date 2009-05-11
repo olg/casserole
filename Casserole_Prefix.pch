@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Casserole' target in the 'Casserole' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

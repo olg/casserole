@@ -30,7 +30,7 @@
 		776BFEB30FB5F59700F0EC94 /* KCRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 776BFEB20FB5F59700F0EC94 /* KCRegistration.m */; };
 		778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EF94B0FB23EDD00FE49FC /* MainWindow.xib */; };
 		778EFA300FB2563200FE49FC /* KCAbstractNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 778EFA2F0FB2563200FE49FC /* KCAbstractNode.m */; };
-		779EF7BA0FB7391D000C014B /* Cuisine.icns in Resources */ = {isa = PBXBuildFile; fileRef = 779EF7B90FB7391D000C014B /* Cuisine.icns */; };
+		779EF7BA0FB7391D000C014B /* Casserole.icns in Resources */ = {isa = PBXBuildFile; fileRef = 779EF7B90FB7391D000C014B /* Casserole.icns */; };
 		779F7EC70FB483FA00AF7A19 /* Status.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779F7EC60FB483FA00AF7A19 /* Status.xib */; };
 		779F7ECB0FB485BE00AF7A19 /* KCStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779F7ECA0FB485BE00AF7A19 /* KCStatusController.m */; };
 		779F7EDD0FB487E100AF7A19 /* KCCookbookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779F7EDC0FB487E100AF7A19 /* KCCookbookController.m */; };
@@ -62,7 +62,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* Cuisine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cuisine_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Casserole_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Casserole_Prefix.pch; sourceTree = "<group>"; };
 		77423DFB0FB49AA100A39860 /* KCImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCImageAndTextCell.h; sourceTree = "<group>"; };
 		77423DFC0FB49AA100A39860 /* KCImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCImageAndTextCell.m; sourceTree = "<group>"; };
 		77423EA20FB4F74100A39860 /* centos.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = centos.gif; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		778EF9470FB23EB200FE49FC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		778EFA2E0FB2563200FE49FC /* KCAbstractNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCAbstractNode.h; sourceTree = "<group>"; };
 		778EFA2F0FB2563200FE49FC /* KCAbstractNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCAbstractNode.m; sourceTree = "<group>"; };
-		779EF7B90FB7391D000C014B /* Cuisine.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Cuisine.icns; sourceTree = "<group>"; };
+		779EF7B90FB7391D000C014B /* Casserole.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Casserole.icns; sourceTree = "<group>"; };
 		779F7EC40FB483F600AF7A19 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Status.xib; sourceTree = "<group>"; };
 		779F7EC90FB485BE00AF7A19 /* KCStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCStatusController.h; sourceTree = "<group>"; };
 		779F7ECA0FB485BE00AF7A19 /* KCStatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCStatusController.m; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		77D439780FB5E6DD00F7867F /* KCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNode.h; sourceTree = "<group>"; };
 		77D439790FB5E6DD00F7867F /* KCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNode.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Cuisine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuisine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Casserole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Casserole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,12 +173,12 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* Cuisine.app */,
+				8D1107320486CEB800E47090 /* Casserole.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* Cuisine */ = {
+		29B97314FDCFA39411CA2CEA /* Casserole */ = {
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -187,13 +187,13 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
-			name = Cuisine;
+			name = Casserole;
 			sourceTree = "<group>";
 		};
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* Cuisine_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* Casserole_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -232,7 +232,7 @@
 		77423E980FB4F63B00A39860 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				779EF7B90FB7391D000C014B /* Cuisine.icns */,
+				779EF7B90FB7391D000C014B /* Casserole.icns */,
 				77423EBC0FB4FA0300A39860 /* Delete.tiff */,
 				77423EBD0FB4FA0300A39860 /* reload.tiff */,
 				77423EA20FB4F74100A39860 /* centos.gif */,
@@ -321,9 +321,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* Cuisine */ = {
+		8D1107260486CEB800E47090 /* Casserole */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Cuisine" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Casserole" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -333,10 +333,10 @@
 			);
 			dependencies = (
 			);
-			name = Cuisine;
+			name = Casserole;
 			productInstallPath = "$(HOME)/Applications";
-			productName = Cuisine;
-			productReference = 8D1107320486CEB800E47090 /* Cuisine.app */;
+			productName = Casserole;
+			productReference = 8D1107320486CEB800E47090 /* Casserole.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -344,14 +344,14 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cuisine" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Casserole" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 29B97314FDCFA39411CA2CEA /* Cuisine */;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Casserole */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Cuisine */,
+				8D1107260486CEB800E47090 /* Casserole */,
 			);
 		};
 /* End PBXProject section */
@@ -382,7 +382,7 @@
 				77A53AE40FB594EB00040FC6 /* Node.xib in Resources */,
 				77A53AF90FB5A40D00040FC6 /* Cookbooks.xib in Resources */,
 				775C57CC0FB6E43E002BA3BB /* Credits.rtf in Resources */,
-				779EF7BA0FB7391D000C014B /* Cuisine.icns in Resources */,
+				779EF7BA0FB7391D000C014B /* Casserole.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,10 +526,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Cuisine_Prefix.pch;
+				GCC_PREFIX_HEADER = Casserole_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = Cuisine;
+				PRODUCT_NAME = Casserole;
 			};
 			name = Debug;
 		};
@@ -544,10 +544,10 @@
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Cuisine_Prefix.pch;
+				GCC_PREFIX_HEADER = Casserole_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = Cuisine;
+				PRODUCT_NAME = Casserole;
 			};
 			name = Release;
 		};
@@ -582,7 +582,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Cuisine" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Casserole" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -591,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cuisine" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Casserole" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
