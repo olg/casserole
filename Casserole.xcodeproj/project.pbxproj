@@ -18,6 +18,8 @@
 		77423EAF0FB4F74100A39860 /* ubuntu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 77423EA80FB4F74100A39860 /* ubuntu.gif */; };
 		77423EBE0FB4FA0300A39860 /* Delete.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 77423EBC0FB4FA0300A39860 /* Delete.tiff */; };
 		77423EBF0FB4FA0300A39860 /* reload.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 77423EBD0FB4FA0300A39860 /* reload.tiff */; };
+		774DD65E0FBB2140004C03A2 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 774DD65D0FBB2140004C03A2 /* JSON.framework */; };
+		774DD6680FBB2145004C03A2 /* JSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 774DD65D0FBB2140004C03A2 /* JSON.framework */; };
 		77577DB20FB2FFF5000E2604 /* Registrations.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77577DB10FB2FFF5000E2604 /* Registrations.xib */; };
 		77577DB60FB3038C000E2604 /* KCRegistrationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77577DB50FB3038C000E2604 /* KCRegistrationsController.m */; };
 		775C57CC0FB6E43E002BA3BB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 775C57CB0FB6E43E002BA3BB /* Credits.rtf */; };
@@ -45,14 +47,24 @@
 		77C484580FB309CB0098C82D /* KCSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C484570FB309CB0098C82D /* KCSearchController.m */; };
 		77C5C2150FB34CA9006D6BC8 /* KCNodesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */; };
 		77C5C21C0FB34D6E006D6BC8 /* Nodes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C5C21B0FB34D6E006D6BC8 /* Nodes.xib */; };
-		77CC5CAB0FB805AC0080386C /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CC5CA60FB805AC0080386C /* NSObject+SBJSON.m */; };
-		77CC5CAC0FB805AC0080386C /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CC5CA80FB805AC0080386C /* NSString+SBJSON.m */; };
-		77CC5CAD0FB805AC0080386C /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CC5CAA0FB805AC0080386C /* SBJSON.m */; };
 		77D4397A0FB5E6DD00F7867F /* KCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D439790FB5E6DD00F7867F /* KCNode.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		774DD65A0FBB20BF004C03A2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				774DD6680FBB2145004C03A2 /* JSON.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -74,6 +86,7 @@
 		77423EA80FB4F74100A39860 /* ubuntu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ubuntu.gif; sourceTree = "<group>"; };
 		77423EBC0FB4FA0300A39860 /* Delete.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Delete.tiff; sourceTree = "<group>"; };
 		77423EBD0FB4FA0300A39860 /* reload.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = reload.tiff; sourceTree = "<group>"; };
+		774DD65D0FBB2140004C03A2 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = "third-party/JSON.framework"; sourceTree = "<group>"; };
 		77577DAF0FB2FFF1000E2604 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Registrations.xib; sourceTree = "<group>"; };
 		77577DB40FB3038C000E2604 /* KCRegistrationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRegistrationsController.h; sourceTree = "<group>"; };
 		77577DB50FB3038C000E2604 /* KCRegistrationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRegistrationsController.m; sourceTree = "<group>"; };
@@ -117,13 +130,6 @@
 		77C5C2130FB34CA9006D6BC8 /* KCNodesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNodesController.h; sourceTree = "<group>"; };
 		77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNodesController.m; sourceTree = "<group>"; };
 		77C5C2190FB34D68006D6BC8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Nodes.xib; sourceTree = "<group>"; };
-		77CC5CA40FB805AC0080386C /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		77CC5CA50FB805AC0080386C /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		77CC5CA60FB805AC0080386C /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		77CC5CA70FB805AC0080386C /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		77CC5CA80FB805AC0080386C /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		77CC5CA90FB805AC0080386C /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		77CC5CAA0FB805AC0080386C /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
 		77D439780FB5E6DD00F7867F /* KCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNode.h; sourceTree = "<group>"; };
 		77D439790FB5E6DD00F7867F /* KCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNode.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				774DD65E0FBB2140004C03A2 /* JSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +162,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				774DD65D0FBB2140004C03A2 /* JSON.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -299,23 +307,8 @@
 		77CC5CA20FB805AC0080386C /* third-party */ = {
 			isa = PBXGroup;
 			children = (
-				77CC5CA30FB805AC0080386C /* JSON */,
 			);
 			path = "third-party";
-			sourceTree = "<group>";
-		};
-		77CC5CA30FB805AC0080386C /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				77CC5CA40FB805AC0080386C /* JSON.h */,
-				77CC5CA50FB805AC0080386C /* NSObject+SBJSON.h */,
-				77CC5CA60FB805AC0080386C /* NSObject+SBJSON.m */,
-				77CC5CA70FB805AC0080386C /* NSString+SBJSON.h */,
-				77CC5CA80FB805AC0080386C /* NSString+SBJSON.m */,
-				77CC5CA90FB805AC0080386C /* SBJSON.h */,
-				77CC5CAA0FB805AC0080386C /* SBJSON.m */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +321,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				774DD65A0FBB20BF004C03A2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -412,9 +406,6 @@
 				776BFEB30FB5F59700F0EC94 /* KCRegistration.m in Sources */,
 				776B00FC0FB6180F00F0EC94 /* KCViewController.m in Sources */,
 				776B01620FB626EE00F0EC94 /* KCValueTransformers.m in Sources */,
-				77CC5CAB0FB805AC0080386C /* NSObject+SBJSON.m in Sources */,
-				77CC5CAC0FB805AC0080386C /* NSString+SBJSON.m in Sources */,
-				77CC5CAD0FB805AC0080386C /* SBJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +511,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Library/Frameworks\"",
+					"\"$(SRCROOT)/third-party\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -541,6 +533,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Library/Frameworks\"",
+					"\"$(SRCROOT)/third-party\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -556,7 +549,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -571,7 +564,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;

@@ -5,26 +5,18 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string>Casserole</string>
+	<string>JSON</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.fotonauts.${PRODUCT_NAME:identifier}</string>
+	<string>org.brautaset.JSON</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
-	<string>APPL</string>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.1.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.2</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2009 Fotonauts Inc.</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
+	<string>1.1.1</string>
 </dict>
 </plist>

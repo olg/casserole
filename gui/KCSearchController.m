@@ -25,12 +25,19 @@
 			[a runModal];
 		}
 		else {
-			[self setResults:[NSDictionary dictionary]];
+			[self setResults:[NSArray array]];
 			if ([op.result isKindOfClass:[NSArray class]])
 			{
+				NSMutableArray* r = [NSMutableArray array];
 				NSArray* a = (NSArray*)op.result;
-				if (([a count]==1) && [[a objectAtIndex:0] isKindOfClass:[NSDictionary class]])
-					[self setResults:[a objectAtIndex:0]];
+				for (NSDictionary* d in a) {
+					NSString* nodeID =  [d objectForKey:@"id"];
+					for (id key in d) {
+						if ((![key isEqualToString:@"id"])&&(![key isEqualToString:@"index_name"]))
+							[r addObject:[NSDictionary dictionaryWithObjectsAndKeys:nodeID, @"id",  [d objectForKey:key], @"value", key, @"key", nil]];
+					}
+				}
+				[self setResults:r];
 			}
 		}
     }
@@ -48,7 +55,7 @@
 	if (attributes==nil)
 		a = @"";
 	else
-		a = [attributes stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		a = [attributes componentsJoinedByString:@","];
 
 	NSOperationQueue* queue = [(KCApplicationDelegate*)[NSApp delegate] queue];
 	KCNetworkOperation* op = [[KCNetworkOperation alloc] init];

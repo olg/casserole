@@ -12,11 +12,11 @@
 
 @interface KCSearchController : KCViewController {
 	NSString* query;
-	NSString* attributes;
-	NSDictionary* results;
+	NSArray* attributes;
+	NSArray* results;
 }
 
-@property (retain) NSDictionary* results;
+@property (retain) NSArray* results;
 
 - (IBAction)search:(id)sender;
 
