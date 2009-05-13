@@ -11,13 +11,17 @@
 
 
 @interface KCSearchController : KCViewController {
-	NSString* query;
 	NSArray* attributes;
 	NSArray* results;
+	NSArray* nodes;
+	IBOutlet NSTextField* progressSearchLabel;
+	IBOutlet NSPredicateEditor*	predicateEditor;
 }
 
 @property (retain) NSArray* results;
+@property (retain) NSArray* nodes;
 
-- (IBAction)search:(id)sender;
+- (IBAction)predicateEditorChanged:(id)sender;
+- (void)search:(id)sender;
 
 @end
