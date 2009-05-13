@@ -28,12 +28,11 @@
 			KCChefConnection* chef = [[KCChefConnection alloc] init];
 			chef.serverURL = [urlField stringValue];
 			[chef refresh:self];
-			
 			[self close];
+
 			KCMainWindowController *c = [[KCMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
 			[c setChefConnection:chef];
-			[c showWindow:self];
-			[[c window] makeKeyAndOrderFront:self];
+			[c showWindow:nil];
 		}
 	} else { 
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context]; 
