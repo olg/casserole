@@ -10,13 +10,9 @@
 #import "KCViewController.h"
 
 @interface KCStatusController : KCViewController {
-	NSMutableArray* nodes;
-	NSString* serverURL;
 	NSString* cookbooks;
 }
 
-@property (retain) NSMutableArray *nodes;
-@property (retain) NSString *serverURL;
 @property (retain) NSString *cookbooks;
 
 @end
