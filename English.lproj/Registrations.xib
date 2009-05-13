@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">9G55</string>
+		<string key="IBDocument.SystemVersion">9J61</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.AppKitVersion">949.46</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="8"/>
+			<integer value="6"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -130,7 +130,7 @@
 												<double key="NSMaxWidth">1.000000e+03</double>
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
 													<int key="NSCellFlags">75628032</int>
-													<int key="NSCellFlags2">0</int>
+													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Validated</string>
 													<reference key="NSSupport" ref="26"/>
 													<reference key="NSBackgroundColor" ref="94711482"/>
@@ -138,11 +138,11 @@
 												</object>
 												<object class="NSButtonCell" key="NSDataCell" id="359012161">
 													<int key="NSCellFlags">67239424</int>
-													<int key="NSCellFlags2">131072</int>
-													<string key="NSContents">Check</string>
+													<int key="NSCellFlags2">134348800</int>
+													<string key="NSContents"/>
 													<reference key="NSSupport" ref="26"/>
 													<reference key="NSControlView" ref="86103948"/>
-													<int key="NSButtonFlags">1211912703</int>
+													<int key="NSButtonFlags">1215582719</int>
 													<int key="NSButtonFlags2">130</int>
 													<object class="NSCustomResource" key="NSNormalImage" id="81155007">
 														<string key="NSClassName">NSImage</string>
@@ -166,7 +166,7 @@
 												<double key="NSMaxWidth">3.402823e+38</double>
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
 													<int key="NSCellFlags">75628032</int>
-													<int key="NSCellFlags2">0</int>
+													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Administrative Access</string>
 													<reference key="NSSupport" ref="26"/>
 													<object class="NSColor" key="NSBackgroundColor">
@@ -182,11 +182,11 @@
 												</object>
 												<object class="NSButtonCell" key="NSDataCell" id="712230879">
 													<int key="NSCellFlags">67239424</int>
-													<int key="NSCellFlags2">131072</int>
-													<string key="NSContents">Check</string>
+													<int key="NSCellFlags2">134348800</int>
+													<string key="NSContents"/>
 													<reference key="NSSupport" ref="26"/>
 													<reference key="NSControlView" ref="86103948"/>
-													<int key="NSButtonFlags">1211912703</int>
+													<int key="NSButtonFlags">1215582719</int>
 													<int key="NSButtonFlags2">130</int>
 													<reference key="NSNormalImage" ref="81155007"/>
 													<reference key="NSAlternateImage" ref="123825177"/>
@@ -282,13 +282,10 @@
 			<object class="NSArrayController" id="464041396">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>name</string>
-					<string>admin</string>
-					<string>validated</string>
 					<string>content.name</string>
 					<string>content.validated</string>
+					<string>content.admin</string>
 				</object>
-				<bool key="NSEditable">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
 				<bool key="NSPreservesSelection">YES</bool>
@@ -326,38 +323,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: arrangedObjects.content.validated</string>
-						<reference key="source" ref="117914199"/>
-						<reference key="destination" ref="464041396"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="117914199"/>
-							<reference key="NSDestination" ref="464041396"/>
-							<string key="NSLabel">value: arrangedObjects.content.validated</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">arrangedObjects.content.validated</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">26</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: arrangedObjects.content.validated</string>
-						<reference key="source" ref="378674752"/>
-						<reference key="destination" ref="464041396"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="378674752"/>
-							<reference key="NSDestination" ref="464041396"/>
-							<string key="NSLabel">value: arrangedObjects.content.validated</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">arrangedObjects.content.validated</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">27</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: arrangedObjects.content.name</string>
 						<reference key="source" ref="856426268"/>
 						<reference key="destination" ref="464041396"/>
@@ -375,6 +340,46 @@
 						</object>
 					</object>
 					<int key="connectionID">28</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.content.admin</string>
+						<reference key="source" ref="378674752"/>
+						<reference key="destination" ref="464041396"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="378674752"/>
+							<reference key="NSDestination" ref="464041396"/>
+							<string key="NSLabel">value: arrangedObjects.content.admin</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.content.admin</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSAllowsEditingMultipleValuesSelection</string>
+								<boolean value="NO" key="NS.object.0" id="6"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">30</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.content.validated</string>
+						<reference key="source" ref="117914199"/>
+						<reference key="destination" ref="464041396"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="117914199"/>
+							<reference key="NSDestination" ref="464041396"/>
+							<string key="NSLabel">value: arrangedObjects.content.validated</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.content.validated</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSAllowsEditingMultipleValuesSelection</string>
+								<reference key="NS.object.0" ref="6"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">31</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -568,7 +573,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">28</int>
+			<int key="maxID">31</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

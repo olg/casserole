@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">9G55</string>
+		<string key="IBDocument.SystemVersion">9J61</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.AppKitVersion">949.46</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="7"/>
+			<integer value="8"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -72,7 +72,7 @@
 										<object class="NSMutableArray" key="NSTableColumns">
 											<bool key="EncodedWithXMLCoder">YES</bool>
 											<object class="NSTableColumn" id="699973753">
-												<double key="NSWidth">1.640000e+02</double>
+												<double key="NSWidth">1.300000e+02</double>
 												<double key="NSMinWidth">4.000000e+01</double>
 												<double key="NSMaxWidth">1.000000e+03</double>
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -155,7 +155,7 @@
 												<reference key="NSTableView" ref="593436683"/>
 											</object>
 											<object class="NSTableColumn" id="624946827">
-												<double key="NSWidth">8.400000e+01</double>
+												<double key="NSWidth">8.100000e+01</double>
 												<double key="NSMinWidth">4.000000e+01</double>
 												<double key="NSMaxWidth">1.000000e+03</double>
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -213,7 +213,7 @@
 												<reference key="NSTableView" ref="593436683"/>
 											</object>
 											<object class="NSTableColumn" id="800696740">
-												<double key="NSWidth">7.000000e+01</double>
+												<double key="NSWidth">5.800000e+01</double>
 												<double key="NSMinWidth">4.000000e+01</double>
 												<double key="NSMaxWidth">1.000000e+03</double>
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -242,7 +242,7 @@
 												<reference key="NSTableView" ref="593436683"/>
 											</object>
 											<object class="NSTableColumn" id="133952437">
-												<double key="NSWidth">9.900000e+01</double>
+												<double key="NSWidth">1.480000e+02</double>
 												<double key="NSMinWidth">4.000000e+01</double>
 												<double key="NSMaxWidth">1.000000e+03</double>
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -692,6 +692,7 @@
 					<string>1.WindowOrigin</string>
 					<string>1.editorWindowContentRectSynchronizationRect</string>
 					<string>10.IBPluginDependency</string>
+					<string>11.CustomClassName</string>
 					<string>11.IBPluginDependency</string>
 					<string>12.IBPluginDependency</string>
 					<string>15.IBPluginDependency</string>
@@ -720,6 +721,7 @@
 					<string>{628, 654}</string>
 					<string>{{217, 442}, {480, 272}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>NSTokenFieldCell</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
