@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
+			<integer value="46"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -75,9 +75,10 @@
 								<string key="NSToolbarItemPaletteLabel">Custom View</string>
 								<nil key="NSToolbarItemToolTip"/>
 								<object class="NSSearchField" key="NSToolbarItemView" id="511756035">
-									<nil key="NSNextResponder"/>
+									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{0, 14}, {96, 22}}</string>
+									<reference key="NSSuperview"/>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSSearchFieldCell" key="NSCell" id="62715571">
 										<int key="NSCellFlags">343014976</int>
@@ -594,13 +595,13 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 														<object class="NSTableView" id="928427781">
 															<reference key="NSNextResponder" ref="861228762"/>
 															<int key="NSvFlags">4352</int>
-															<string key="NSFrameSize">{208, 77}</string>
+															<string key="NSFrameSize">{206, 77}</string>
 															<reference key="NSSuperview" ref="861228762"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="218616901">
 																<reference key="NSNextResponder" ref="226897722"/>
 																<int key="NSvFlags">4352</int>
-																<string key="NSFrameSize">{208, 17}</string>
+																<string key="NSFrameSize">{206, 17}</string>
 																<reference key="NSSuperview" ref="226897722"/>
 																<reference key="NSTableView" ref="928427781"/>
 															</object>
@@ -613,7 +614,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 															<object class="NSMutableArray" key="NSTableColumns">
 																<bool key="EncodedWithXMLCoder">YES</bool>
 																<object class="NSTableColumn" id="134691666">
-																	<double key="NSWidth">2.050000e+02</double>
+																	<double key="NSWidth">2.030000e+02</double>
 																	<double key="NSMinWidth">4.000000e+01</double>
 																	<double key="NSMaxWidth">1.000000e+03</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -650,7 +651,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 															<reference key="NSBackgroundColor" ref="297465837"/>
 															<reference key="NSGridColor" ref="389494210"/>
 															<double key="NSRowHeight">1.700000e+01</double>
-															<int key="NSTvFlags">-689930240</int>
+															<int key="NSTvFlags">-692027392</int>
 															<int key="NSColumnAutoresizingStyle">1</int>
 															<int key="NSDraggingSourceMaskForLocal">15</int>
 															<int key="NSDraggingSourceMaskForNonLocal">0</int>
@@ -679,7 +680,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 													<int key="NSvFlags">256</int>
 													<string key="NSFrame">{{-100, -100}, {189, 15}}</string>
 													<reference key="NSSuperview" ref="540038169"/>
-													<bool key="NSEnabled">YES</bool>
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="540038169"/>
 													<string key="NSAction">_doScroller:</string>
@@ -704,7 +704,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 											<string key="NSFrame">{{0, 424}, {206, 94}}</string>
 											<reference key="NSSuperview" ref="281380729"/>
 											<reference key="NSNextKeyView" ref="861228762"/>
-											<int key="NSsFlags">128</int>
+											<int key="NSsFlags">0</int>
 											<reference key="NSVScroller" ref="455172612"/>
 											<reference key="NSHScroller" ref="464193740"/>
 											<reference key="NSContentView" ref="861228762"/>
@@ -764,10 +764,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 				<string key="NSTreeContentLeafKey">isLeaf</string>
 			</object>
 			<object class="NSUserDefaultsController" id="287853296">
-				<object class="NSMutableArray" key="NSDeclaredKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>delegate.queue.operations.@count</string>
-				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSArrayController" id="391934260">
@@ -962,6 +958,59 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						</object>
 					</object>
 					<int key="connectionID">91</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">searchField</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="511756035"/>
+					</object>
+					<int key="connectionID">100</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">predicate: currentViewController.searchPredicate</string>
+						<reference key="source" ref="511756035"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="511756035"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">predicate: currentViewController.searchPredicate</string>
+							<string key="NSBinding">predicate</string>
+							<string key="NSKeyPath">currentViewController.searchPredicate</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSPredicateFormat</string>
+									<string>NSRaisesForNotApplicableKeys</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>((attributes.name contains $value) or (id contains $value) or (key contains $value) or (value contains $value) or (attributes.ipaddress contains $value) or (attributes.platform contains $value) or (attributes.recipes contains $value))</string>
+									<boolean value="NO" id="6"/>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">102</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentViewController.canSearch</string>
+						<reference key="source" ref="511756035"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="511756035"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: currentViewController.canSearch</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentViewController.canSearch</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">105</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1274,7 +1323,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>{{100, 426}, {798, 548}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{100, 426}, {798, 548}}</string>
-					<boolean value="NO"/>
+					<reference ref="6"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
 					<boolean value="YES"/>
@@ -1284,7 +1333,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{191, 974}, {616, 0}}</string>
+					<string>{{191, 747}, {616, 227}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1329,7 +1378,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">94</int>
+			<int key="maxID">105</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1378,6 +1427,8 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>currentView</string>
+							<string>currentViewController</string>
+							<string>searchField</string>
 							<string>sourceContents</string>
 							<string>sourceController</string>
 							<string>sourceView</string>
@@ -1385,6 +1436,8 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSView</string>
+							<string>KCViewController</string>
+							<string>NSSearchField</string>
 							<string>NSMutableArray</string>
 							<string>NSTreeController</string>
 							<string>NSOutlineView</string>
@@ -1405,6 +1458,14 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">core/KCNode.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">KCViewController</string>
+					<string key="superclassName">NSViewController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">gui/KCViewController.h</string>
 					</object>
 				</object>
 			</object>

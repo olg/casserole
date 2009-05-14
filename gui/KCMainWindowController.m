@@ -19,7 +19,7 @@
 
 
 @implementation KCMainWindowController
-
+@synthesize currentViewController;
 @synthesize sourceController;
 @synthesize sourceContents;
 @synthesize chefConnection;
@@ -99,7 +99,7 @@
 		registrationsController.chefConnection = self.chefConnection;
 		if (registrationsController != nil) 
 		{		
-			currentViewController = registrationsController;	// keep track of the current view controller
+			[self setCurrentViewController:registrationsController];	// keep track of the current view controller
 			[currentViewController setTitle:@"Registrations table"];
 		}
 	}
@@ -110,9 +110,10 @@
 		searchController.chefConnection = self.chefConnection;
 		if (searchController != nil) 
 		{		
-			currentViewController = searchController;	// keep track of the current view controller
+			[self setCurrentViewController:searchController];	// keep track of the current view controller
 			[currentViewController setTitle:@"Search"];
 		}
+		[currentViewController setCanSearch:true];
 	}
 	else if ([node isKindOfClass:[KCNode class]]) 
 	{
@@ -122,7 +123,7 @@
 		nodeController.node = (KCNode*)node;
 		if (nodeController != nil) 
 		{		
-			currentViewController = nodeController;	// keep track of the current view controller
+			[self setCurrentViewController:nodeController];	// keep track of the current view controller
 			[currentViewController setTitle:@"Node"];
 		}
 	}
@@ -133,7 +134,7 @@
 		cookbooksController.chefConnection = self.chefConnection;
 		if (cookbooksController != nil) 
 		{		
-			currentViewController = cookbooksController;	// keep track of the current view controller
+			[self setCurrentViewController:cookbooksController];	// keep track of the current view controller
 			[currentViewController setTitle:@"Cookbooks"];
 		}
 	}
@@ -144,7 +145,7 @@
 		nodesController.chefConnection = self.chefConnection;
 		if (nodesController != nil) 
 		{		
-			currentViewController = nodesController;	// keep track of the current view controller
+			[self setCurrentViewController:nodesController];	// keep track of the current view controller
 			[currentViewController setTitle:@"Nodes"];
 		}
 	}
@@ -155,7 +156,7 @@
 		cookbookController.chefConnection = self.chefConnection;
 		if (cookbookController != nil) 
 		{		
-			currentViewController = cookbookController;	// keep track of the current view controller
+			[self setCurrentViewController:cookbookController];	// keep track of the current view controller
 			[currentViewController setTitle:@"Cookbook"];
 		}
 	}
@@ -166,12 +167,13 @@
 		statusController.chefConnection = self.chefConnection;
 		if (statusController != nil) 
 		{		
-			currentViewController = statusController;	// keep track of the current view controller
+			[self setCurrentViewController:statusController];	// keep track of the current view controller
 			[currentViewController setTitle:@"Status"];
 		}
 	}
 	
-			
+	[searchField setObjectValue:@""];
+	[currentViewController setSearchPredicate:nil];
 	[currentView addSubview: [currentViewController view]];
 
 	// make sure we automatically resize the controller's view to the current window size

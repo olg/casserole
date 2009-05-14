@@ -16,6 +16,7 @@
 
 -(void)awakeFromNib 
 {
+	self.canSearch = true;
 	[predicateEditor addRow:self];
 	// put the focus in the first text field
     id displayValue = [[predicateEditor displayValuesForRow:1] lastObject];
@@ -70,7 +71,6 @@
 	[self setNodes:[NSArray array]];
 	[self setResults:[NSArray array]];
 		
-	NSLog(@"%@",topLevelPredicate);
 	switch ([topLevelPredicate compoundPredicateType])
 	{
 		case NSAndPredicateType:

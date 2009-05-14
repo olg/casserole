@@ -11,8 +11,12 @@
 
 @interface KCViewController : NSViewController {
 	KCChefConnection *chefConnection;
+	NSPredicate* searchPredicate;
+	bool canSearch;
 }
 
 @property (retain) KCChefConnection *chefConnection;
+@property (retain) NSPredicate* searchPredicate;
+@property bool canSearch;
 
 @end

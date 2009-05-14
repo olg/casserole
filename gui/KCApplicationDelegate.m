@@ -29,7 +29,6 @@
 
 -(void)openURL:(id)sender
 {
-	NSLog(@"s:%@",sender);
 	NSString* text = [sender title];
 	NSURL* url = [NSURL URLWithString:text];
 	[[NSWorkspace sharedWorkspace] openURL:url];

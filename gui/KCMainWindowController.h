@@ -15,10 +15,12 @@
 	NSMutableArray				*sourceContents;
 	IBOutlet NSOutlineView		*sourceView;
 	NSView						*currentView;
-	KCViewController			*currentViewController;
+	IBOutlet KCViewController	*currentViewController;
 	KCChefConnection			*chefConnection;
+	IBOutlet NSSearchField		*searchField;
 }
 
+@property (retain) KCViewController	*currentViewController;
 @property (retain) KCChefConnection *chefConnection;
 @property (retain) IBOutlet NSTreeController *sourceController;
 @property (retain) IBOutlet NSMutableArray *sourceContents;

@@ -12,4 +12,10 @@
 @implementation KCNodesController
 @synthesize nodes;
 
+
+-(NSPredicate*)predicateTemplate
+{
+	return [NSPredicate predicateWithFormat:@"((attributes.name contains $value) or (attributes.ipaddress contains $value) or (attributes.platform contains $value) or (attributes.recipes contains $value))"];
+}
+
 @end

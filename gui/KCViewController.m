@@ -11,5 +11,7 @@
 
 @implementation KCViewController
 @synthesize chefConnection;
+@synthesize searchPredicate;
+@synthesize canSearch;
 
 @end
