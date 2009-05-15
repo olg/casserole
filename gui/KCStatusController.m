@@ -22,4 +22,9 @@
 {
 }
 
+-(NSString*)iconName
+{
+	return NSImageNameInfo;
+}
+
 @end

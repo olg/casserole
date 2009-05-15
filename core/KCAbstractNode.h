@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class KCChefConnection;
+@class KCViewController;
 
 @interface KCAbstractNode : NSObject {
 	KCAbstractNode *_parent;  
@@ -30,7 +31,17 @@
 
 -(void)refresh:(id)sender;
 
+-(NSString*)iconName;
+
 @end
 
-@interface KCNodesProxy : KCAbstractNode
+@interface KCNodesProxy : KCAbstractNode 
+@end
+
+@interface KCViewControllerNode : KCAbstractNode {
+	KCViewController *viewController;  
+}  
+
+@property(assign) KCViewController *viewController;  
+
 @end

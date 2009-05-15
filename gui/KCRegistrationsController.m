@@ -12,4 +12,9 @@
 @implementation KCRegistrationsController
 @synthesize registrations;
 
+-(NSString*)iconName
+{
+	return NSImageNameUserGroup;
+}
+
 @end

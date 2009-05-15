@@ -51,4 +51,14 @@
 	[queue addOperation:op];
 }
 
+-(NSString*)iconName
+{
+	NSString* name = [[attributes objectForKey:@"attributes"] objectForKey:@"platform"];
+	if (name!=nil)
+		return name;
+	else
+		return NSImageNameNetwork;
+}
+
+
 @end

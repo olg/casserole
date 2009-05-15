@@ -39,7 +39,8 @@
 			if ([op.result isKindOfClass:[NSArray class]])
 			{
 				NSArray* array = (NSArray*)op.result;
-				if ([op.type isEqualToString:@"get.nodes"]) { 
+				if ([op.type isEqualToString:@"get.nodes"]) {
+					[self willChangeValueForKey:@"nodes"];
 					[nodes removeAllObjects];
 					for (NSString *element in array) {
 						KCNode* node = [[KCNode alloc] init];
@@ -48,6 +49,7 @@
 						[nodes addObject:node];
 						[node refresh:self];
 					}
+					[self didChangeValueForKey:@"nodes"];
 				}
 				if ([op.type isEqualToString:@"get.registrations"]) { 
 					[registrations removeAllObjects];

@@ -32,4 +32,9 @@
 	[self setCookbooks:a];
 }
 
+-(NSString*)iconName
+{
+	return NSImageNameMultipleDocuments;
+}
+
 @end

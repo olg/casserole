@@ -193,6 +193,10 @@
 		return [item description];
 }
 
+-(NSString*)iconName
+{
+	return [node iconName];
+}
 
 
 @end

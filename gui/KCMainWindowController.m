@@ -26,10 +26,21 @@
 @synthesize currentView;
 @synthesize sourceView;
 
+@synthesize registrationsController;
+@synthesize searchController;
+@synthesize nodeController;
+@synthesize cookbooksController;
+@synthesize nodesController;
+@synthesize cookbookController;
+@synthesize statusController;
+
+
 #define COLUMNID_NAME @"NameColumn"
 
 - (void)awakeFromNib
 {	
+	[self setupViewControllers];
+	
 	NSTableColumn *tableColumn = [sourceView tableColumnWithIdentifier:COLUMNID_NAME];
 	KCImageAndTextCell *imageAndTextCell = [[KCImageAndTextCell alloc] init];
 	[imageAndTextCell setEditable:NO];
@@ -39,32 +50,39 @@
 	[[self window] setContentBorderThickness:32 forEdge:NSMinYEdge];
 
 	NSMutableArray* a = [NSMutableArray array];
-	KCAbstractNode *node;
+	KCViewControllerNode *viewNode;
 	KCAbstractNode *child;
-	node = [[KCAbstractNode alloc] init];
-	[node setNodeTitle:@"Status"];
-	[a addObject:node];
-	[node setIsLeaf:true];
-	node = [[KCNodesProxy alloc] init];
-	node.connection = self.chefConnection;
-	[node setNodeTitle:@"Nodes"];
-	[a addObject:node];
-	node = [[KCAbstractNode alloc] init];
-	[node setNodeTitle:@"Cookbooks"];
-	[node setIsLeaf:false];
+	KCNodesProxy *nodeProxy;
+
+	viewNode = [[KCViewControllerNode alloc] init];
+	viewNode.viewController = statusController;
+	[viewNode setIsLeaf:true];
+	[a addObject:viewNode];
+
+	nodeProxy = [[KCNodesProxy alloc] init];
+	nodeProxy.connection = self.chefConnection;
+	[nodeProxy setNodeTitle:@"Nodes"];
+	[a addObject:nodeProxy];
+	
+	viewNode = [[KCViewControllerNode alloc] init];
+	viewNode.viewController = cookbooksController;
+	[viewNode setIsLeaf:false];
 	child = [[KCAbstractNode alloc] init];
 	[child setNodeTitle:@"Apache2"];
 	[child setIsLeaf:true];
-	[node addObject:child];
-	[a addObject:node];
-	node = [[KCAbstractNode alloc] init];
-	[node setNodeTitle:@"Registrations"];
-	[a addObject:node];
-	[node setIsLeaf:true];
-	node = [[KCAbstractNode alloc] init];
-	[node setNodeTitle:@"Search"];
-	[node setIsLeaf:false];
-/*	child = [[KCAbstractNode alloc] init];
+	[viewNode addObject:child];
+	[a addObject:viewNode];
+	
+	viewNode = [[KCViewControllerNode alloc] init];
+	viewNode.viewController = registrationsController;
+	[viewNode setIsLeaf:true];
+	[a addObject:viewNode];
+
+	viewNode = [[KCViewControllerNode alloc] init];
+	((KCViewControllerNode*)viewNode).viewController = searchController;
+	[viewNode setIsLeaf:true];
+
+	/*	child = [[KCAbstractNode alloc] init];
 	[child setNodeTitle:@"Rails nodes"];
 	[child setIsLeaf:true];
 	[node addObject:child];
@@ -72,7 +90,7 @@
 	[child setNodeTitle:@"Ubuntu nodes"];
 	[child setIsLeaf:true];
 	[node addObject:child];*/
-	[a addObject:node];
+	[a addObject:viewNode];
 
 	
 	[self setSourceContents:a];
@@ -82,6 +100,54 @@
 //	outlineViewSelectionDidChange:notification
 // -------------------------------------------------------------------------------
 
+- (void)setupViewControllers
+{
+	registrationsController = [[KCRegistrationsController alloc] initWithNibName:@"Registrations" bundle:nil];
+	registrationsController.chefConnection = self.chefConnection;
+	registrationsController.windowController = self;
+	[registrationsController setTitle:@"Registrations"];
+
+	searchController = [[KCSearchController alloc] initWithNibName:@"Search" bundle:nil];
+	searchController.chefConnection = self.chefConnection;
+	searchController.windowController = self;
+	[searchController setCanSearch:true];
+	[searchController setTitle:@"Search"];
+
+	nodeController = [[KCNodeController alloc] initWithNibName:@"Node" bundle:nil];
+	nodeController.chefConnection = self.chefConnection;
+	nodeController.windowController = self;
+	[nodeController setTitle:@"Node"];
+
+	cookbooksController = [[KCCookbooksController alloc] initWithNibName:@"Cookbooks" bundle:nil];
+	cookbooksController.chefConnection = self.chefConnection;
+	cookbooksController.windowController = self;
+	[cookbooksController setTitle:@"Cookbooks"];
+
+	nodesController = [[KCNodesController alloc] initWithNibName:@"Nodes" bundle:nil];
+	nodesController.chefConnection = self.chefConnection;
+	nodesController.windowController = self;
+	[nodesController setTitle:@"Nodes"];
+
+	cookbookController = [[KCCookbookController alloc] initWithNibName:@"Cookbook" bundle:nil];
+	cookbookController.chefConnection = self.chefConnection;
+	cookbookController.windowController = self;
+	[cookbookController setTitle:@"Cookbook"];
+
+	statusController = [[KCStatusController alloc] initWithNibName:@"Status" bundle:nil];
+	statusController.chefConnection = self.chefConnection;
+	statusController.windowController = self;
+	[statusController setTitle:@"Status"];
+}
+
+- (void)switchView:(KCViewController*)view
+{
+	[sourceController removeSelectionIndexPaths:[sourceController selectionIndexPaths]];
+	if (view==nodesController)
+		[sourceController addSelectionIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathWithIndex:1]]];
+	else
+		[sourceController addSelectionIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathWithIndex:2]]];		
+	[self changeItemView];
+}
 
 - (void)changeItemView
 {
@@ -94,82 +160,39 @@
 	
 	if ([title isEqualToString:@"Registrations"]) 
 	{
-		KCRegistrationsController* registrationsController =
-		[[KCRegistrationsController alloc] initWithNibName:@"Registrations" bundle:nil];
-		registrationsController.chefConnection = self.chefConnection;
-		if (registrationsController != nil) 
-		{		
-			[self setCurrentViewController:registrationsController];	// keep track of the current view controller
-			[currentViewController setTitle:@"Registrations table"];
-		}
+		[self setCurrentViewController:registrationsController];	// keep track of the current view controller
+		[currentViewController setTitle:@"Registrations"];
 	}
 	else if ([title isEqualToString:@"Search"]) 
 	{
-		KCSearchController* searchController =
-		[[KCSearchController alloc] initWithNibName:@"Search" bundle:nil];
-		searchController.chefConnection = self.chefConnection;
-		if (searchController != nil) 
-		{		
-			[self setCurrentViewController:searchController];	// keep track of the current view controller
-			[currentViewController setTitle:@"Search"];
-		}
-		[currentViewController setCanSearch:true];
+		[self setCurrentViewController:searchController];	// keep track of the current view controller
+		[currentViewController setTitle:@"Search"];
 	}
 	else if ([node isKindOfClass:[KCNode class]]) 
 	{
-		KCNodeController* nodeController =
-		[[KCNodeController alloc] initWithNibName:@"Node" bundle:nil];
-		nodeController.chefConnection = self.chefConnection;
 		nodeController.node = (KCNode*)node;
-		if (nodeController != nil) 
-		{		
-			[self setCurrentViewController:nodeController];	// keep track of the current view controller
-			[currentViewController setTitle:@"Node"];
-		}
+		[self setCurrentViewController:nodeController];	// keep track of the current view controller
+		[currentViewController setTitle:@"Node"];
 	}
 	else if ([title isEqualToString:@"Cookbooks"]) 
 	{
-		KCCookbooksController* cookbooksController =
-		[[KCCookbooksController alloc] initWithNibName:@"Cookbooks" bundle:nil];
-		cookbooksController.chefConnection = self.chefConnection;
-		if (cookbooksController != nil) 
-		{		
-			[self setCurrentViewController:cookbooksController];	// keep track of the current view controller
-			[currentViewController setTitle:@"Cookbooks"];
-		}
+		[self setCurrentViewController:cookbooksController];	// keep track of the current view controller
+		[currentViewController setTitle:@"Cookbooks"];
 	}
 	else if ([title isEqualToString:@"Nodes"]) 
 	{
-		KCNodesController* nodesController =
-		[[KCNodesController alloc] initWithNibName:@"Nodes" bundle:nil];
-		nodesController.chefConnection = self.chefConnection;
-		if (nodesController != nil) 
-		{		
-			[self setCurrentViewController:nodesController];	// keep track of the current view controller
-			[currentViewController setTitle:@"Nodes"];
-		}
+		[self setCurrentViewController:nodesController];	// keep track of the current view controller
+		[currentViewController setTitle:@"Nodes"];
 	}
 	else if ([title isEqualToString:@"Apache2"]) 
 	{
-		KCCookbookController* cookbookController =
-		[[KCCookbookController alloc] initWithNibName:@"Cookbook" bundle:nil];
-		cookbookController.chefConnection = self.chefConnection;
-		if (cookbookController != nil) 
-		{		
-			[self setCurrentViewController:cookbookController];	// keep track of the current view controller
-			[currentViewController setTitle:@"Cookbook"];
-		}
+		[self setCurrentViewController:cookbookController];	// keep track of the current view controller
+		[currentViewController setTitle:@"Cookbook"];
 	}
 	else
 	{
-		KCStatusController* statusController =
-		[[KCStatusController alloc] initWithNibName:@"Status" bundle:nil];
-		statusController.chefConnection = self.chefConnection;
-		if (statusController != nil) 
-		{		
-			[self setCurrentViewController:statusController];	// keep track of the current view controller
-			[currentViewController setTitle:@"Status"];
-		}
+		[self setCurrentViewController:statusController];	// keep track of the current view controller
+		[currentViewController setTitle:@"Status"];
 	}
 	
 	[searchField setObjectValue:@""];
@@ -188,31 +211,12 @@
 		if ([cell isKindOfClass:[KCImageAndTextCell class]])
 		{
 			item = [item representedObject];
+			NSString* imageName = [item iconName];
+			if (imageName!=nil)
+				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:imageName]];
 			
-			if ([item isKindOfClass:[KCNode class]])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:[[((KCNode*)item).attributes objectForKey:@"attributes"] objectForKey:@"platform"]]];
-			if ([[item nodeTitle] isEqualToString:@"Nodes"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameNetwork]];
-			else if ([[item nodeTitle] isEqualToString:@"Registrations"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameUserGroup]];
-			else if ([[item nodeTitle] isEqualToString:@"Rails nodes"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameAdvanced]];
-			else if ([[item nodeTitle] isEqualToString:@"Ubuntu nodes"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameAdvanced]];
-			else if ([[item nodeTitle] isEqualToString:@"Search"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"Spotlight"]];//NSImageNameAdvanced]];
-			else if ([[item nodeTitle] isEqualToString:@"Cookbooks"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameMultipleDocuments]];
-			else if ([[item nodeTitle] isEqualToString:@"Apache2"])
+			else if ([[item nodeTitle] isEqualToString:@"Apache2"]) 
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
-			else if ([[item nodeTitle] isEqualToString:@"test1.ftnx.net"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"ubuntu.gif"]];
-			else if ([[item nodeTitle] isEqualToString:@"Passenger"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
-			else if ([[item nodeTitle] isEqualToString:@"CouchDB"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
-			else if ([[item nodeTitle] isEqualToString:@"Status"])
-				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:NSImageNameInfo]];
 		}
 	}
 }

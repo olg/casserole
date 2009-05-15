@@ -8,7 +8,7 @@
 
 #import "KCAbstractNode.h"
 #import "KCChefConnection.h"
-
+#import "KCViewController.h"
 
 @implementation KCAbstractNode
 
@@ -18,6 +18,11 @@
 @synthesize connection = _connection;
 @dynamic isLeaf;  
 @dynamic children;  
+
+- (NSString*)iconName
+{
+	return nil;
+}
 
 - (void)refresh:(id)sender
 {
@@ -100,8 +105,32 @@
 
 
 
+@implementation KCViewControllerNode
+@synthesize viewController;
+
+-(NSString*)iconName
+{
+	return [viewController iconName];
+}
+
+-(NSString*)nodeTitle
+{
+	return [viewController title];
+}
+
+-(void)setNodeTitle:(NSString*)s
+{
+	return [viewController setTitle:s];
+}
+
+@end
 
 @implementation KCNodesProxy
+
+-(NSString*)iconName
+{
+	return NSImageNameNetwork;
+}
 
 - (void)setIsLeaf:(BOOL)flag;  
 {  

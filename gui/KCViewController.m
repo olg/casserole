@@ -10,8 +10,14 @@
 
 
 @implementation KCViewController
+@synthesize windowController;
 @synthesize chefConnection;
 @synthesize searchPredicate;
 @synthesize canSearch;
+
+- (NSString*)iconName
+{
+	return nil;
+}
 
 @end

@@ -94,4 +94,9 @@
 	[self setCookbookContents:a];
 }
 
+-(NSString*)iconName
+{
+	return @"NSMysteryDocument";
+}
+
 @end

@@ -126,13 +126,18 @@
     if ([event type] == NSKeyDown)
 	{
 		NSString* characters = [event characters];
-		if ([characters length] > 0 && [characters characterAtIndex:0] == 0x0D)
+		if ([characters length] > 0 && (([characters characterAtIndex:0] == 0x0D)||([characters characterAtIndex:0] == 0x03)))
 			[self search:self];
     }
     
     // if the user deleted the first row, then add it again - no sense leaving the user with no rows
     if ([predicateEditor numberOfRows] == 0)
 		[predicateEditor addRow:self];
+}
+
+-(NSString*)iconName
+{
+	return @"Spotlight";
 }
 
 
