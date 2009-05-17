@@ -15,13 +15,20 @@
 	NSString* tags;
 	NSMutableArray* attributes;
 	NSString* name;
+	NSString* searchString;
+	NSString* resultsString;
+	NSArray* matchingAttributes;
+	IBOutlet NSOutlineView* outlineView;
 	KCNode* node;
 }
 
 @property (retain) KCNode* node;
+@property (copy)   NSString* searchString;
+@property (copy)   NSString* resultsString;
 @property (retain) IBOutlet NSString* recipes;
 @property (retain) IBOutlet NSString* name;
 @property (retain) IBOutlet NSString* tags;
 @property (retain) IBOutlet NSMutableArray* attributes;
+@property (retain) IBOutlet NSArray* matchingAttributes;
 
 @end
