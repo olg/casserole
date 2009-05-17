@@ -12,20 +12,18 @@
 @class KCViewController;
 
 @interface KCAbstractNode : NSObject {
-	KCAbstractNode *_parent;  
-	NSString *_nodeTitle;  
-	NSString *_nodeValue;  
-	NSMutableArray *_children;  
-	KCChefConnection *_connection;  
-	BOOL _isLeaf;  
+	KCAbstractNode *parent;
+	NSString *nodeTitle;
+	NSString *nodeValue;
+	NSMutableArray *children;
+	BOOL isLeaf;
 }  
 
-@property(copy) NSString *nodeValue;  
-@property(copy) NSString *nodeTitle;  
-@property(copy) NSMutableArray *children;  
-@property(assign) KCAbstractNode *parent;  
-@property(assign) BOOL isLeaf;  
-@property(assign) KCChefConnection *connection;  
+@property(copy) NSString *nodeValue;
+@property(copy) NSString *nodeTitle;
+@property(copy) NSMutableArray *children;
+@property(assign) KCAbstractNode *parent;
+@property(assign) BOOL isLeaf;
 
 -(void)addObject:(id)o;
 
@@ -35,13 +33,27 @@
 
 @end
 
-@interface KCNodesProxy : KCAbstractNode 
+@interface KCAttributeNode : KCAbstractNode {
+	NSString *nodeType;
+}
+@property(assign) NSString *nodeType;
 @end
 
-@interface KCViewControllerNode : KCAbstractNode {
-	KCViewController *viewController;  
+@interface KCChefNode : KCAbstractNode {
+	KCChefConnection *connection;
+}
+
+@property(assign) KCChefConnection *connection;
+
+@end
+
+@interface KCNodesProxy : KCChefNode
+@end
+
+@interface KCViewControllerNode : KCChefNode {
+	KCViewController *viewController;
 }  
 
-@property(assign) KCViewController *viewController;  
+@property(assign) KCViewController *viewController;
 
 @end

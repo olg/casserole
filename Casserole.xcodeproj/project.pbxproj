@@ -30,6 +30,7 @@
 		776B00FC0FB6180F00F0EC94 /* KCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776B00FB0FB6180F00F0EC94 /* KCViewController.m */; };
 		776B01620FB626EE00F0EC94 /* KCValueTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = 776B01610FB626EE00F0EC94 /* KCValueTransformers.m */; };
 		776BFEB30FB5F59700F0EC94 /* KCRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 776BFEB20FB5F59700F0EC94 /* KCRegistration.m */; };
+		777DECD70FBFA5410095EB25 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777DECD60FBFA5410095EB25 /* QuartzCore.framework */; };
 		778EF94C0FB23EDD00FE49FC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EF94B0FB23EDD00FE49FC /* MainWindow.xib */; };
 		778EFA300FB2563200FE49FC /* KCAbstractNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 778EFA2F0FB2563200FE49FC /* KCAbstractNode.m */; };
 		779EF7BA0FB7391D000C014B /* Casserole.icns in Resources */ = {isa = PBXBuildFile; fileRef = 779EF7B90FB7391D000C014B /* Casserole.icns */; };
@@ -104,6 +105,7 @@
 		776B01610FB626EE00F0EC94 /* KCValueTransformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCValueTransformers.m; sourceTree = "<group>"; };
 		776BFEB10FB5F59700F0EC94 /* KCRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCRegistration.h; sourceTree = "<group>"; };
 		776BFEB20FB5F59700F0EC94 /* KCRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCRegistration.m; sourceTree = "<group>"; };
+		777DECD60FBFA5410095EB25 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		778EF9470FB23EB200FE49FC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		778EFA2E0FB2563200FE49FC /* KCAbstractNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCAbstractNode.h; sourceTree = "<group>"; };
 		778EFA2F0FB2563200FE49FC /* KCAbstractNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCAbstractNode.m; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				774DD65E0FBB2140004C03A2 /* JSON.framework in Frameworks */,
+				777DECD70FBFA5410095EB25 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +165,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				777DECD60FBFA5410095EB25 /* QuartzCore.framework */,
 				774DD65D0FBB2140004C03A2 /* JSON.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);

@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="20"/>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -81,17 +81,11 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{57, 511}, {561, 17}}</string>
 						<reference key="NSSuperview" ref="1005"/>
-						<object class="NSShadow" key="NSViewShadow">
-							<double key="NSShadowHoriz">5.000000e+00</double>
-							<double key="NSShadowVert">4.000000e+00</double>
-							<double key="NSShadowBlurRadius">2.000000e+00</double>
-							<reference key="NSShadowColor" ref="874428939"/>
-						</object>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="262186541">
 							<int key="NSCellFlags">68288064</int>
 							<int key="NSCellFlags2">272630784</int>
-							<string key="NSContents">test1.ftnx.net</string>
+							<string key="NSContents">test1.example.com</string>
 							<reference key="NSSupport" ref="812614290"/>
 							<reference key="NSControlView" ref="160485015"/>
 							<reference key="NSBackgroundColor" ref="360712617"/>
@@ -547,49 +541,10 @@
 				<string key="NSTreeContentChildrenKey">children</string>
 				<string key="NSTreeContentLeafKey">isLeaf</string>
 			</object>
-			<object class="NSDictionaryController" id="730373163">
-				<object class="NSMutableArray" key="NSDeclaredKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>key</string>
-					<string>value</string>
-				</object>
-				<bool key="NSEditable">YES</bool>
-				<bool key="NSAvoidsEmptySelection">YES</bool>
-				<bool key="NSPreservesSelection">YES</bool>
-				<bool key="NSSelectsInsertedObjects">YES</bool>
-				<bool key="NSFilterRestrictsInsertion">YES</bool>
-				<object class="NSArray" key="NSSortDescriptors">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="NSSortDescriptor">
-						<string key="NSKey">key</string>
-						<bool key="NSAscending">YES</bool>
-						<string key="NSSelector">compare:</string>
-					</object>
-				</object>
-				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
-				<string key="NSInitialKey">key</string>
-				<string key="NSInitialValue">value</string>
-			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentArray: attributes</string>
-						<reference key="source" ref="917418109"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="917418109"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">contentArray: attributes</string>
-							<string key="NSBinding">contentArray</string>
-							<string key="NSKeyPath">attributes</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">30</int>
-				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
@@ -597,22 +552,6 @@
 						<reference key="destination" ref="1005"/>
 					</object>
 					<int key="connectionID">39</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentDictionary: node.attributes</string>
-						<reference key="source" ref="730373163"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="730373163"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">contentDictionary: node.attributes</string>
-							<string key="NSBinding">contentDictionary</string>
-							<string key="NSKeyPath">node.attributes</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">48</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -671,12 +610,60 @@
 					<int key="connectionID">58</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">dataSource</string>
-						<reference key="source" ref="911559918"/>
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentArray: node.chefAttributes</string>
+						<reference key="source" ref="917418109"/>
 						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="917418109"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">contentArray: node.chefAttributes</string>
+							<string key="NSBinding">contentArray</string>
+							<string key="NSKeyPath">node.chefAttributes</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
 					</object>
-					<int key="connectionID">60</int>
+					<int key="connectionID">61</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.nodeTitle</string>
+						<reference key="source" ref="101702526"/>
+						<reference key="destination" ref="917418109"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="101702526"/>
+							<reference key="NSDestination" ref="917418109"/>
+							<string key="NSLabel">value: arrangedObjects.nodeTitle</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.nodeTitle</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">62</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.nodeValue</string>
+						<reference key="source" ref="401662536"/>
+						<reference key="destination" ref="917418109"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="401662536"/>
+							<reference key="NSDestination" ref="917418109"/>
+							<string key="NSLabel">value: arrangedObjects.nodeValue</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.nodeValue</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">63</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">outlineView</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="726665830"/>
+					</object>
+					<int key="connectionID">77</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -714,11 +701,11 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="409231034"/>
-							<reference ref="160485015"/>
 							<reference ref="745077583"/>
 							<reference ref="459659210"/>
 							<reference ref="61700470"/>
 							<reference ref="119311088"/>
+							<reference ref="160485015"/>
 							<reference ref="726665830"/>
 						</object>
 						<reference key="parent" ref="1002"/>
@@ -808,6 +795,11 @@
 						<reference key="parent" ref="119311088"/>
 					</object>
 					<object class="IBObjectRecord">
+						<int key="objectID">29</int>
+						<reference key="object" ref="917418109"/>
+						<reference key="parent" ref="1002"/>
+					</object>
+					<object class="IBObjectRecord">
 						<int key="objectID">20</int>
 						<reference key="object" ref="726665830"/>
 						<object class="NSMutableArray" key="children">
@@ -872,16 +864,6 @@
 						<reference key="object" ref="454620978"/>
 						<reference key="parent" ref="101702526"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">29</int>
-						<reference key="object" ref="917418109"/>
-						<reference key="parent" ref="1002"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">47</int>
-						<reference key="object" ref="730373163"/>
-						<reference key="parent" ref="1002"/>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -920,9 +902,9 @@
 					<string>3.IBPluginDependency</string>
 					<string>4.IBPluginDependency</string>
 					<string>4.IBViewIntegration.shadowBlurRadius</string>
+					<string>4.IBViewIntegration.shadowColor</string>
 					<string>4.IBViewIntegration.shadowOffsetHeight</string>
 					<string>4.IBViewIntegration.shadowOffsetWidth</string>
-					<string>47.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>9.IBPluginDependency</string>
 				</object>
@@ -960,9 +942,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<real value="2.000000e+00"/>
+					<reference ref="874428939"/>
 					<real value="4.000000e+00"/>
 					<real value="5.000000e+00"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
@@ -987,7 +969,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">60</int>
+			<int key="maxID">87</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

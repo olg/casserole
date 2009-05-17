@@ -10,14 +10,17 @@
 #import "KCChefConnection.h"
 #import "KCViewController.h"
 
+@implementation KCAttributeNode
+@synthesize nodeType;
+@end
+
 @implementation KCAbstractNode
 
-@synthesize nodeValue = _nodeValue;  
-@synthesize nodeTitle = _nodeTitle;  
-@synthesize parent = _parent;  
-@synthesize connection = _connection;
-@dynamic isLeaf;  
-@dynamic children;  
+@synthesize nodeValue;
+@synthesize nodeTitle;
+@synthesize parent;
+@dynamic isLeaf;
+@dynamic children;
 
 - (NSString*)iconName
 {
@@ -30,80 +33,83 @@
 
 - (NSString*)description  
 {
-	return _nodeTitle;
+	return nodeTitle;
 }
 
-- (void)setIsLeaf:(BOOL)flag;  
+- (void)setIsLeaf:(BOOL)flag;
 {  
-	_isLeaf = flag;  
-	if (_isLeaf)  
-		self.children = [NSMutableArray arrayWithObject:self];  
+	isLeaf = flag;
+	if (isLeaf)
+		self.children = [NSMutableArray arrayWithObject:self];
 	else  
-		self.children = [NSMutableArray array];  
+		self.children = [NSMutableArray array];
 }  
-- (BOOL)isLeaf;  
+- (BOOL)isLeaf;
 {  
-	return _isLeaf;  
+	return isLeaf;
 }  
 
-- (NSMutableArray *)children;  
+- (NSMutableArray *)children;
 {  
-	return _children;  
+	return children;
 }  
 
-- (void)setChildren:(NSMutableArray *)newChildren;  
+- (void)setChildren:(NSMutableArray *)newChildren;
 {  
-	if (_children == newChildren)  
-		return;  
-	[_children release];  
-	_children = [newChildren mutableCopy];  
+	if (children == newChildren)  
+		return;
+	[children release];
+	children = [newChildren mutableCopy];
 }  
 
-- (NSUInteger)countOfChildren;  
+- (NSUInteger)countOfChildren;
 {  
 	if (self.isLeaf)  
-		return 0;  
-	return [self.children count];  
+		return 0;
+	return [self.children count];
 }  
 
 - (void)addObject:(id)object
 {  
 	if (self.isLeaf)  
-		return;  
-	[self.children insertObject:object atIndex:[self countOfChildren]];  
+		return;
+	[self.children insertObject:object atIndex:[self countOfChildren]];
 }  
 
-- (void)insertObject:(id)object inChildrenAtIndex:(NSUInteger)index;  
+- (void)insertObject:(id)object inChildrenAtIndex:(NSUInteger)index;
 {  
 	if (self.isLeaf)  
-		return;  
-	[self.children insertObject:object atIndex:index];  
+		return;
+	[self.children insertObject:object atIndex:index];
 }  
 
-- (void)removeObjectFromChildrenAtIndex:(NSUInteger)index;  
+- (void)removeObjectFromChildrenAtIndex:(NSUInteger)index;
 {  
 	if (self.isLeaf)  
-		return;  
-	[self.children removeObjectAtIndex:index];  
+		return;
+	[self.children removeObjectAtIndex:index];
 }  
 
-- (id)objectInChildrenAtIndex:(NSUInteger)index;  
+- (id)objectInChildrenAtIndex:(NSUInteger)index;
 {  
 	if (self.isLeaf)  
-		return nil;  
-	return [self.children objectAtIndex:index];  
+		return nil;
+	return [self.children objectAtIndex:index];
 }  
 
-- (void)replaceObjectInChildrenAtIndex:(NSUInteger)index withObject:(id)object;  
+- (void)replaceObjectInChildrenAtIndex:(NSUInteger)index withObject:(id)object;
 {  
 	if (self.isLeaf)  
-		return;  
-	[self.children replaceObjectAtIndex:index withObject:object];  
+		return;
+	[self.children replaceObjectAtIndex:index withObject:object];
 }  
 
 @end
 
 
+@implementation KCChefNode
+@synthesize connection;
+@end
 
 @implementation KCViewControllerNode
 @synthesize viewController;
@@ -132,53 +138,53 @@
 	return NSImageNameNetwork;
 }
 
-- (void)setIsLeaf:(BOOL)flag;  
+- (void)setIsLeaf:(BOOL)flag;
 {  
 	return;
 }  
-- (BOOL)isLeaf;  
+- (BOOL)isLeaf;
 {  
-	return NO;  
+	return NO;
 } 
 
-- (NSMutableArray *)children;  
+- (NSMutableArray *)children;
 {  
-	return self.connection.nodes;  
+	return self.connection.nodes;
 }  
 
-- (void)setChildren:(NSMutableArray *)newChildren;  
+- (void)setChildren:(NSMutableArray *)newChildren;
 {  
-	return;  
+	return;
 }  
 
-- (NSUInteger)countOfChildren;  
+- (NSUInteger)countOfChildren;
 {  
-	return [self.connection.nodes count];  
+	return [self.connection.nodes count];
 }  
 
 - (void)addObject:(id)object
 {  
-	return;  
+	return;
 }  
 
-- (void)insertObject:(id)object inChildrenAtIndex:(NSUInteger)index;  
+- (void)insertObject:(id)object inChildrenAtIndex:(NSUInteger)index;
 {  
-	return;  
+	return;
 }  
 
-- (void)removeObjectFromChildrenAtIndex:(NSUInteger)index;  
+- (void)removeObjectFromChildrenAtIndex:(NSUInteger)index;
 {  
-	return;  
+	return;
 }  
 
-- (id)objectInChildrenAtIndex:(NSUInteger)index;  
+- (id)objectInChildrenAtIndex:(NSUInteger)index;
 {  
-	return [_connection.nodes objectAtIndex:index];  
+	return [connection.nodes objectAtIndex:index];
 }  
 
-- (void)replaceObjectInChildrenAtIndex:(NSUInteger)index withObject:(id)object;  
+- (void)replaceObjectInChildrenAtIndex:(NSUInteger)index withObject:(id)object;
 {  
-	return;  
+	return;
 }  
 
 @end

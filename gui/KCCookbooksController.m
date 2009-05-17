@@ -16,16 +16,16 @@
 - (void)awakeFromNib
 {
 	NSMutableArray* a = [NSMutableArray array];
-	KCAbstractNode *node;
-	node = [[KCAbstractNode alloc] init];
+	KCChefNode *node;
+	node = [[KCChefNode alloc] init];
 	[node setNodeTitle:@"CouchDB"];
 	[node setIsLeaf:true];
 	[a addObject:node];
-	node = [[KCAbstractNode alloc] init];
+	node = [[KCChefNode alloc] init];
 	[node setNodeTitle:@"Apache"];
 	[node setIsLeaf:true];
 	[a addObject:node];
-	node = [[KCAbstractNode alloc] init];
+	node = [[KCChefNode alloc] init];
 	[node setNodeTitle:@"Passenger"];
 	[node setIsLeaf:true];
 	[a addObject:node];	

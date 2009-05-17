@@ -9,12 +9,16 @@
 #import <Cocoa/Cocoa.h>
 #import "KCAbstractNode.h"
 
-@interface KCNode : KCAbstractNode {
+@interface KCNode : KCChefNode {
 	NSDictionary* attributes;
+	NSMutableArray* chefAttributes;
 }
 
 @property (retain) NSDictionary* attributes;
+@property (retain) NSMutableArray* chefAttributes;
 
 -(void)refresh:(id)sender;
+-(NSMutableArray*)nodeTreeFromDictionary:(NSDictionary*)d;
+-(NSMutableArray*)nodeTreeFromArray:(NSArray*)array;
 
 @end

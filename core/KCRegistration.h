@@ -10,7 +10,7 @@
 #import "KCAbstractNode.h"
 
 
-@interface KCRegistration : KCAbstractNode {
+@interface KCRegistration : KCChefNode {
 	NSDictionary* content;
 }
 

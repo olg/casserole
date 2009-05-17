@@ -51,7 +51,7 @@
 
 	NSMutableArray* a = [NSMutableArray array];
 	KCViewControllerNode *viewNode;
-	KCAbstractNode *child;
+	KCChefNode *child;
 	KCNodesProxy *nodeProxy;
 
 	viewNode = [[KCViewControllerNode alloc] init];
@@ -67,7 +67,7 @@
 	viewNode = [[KCViewControllerNode alloc] init];
 	viewNode.viewController = cookbooksController;
 	[viewNode setIsLeaf:false];
-	child = [[KCAbstractNode alloc] init];
+	child = [[KCChefNode alloc] init];
 	[child setNodeTitle:@"Apache2"];
 	[child setIsLeaf:true];
 	[viewNode addObject:child];
@@ -82,11 +82,11 @@
 	((KCViewControllerNode*)viewNode).viewController = searchController;
 	[viewNode setIsLeaf:true];
 
-	/*	child = [[KCAbstractNode alloc] init];
+	/*	child = [[KCChefNode alloc] init];
 	[child setNodeTitle:@"Rails nodes"];
 	[child setIsLeaf:true];
 	[node addObject:child];
-	child = [[KCAbstractNode alloc] init];
+	child = [[KCChefNode alloc] init];
 	[child setNodeTitle:@"Ubuntu nodes"];
 	[child setIsLeaf:true];
 	[node addObject:child];*/
@@ -116,6 +116,7 @@
 	nodeController = [[KCNodeController alloc] initWithNibName:@"Node" bundle:nil];
 	nodeController.chefConnection = self.chefConnection;
 	nodeController.windowController = self;
+	[nodeController setCanSearch:true];
 	[nodeController setTitle:@"Node"];
 
 	cookbooksController = [[KCCookbooksController alloc] initWithNibName:@"Cookbooks" bundle:nil];
@@ -152,7 +153,7 @@
 - (void)changeItemView
 {
 	NSArray		*selection = [sourceController selectedObjects];	
-	KCAbstractNode		*node = [selection objectAtIndex:0];
+	KCChefNode		*node = [selection objectAtIndex:0];
 	NSString	*title = [node nodeTitle];
 	
 	if ([currentViewController view] != nil)
