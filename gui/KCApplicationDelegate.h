@@ -16,6 +16,7 @@
 @property (retain) NSOperationQueue* queue;
 
 - (IBAction)openURL:(id)sender;
+- (IBAction)sendMail:(id)sender;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
 
 

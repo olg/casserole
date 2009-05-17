@@ -34,6 +34,12 @@
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 
+-(void)sendMail:(id)sender
+{
+	NSURL* url = [NSURL URLWithString:@"mailto:casserole@fotonauts.com"];
+	[[NSWorkspace sharedWorkspace] openURL:url];
+}
+
 -(void)refresh:(id)sender
 {
 }
