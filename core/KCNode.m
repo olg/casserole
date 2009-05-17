@@ -3,7 +3,7 @@
 //  Casserole
 //
 //  Created by Olivier Gutknecht on 5/9/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 Fotonauts. All rights reserved.
 //
 
 #import "KCNode.h"
