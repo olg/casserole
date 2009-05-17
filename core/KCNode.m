@@ -136,7 +136,7 @@
 			[n setIsLeaf:false];
 			[n setChildren:[self nodeTreeFromArray:value]];
 		}
-		if ([value isKindOfClass:[NSDictionary class]]) {
+		else if ([value isKindOfClass:[NSDictionary class]]) {
 			n.nodeType = @"Dictionary";
 			[n setIsLeaf:false];
 			[n setChildren:[self nodeTreeFromDictionary:value]];
@@ -163,7 +163,7 @@
 			[n setIsLeaf:false];
 			[n setChildren:[self nodeTreeFromArray:value]];
 		}
-		if ([value isKindOfClass:[NSDictionary class]]) {
+		else if ([value isKindOfClass:[NSDictionary class]]) {
 			n.nodeType = @"Dictionary";
 			[n setIsLeaf:false];
 			[n setChildren:[self nodeTreeFromDictionary:value]];
@@ -173,6 +173,7 @@
 			[n setIsLeaf:true];
 			n.nodeValue = [value description];
 		}
+		[result addObject:n];
 	}
 	return result;
 }
