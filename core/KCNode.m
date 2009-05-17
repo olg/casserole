@@ -14,11 +14,35 @@
 @implementation KCNode
 @synthesize attributes;
 @synthesize chefAttributes;
+@synthesize chefAttributesCount;
 
 - (BOOL)isLeaf;  
 {  
 	return true;  
 } 
+
+-(bool)countLeafNodes:(KCAttributeNode*)node
+{
+	if (![node isLeaf])
+	{
+		int results = 0;
+		if (nodeValue!=nil)
+			results = 1;
+		for (KCAttributeNode* subnode in [node children])
+			results += ([self countLeafNodes:subnode]);
+		return results;
+	}
+	else
+		return 1;
+}
+
+-(int)countLeafAttributes
+{
+	int results = 0;
+	for (KCAttributeNode* node in chefAttributes)
+		results += ([self countLeafNodes:node]);
+	return results;
+}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
 					  ofObject:(id)object
@@ -35,11 +59,68 @@
 			if ([op.result isKindOfClass:[NSDictionary class]]) {
 				[self setAttributes:(NSDictionary*)op.result];
 				[self setChefAttributes:[self nodeTreeFromDictionary:[(NSDictionary*)op.result objectForKey:@"attributes"]]];
+				[self setChefAttributesCount:[self countLeafAttributes]];
 			}
 		}
     }
 }
 
+-(int)countNodes:(KCAttributeNode*)node containingString:(NSString*)searchString
+{
+	int result = 0;
+	NSString* text = [node nodeTitle];
+	NSString* value = [node nodeValue];
+	NSRange range1 = [text rangeOfString:searchString];
+	NSRange range2 = [value rangeOfString:searchString];
+	if (![node isLeaf])
+	{
+		for (KCAttributeNode* subnode in [node children]) {
+			result += [self countNodes:subnode containingString:searchString];
+		}
+	}
+	if (((range1.location!=NSNotFound)&&(text!=nil))||((range2.location!=NSNotFound)&&(value!=nil))) {
+		result++;
+	}
+	return result;
+}
+
+-(int)countNodesContainingString:(NSString*)searchString
+{
+	int result = 0;
+	for (KCAttributeNode* node in chefAttributes)
+		result += [self countNodes:node containingString:searchString];
+	return result;
+}
+
+
+-(bool)addNodes:(KCAttributeNode*)node containingString:(NSString*)searchString toArray:(NSMutableArray*)array
+{
+	bool found = false;
+	NSString* text = [node nodeTitle];
+	NSString* value = [node nodeValue];
+	NSRange range1 = [text rangeOfString:searchString];
+	NSRange range2 = [value rangeOfString:searchString];
+	if (![node isLeaf])
+	{
+		for (KCAttributeNode* subnode in [node children]) {
+			if ([self addNodes:subnode containingString:searchString toArray:array])
+				found = true;
+		}
+	}
+	if (found || (((range1.location!=NSNotFound)&&(text!=nil))||((range2.location!=NSNotFound)&&(value!=nil)))) {
+		[array addObject:node];
+		found = true;
+	}
+	return found;
+}
+
+-(NSArray*)attributeNodesContaining:(NSString*)searchString
+{
+	NSMutableArray* array = [NSMutableArray array];
+	for (KCAttributeNode* node in chefAttributes)
+		[self addNodes:node containingString:searchString toArray:array];
+	return array;
+}
 
 -(NSMutableArray*)nodeTreeFromDictionary:(NSDictionary*)d
 {
