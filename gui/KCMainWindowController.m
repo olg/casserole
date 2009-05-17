@@ -37,28 +37,18 @@
 
 #define COLUMNID_NAME @"NameColumn"
 
-- (void)awakeFromNib
-{	
-	[self setupViewControllers];
-	
-	NSTableColumn *tableColumn = [sourceView tableColumnWithIdentifier:COLUMNID_NAME];
-	KCImageAndTextCell *imageAndTextCell = [[KCImageAndTextCell alloc] init];
-	[imageAndTextCell setEditable:NO];
-	[tableColumn setDataCell:imageAndTextCell];
-
-	[[self window] setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
-	[[self window] setContentBorderThickness:32 forEdge:NSMinYEdge];
-
+-(void)prepareSourceContent
+{
 	NSMutableArray* a = [NSMutableArray array];
 	KCViewControllerNode *viewNode;
 	KCChefNode *child;
 	KCNodesProxy *nodeProxy;
-
+	
 	viewNode = [[KCViewControllerNode alloc] init];
 	viewNode.viewController = statusController;
 	[viewNode setIsLeaf:true];
 	[a addObject:viewNode];
-
+	
 	nodeProxy = [[KCNodesProxy alloc] init];
 	nodeProxy.connection = self.chefConnection;
 	[nodeProxy setNodeTitle:@"Nodes"];
@@ -77,23 +67,39 @@
 	viewNode.viewController = registrationsController;
 	[viewNode setIsLeaf:true];
 	[a addObject:viewNode];
-
+	
 	viewNode = [[KCViewControllerNode alloc] init];
 	((KCViewControllerNode*)viewNode).viewController = searchController;
 	[viewNode setIsLeaf:true];
-
+	
 	/*	child = [[KCChefNode alloc] init];
-	[child setNodeTitle:@"Rails nodes"];
-	[child setIsLeaf:true];
-	[node addObject:child];
-	child = [[KCChefNode alloc] init];
-	[child setNodeTitle:@"Ubuntu nodes"];
-	[child setIsLeaf:true];
-	[node addObject:child];*/
+	 [child setNodeTitle:@"Rails nodes"];
+	 [child setIsLeaf:true];
+	 [node addObject:child];
+	 child = [[KCChefNode alloc] init];
+	 [child setNodeTitle:@"Ubuntu nodes"];
+	 [child setIsLeaf:true];
+	 [node addObject:child];*/
 	[a addObject:viewNode];
-
+	
 	
 	[self setSourceContents:a];
+}
+
+- (void)awakeFromNib
+{	
+	[self setupViewControllers];
+	
+	NSTableColumn *tableColumn = [sourceView tableColumnWithIdentifier:COLUMNID_NAME];
+	KCImageAndTextCell *imageAndTextCell = [[KCImageAndTextCell alloc] init];
+	[imageAndTextCell setEditable:NO];
+	[tableColumn setDataCell:imageAndTextCell];
+
+	[[self window] setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
+	[[self window] setContentBorderThickness:32 forEdge:NSMinYEdge];
+
+	[self prepareSourceContent];
+	[self addObserver:self forKeyPath:@"chefConnection.nodes.@count" options:0 context:nil]; 
 }
 
 // -------------------------------------------------------------------------------
@@ -232,6 +238,19 @@
 -(void)refresh:(id)sender
 {
 	[chefConnection refresh:sender];
+	[self prepareSourceContent];
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqual:@"chefConnection.nodes.@count"]) {
+		[self prepareSourceContent];
+    }
+}
+
+
 
 @end
