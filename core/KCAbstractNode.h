@@ -25,7 +25,8 @@
 @property(assign) KCAbstractNode *parent;
 @property(assign) BOOL isLeaf;
 
--(void)addObject:(id)o;
+-(void)addObject:(KCAbstractNode*)o;
+-(void)addSortedObject:(KCAbstractNode*)object;
 
 -(void)refresh:(id)sender;
 
@@ -41,13 +42,18 @@
 
 @interface KCChefNode : KCAbstractNode {
 	KCChefConnection *connection;
+	NSString *nodeType;
 }
 
 @property(assign) KCChefConnection *connection;
+@property(assign) NSString *nodeType;
 
 @end
 
 @interface KCNodesProxy : KCChefNode
+@end
+
+@interface KCCookbooksProxy : KCChefNode
 @end
 
 @interface KCViewControllerNode : KCChefNode {

@@ -15,7 +15,7 @@
 
 
 @implementation KCNetworkOperation
-@synthesize callback;
+@synthesize userInfo;
 @synthesize result;
 @synthesize data;
 @synthesize url;
@@ -31,6 +31,7 @@
 
 	[NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[[self url] host]];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[self url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+	[request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
 	d = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&e];
 	if (d!=nil)
 	{
@@ -40,6 +41,45 @@
 		NSString *json_string = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
 		NSObject* r = [parser objectWithString:json_string error:nil];
 		[self setResult:r];
+	}
+	if (e!=nil)
+		NSLog(@"error %@ %@",self.url,e);
+	[self setError:e];
+}
+
+-(void)finalize
+{
+    [super finalize];
+}
+
+@end
+
+// Will refactor these two operations
+
+@implementation KCNetworkStringOperation
+@synthesize userInfo;
+@synthesize result;
+@synthesize data;
+@synthesize url;
+@synthesize error;
+@synthesize summary;
+@synthesize type;
+@synthesize userInfo;
+
+-(void)main
+{
+	NSError *e = nil;
+	NSData *d;
+	NSHTTPURLResponse *response = nil;
+
+	[NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[[self url] host]];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[self url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+	d = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&e];
+	if (d!=nil)
+	{
+		[self setData:d];
+		NSString *string = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+		[self setResult:string];
 	}
 	if (e!=nil)
 		NSLog(@"error %@ %@",self.url,e);

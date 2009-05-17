@@ -11,26 +11,6 @@
 
 
 @implementation KCCookbooksController
-@synthesize cookbooks;
-
-- (void)awakeFromNib
-{
-	NSMutableArray* a = [NSMutableArray array];
-	KCChefNode *node;
-	node = [[KCChefNode alloc] init];
-	[node setNodeTitle:@"CouchDB"];
-	[node setIsLeaf:true];
-	[a addObject:node];
-	node = [[KCChefNode alloc] init];
-	[node setNodeTitle:@"Apache"];
-	[node setIsLeaf:true];
-	[a addObject:node];
-	node = [[KCChefNode alloc] init];
-	[node setNodeTitle:@"Passenger"];
-	[node setIsLeaf:true];
-	[a addObject:node];	
-	[self setCookbooks:a];
-}
 
 -(NSString*)iconName
 {

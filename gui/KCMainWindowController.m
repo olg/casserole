@@ -8,6 +8,7 @@
 
 #import "KCMainWindowController.h"
 #import "KCAbstractNode.h"
+#import "KCCookbook.h"
 #import "KCRegistrationsController.h"
 #import "KCSearchController.h"
 #import "KCStatusController.h"
@@ -41,8 +42,8 @@
 {
 	NSMutableArray* a = [NSMutableArray array];
 	KCViewControllerNode *viewNode;
-	KCChefNode *child;
 	KCNodesProxy *nodeProxy;
+	KCCookbooksProxy *cookbookProxy;
 	
 	viewNode = [[KCViewControllerNode alloc] init];
 	viewNode.viewController = statusController;
@@ -54,6 +55,13 @@
 	[nodeProxy setNodeTitle:@"Nodes"];
 	[a addObject:nodeProxy];
 	
+	cookbookProxy = [[KCCookbooksProxy alloc] init];
+	cookbookProxy.connection = self.chefConnection;
+	[cookbookProxy setNodeTitle:@"Cookbooks"];
+	[a addObject:cookbookProxy];
+
+#if 0
+	KCChefNode *child;
 	viewNode = [[KCViewControllerNode alloc] init];
 	viewNode.viewController = cookbooksController;
 	[viewNode setIsLeaf:false];
@@ -62,6 +70,7 @@
 	[child setIsLeaf:true];
 	[viewNode addObject:child];
 	[a addObject:viewNode];
+#endif
 	
 	viewNode = [[KCViewControllerNode alloc] init];
 	viewNode.viewController = registrationsController;
@@ -99,7 +108,7 @@
 	[[self window] setContentBorderThickness:32 forEdge:NSMinYEdge];
 
 	[self prepareSourceContent];
-	[self addObserver:self forKeyPath:@"chefConnection.nodes.@count" options:0 context:nil]; 
+	[self addObserver:self forKeyPath:@"chefConnection.nodes.@count" options:0 context:nil];
 }
 
 // -------------------------------------------------------------------------------
@@ -165,36 +174,37 @@
 	if ([currentViewController view] != nil)
 		[[currentViewController view] removeFromSuperview];	// remove the current view
 	
-	if ([title isEqualToString:@"Registrations"]) 
+	if ([title isEqualToString:@"Registrations"])
 	{
 		[self setCurrentViewController:registrationsController];	// keep track of the current view controller
 		[currentViewController setTitle:@"Registrations"];
 	}
-	else if ([title isEqualToString:@"Search"]) 
+	else if ([title isEqualToString:@"Search"])
 	{
 		[self setCurrentViewController:searchController];	// keep track of the current view controller
 		[currentViewController setTitle:@"Search"];
 	}
-	else if ([node isKindOfClass:[KCNode class]]) 
+	else if ([node isKindOfClass:[KCNode class]])
 	{
 		nodeController.node = (KCNode*)node;
 		[self setCurrentViewController:nodeController];	// keep track of the current view controller
-		[currentViewController setTitle:@"Node"];
+		[currentViewController setTitle:[node nodeTitle]];
 	}
-	else if ([title isEqualToString:@"Cookbooks"]) 
+	else if ([node isKindOfClass:[KCCookbook class]])
+	{
+		cookbookController.cookbook = (KCCookbook*)node;
+		[self setCurrentViewController:cookbookController];	// keep track of the current view controller
+		[currentViewController setTitle:[node nodeTitle]];
+	}
+	else if ([title isEqualToString:@"Cookbooks"])
 	{
 		[self setCurrentViewController:cookbooksController];	// keep track of the current view controller
 		[currentViewController setTitle:@"Cookbooks"];
 	}
-	else if ([title isEqualToString:@"Nodes"]) 
+	else if ([title isEqualToString:@"Nodes"])
 	{
 		[self setCurrentViewController:nodesController];	// keep track of the current view controller
 		[currentViewController setTitle:@"Nodes"];
-	}
-	else if ([title isEqualToString:@"Apache2"]) 
-	{
-		[self setCurrentViewController:cookbookController];	// keep track of the current view controller
-		[currentViewController setTitle:@"Cookbook"];
 	}
 	else
 	{
@@ -209,7 +219,7 @@
 	// make sure we automatically resize the controller's view to the current window size
 	[[currentViewController view] setFrame: [currentView bounds]];	
 }
-	
+
 - (void)outlineView:(NSOutlineView *)olv willDisplayCell:(NSCell*)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
 	[(KCImageAndTextCell*)cell setImage:nil];
@@ -222,7 +232,7 @@
 			if (imageName!=nil)
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:imageName]];
 			
-			else if ([[item nodeTitle] isEqualToString:@"Apache2"]) 
+			else if ([[item nodeTitle] isEqualToString:@"Apache2"])
 				[(KCImageAndTextCell*)cell setImage:[NSImage imageNamed:@"NSMysteryDocument"]];
 		}
 	}

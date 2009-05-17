@@ -16,10 +16,30 @@
 	NSError *error;
 	NSString* type;
 	NSString* summary;
-	NSObject* callback;
+	NSObject* userInfo;
 }
 
-@property (retain) NSObject *callback;
+@property (retain) NSObject *userInfo;
+@property (retain) NSString *summary;
+@property (retain) NSString *type;
+@property (retain) NSObject *result;
+@property (retain) NSData *data;
+@property (retain) NSError *error;
+@property (retain) NSURL *url;
+
+@end
+
+@interface KCNetworkStringOperation : NSOperation {
+	NSObject *result;
+	NSData *data;
+	NSURL *url;
+	NSError *error;
+	NSString* type;
+	NSString* summary;
+	NSObject* userInfo;
+}
+
+@property (retain) NSObject *userInfo;
 @property (retain) NSString *summary;
 @property (retain) NSString *type;
 @property (retain) NSObject *result;

@@ -553,7 +553,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 												</object>
 												<object class="NSScroller" id="30509464">
 													<reference key="NSNextResponder" ref="909952441"/>
-													<int key="NSvFlags">256</int>
+													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{-100, -100}, {15, 532}}</string>
 													<reference key="NSSuperview" ref="909952441"/>
 													<reference key="NSTarget" ref="909952441"/>
@@ -575,7 +575,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 											<string key="NSFrameSize">{200, 423}</string>
 											<reference key="NSSuperview" ref="281380729"/>
 											<reference key="NSNextKeyView" ref="513889271"/>
-											<int key="NSsFlags">0</int>
+											<int key="NSsFlags">528</int>
 											<reference key="NSVScroller" ref="30509464"/>
 											<reference key="NSHScroller" ref="325037419"/>
 											<reference key="NSContentView" ref="513889271"/>

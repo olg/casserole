@@ -11,9 +11,7 @@
 
 
 @interface KCCookbooksController : KCViewController {
-	NSMutableArray* cookbooks;
+	IBOutlet NSArrayController* contentsController;
 }
-
-@property (retain) NSMutableArray* cookbooks;
 
 @end

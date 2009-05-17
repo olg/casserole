@@ -10,15 +10,20 @@
 #import "KCViewController.h"
 
 @interface KCCookbookController : KCViewController {
-	NSMutableArray				*cookbookContents;
-	NSString					*cookbookName;
+//	NSMutableArray				*cookbookContents;
+//	NSString					*cookbookName;
 	NSString					*sourceText;
-	IBOutlet NSBrowser			*cookbookStructure;
+	IBOutlet NSBrowser			*cookbookBrowser;
+	IBOutlet NSTreeController	*cookbookStructureController;
 	NSTextView					*textView;
+	KCCookbook					*cookbook;
+	NSMutableArray				*selections;
+	NSOperation					*currentOperation;
 }
 
-@property (retain) IBOutlet NSMutableArray *cookbookContents;
+// @property (retain) IBOutlet NSMutableArray *cookbookContents;
 @property (retain) IBOutlet NSString *sourceText;
 @property (retain) IBOutlet NSTextView *textView;
+@property (retain) KCCookbook* cookbook;
 
 @end

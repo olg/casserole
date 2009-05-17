@@ -31,7 +31,7 @@
 {
 }
 
-- (NSString*)description  
+- (NSString*)description
 {
 	return nodeTitle;
 }
@@ -52,78 +52,91 @@
 
 
 - (void)setIsLeaf:(BOOL)flag;
-{  
+{
 	isLeaf = flag;
 	if (isLeaf)
 		self.children = [NSMutableArray arrayWithObject:self];
-	else  
+	else
 		self.children = [NSMutableArray array];
-}  
+}
 - (BOOL)isLeaf;
-{  
+{
 	return isLeaf;
-}  
+}
 
 - (NSMutableArray *)children;
-{  
+{
 	return children;
-}  
+}
 
 - (void)setChildren:(NSMutableArray *)newChildren;
-{  
-	if (children == newChildren)  
+{
+	if (children == newChildren)
 		return;
 	[children release];
 	children = [newChildren mutableCopy];
-}  
+}
 
 - (NSUInteger)countOfChildren;
-{  
-	if (self.isLeaf)  
+{
+	if (self.isLeaf)
 		return 0;
 	return [self.children count];
-}  
+}
 
-- (void)addObject:(id)object
-{  
-	if (self.isLeaf)  
-		return;
-	[self.children insertObject:object atIndex:[self countOfChildren]];
-}  
 
-- (void)insertObject:(id)object inChildrenAtIndex:(NSUInteger)index;
-{  
-	if (self.isLeaf)  
+- (void)insertObject:(KCAbstractNode*)object inChildrenAtIndex:(NSUInteger)index;
+{
+	if (self.isLeaf)
 		return;
 	[self.children insertObject:object atIndex:index];
-}  
+}
 
 - (void)removeObjectFromChildrenAtIndex:(NSUInteger)index;
-{  
-	if (self.isLeaf)  
+{
+	if (self.isLeaf)
 		return;
 	[self.children removeObjectAtIndex:index];
-}  
+}
 
 - (id)objectInChildrenAtIndex:(NSUInteger)index;
-{  
-	if (self.isLeaf)  
+{
+	if (self.isLeaf)
 		return nil;
 	return [self.children objectAtIndex:index];
-}  
+}
 
-- (void)replaceObjectInChildrenAtIndex:(NSUInteger)index withObject:(id)object;
-{  
-	if (self.isLeaf)  
+- (void)replaceObjectInChildrenAtIndex:(NSUInteger)index withObject:(KCAbstractNode*)object;
+{
+	if (self.isLeaf)
 		return;
 	[self.children replaceObjectAtIndex:index withObject:object];
-}  
+}
+
+
+- (void)addObject:(KCAbstractNode*)object
+{
+	[self insertObject:object inChildrenAtIndex:[self countOfChildren]];
+}
+
+- (void)addSortedObject:(KCAbstractNode*)object
+{
+	if (self.isLeaf)
+		return;
+	[self addObject:object];
+	[self willChangeValueForKey:@"children"];
+	[self.children sortUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"nodeTitle" ascending:YES]]];
+	[self didChangeValueForKey:@"children"];
+}
+
+
 
 @end
 
 
 @implementation KCChefNode
 @synthesize connection;
+@synthesize nodeType;
 @end
 
 @implementation KCViewControllerNode
@@ -154,53 +167,111 @@
 }
 
 - (void)setIsLeaf:(BOOL)flag;
-{  
+{
 	return;
-}  
+}
 - (BOOL)isLeaf;
-{  
+{
 	return NO;
-} 
+}
 
 - (NSMutableArray *)children;
-{  
+{
 	return self.connection.nodes;
-}  
+}
 
 - (void)setChildren:(NSMutableArray *)newChildren;
-{  
+{
 	return;
-}  
+}
 
 - (NSUInteger)countOfChildren;
-{  
+{
 	return [self.connection.nodes count];
-}  
+}
 
 - (void)addObject:(id)object
-{  
+{
 	return;
-}  
+}
 
 - (void)insertObject:(id)object inChildrenAtIndex:(NSUInteger)index;
-{  
+{
 	return;
-}  
+}
 
 - (void)removeObjectFromChildrenAtIndex:(NSUInteger)index;
-{  
+{
 	return;
-}  
+}
 
 - (id)objectInChildrenAtIndex:(NSUInteger)index;
-{  
+{
 	return [connection.nodes objectAtIndex:index];
-}  
+}
 
 - (void)replaceObjectInChildrenAtIndex:(NSUInteger)index withObject:(id)object;
-{  
+{
 	return;
-}  
+}
+
+@end
+
+@implementation KCCookbooksProxy
+
+-(NSString*)iconName
+{
+	return NSImageNameMultipleDocuments;
+}
+
+- (void)setIsLeaf:(BOOL)flag;
+{
+	return;
+}
+- (BOOL)isLeaf;
+{
+	return NO;
+}
+
+- (NSMutableArray *)children;
+{
+	return self.connection.cookbooks;
+}
+
+- (void)setChildren:(NSMutableArray *)newChildren;
+{
+	return;
+}
+
+- (NSUInteger)countOfChildren;
+{
+	return [self.connection.cookbooks count];
+}
+
+- (void)addObject:(id)object
+{
+	return;
+}
+
+- (void)insertObject:(id)object inChildrenAtIndex:(NSUInteger)index;
+{
+	return;
+}
+
+- (void)removeObjectFromChildrenAtIndex:(NSUInteger)index;
+{
+	return;
+}
+
+- (id)objectInChildrenAtIndex:(NSUInteger)index;
+{
+	return [connection.cookbooks objectAtIndex:index];
+}
+
+- (void)replaceObjectInChildrenAtIndex:(NSUInteger)index withObject:(id)object;
+{
+	return;
+}
 
 @end
 

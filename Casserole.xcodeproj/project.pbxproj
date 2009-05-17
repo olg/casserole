@@ -44,6 +44,8 @@
 		77A53AFE0FB5A4E700040FC6 /* KCCookbooksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53AFD0FB5A4E700040FC6 /* KCCookbooksController.m */; };
 		77A53B260FB5A75600040FC6 /* KCChefConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53B250FB5A75600040FC6 /* KCChefConnection.m */; };
 		77A53B910FB5B48500040FC6 /* KCNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A53B900FB5B48500040FC6 /* KCNetworkOperation.m */; };
+		77B85FB70FC062B000AC2A91 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77B85FB60FC062B000AC2A91 /* LICENSE.txt */; };
+		77B85FC00FC067C300AC2A91 /* KCCookbook.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B85FBF0FC067C300AC2A91 /* KCCookbook.m */; };
 		77C484540FB309980098C82D /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C484530FB309980098C82D /* Search.xib */; };
 		77C484580FB309CB0098C82D /* KCSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C484570FB309CB0098C82D /* KCSearchController.m */; };
 		77C5C2150FB34CA9006D6BC8 /* KCNodesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C5C2140FB34CA9006D6BC8 /* KCNodesController.m */; };
@@ -126,6 +128,9 @@
 		77A53B250FB5A75600040FC6 /* KCChefConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCChefConnection.m; sourceTree = "<group>"; };
 		77A53B8F0FB5B48500040FC6 /* KCNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCNetworkOperation.h; sourceTree = "<group>"; };
 		77A53B900FB5B48500040FC6 /* KCNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCNetworkOperation.m; sourceTree = "<group>"; };
+		77B85FB60FC062B000AC2A91 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		77B85FBE0FC067C300AC2A91 /* KCCookbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCCookbook.h; sourceTree = "<group>"; };
+		77B85FBF0FC067C300AC2A91 /* KCCookbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCCookbook.m; sourceTree = "<group>"; };
 		77C484510FB309940098C82D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Search.xib; sourceTree = "<group>"; };
 		77C484560FB309CB0098C82D /* KCSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCSearchController.h; sourceTree = "<group>"; };
 		77C484570FB309CB0098C82D /* KCSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCSearchController.m; sourceTree = "<group>"; };
@@ -193,6 +198,7 @@
 		29B97314FDCFA39411CA2CEA /* Casserole */ = {
 			isa = PBXGroup;
 			children = (
+				77B85FB60FC062B000AC2A91 /* LICENSE.txt */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -304,6 +310,8 @@
 				77D439790FB5E6DD00F7867F /* KCNode.m */,
 				776BFEB10FB5F59700F0EC94 /* KCRegistration.h */,
 				776BFEB20FB5F59700F0EC94 /* KCRegistration.m */,
+				77B85FBE0FC067C300AC2A91 /* KCCookbook.h */,
+				77B85FBF0FC067C300AC2A91 /* KCCookbook.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -381,6 +389,7 @@
 				77A53AF90FB5A40D00040FC6 /* Cookbooks.xib in Resources */,
 				775C57CC0FB6E43E002BA3BB /* Credits.rtf in Resources */,
 				779EF7BA0FB7391D000C014B /* Casserole.icns in Resources */,
+				77B85FB70FC062B000AC2A91 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +419,7 @@
 				776BFEB30FB5F59700F0EC94 /* KCRegistration.m in Sources */,
 				776B00FC0FB6180F00F0EC94 /* KCViewController.m in Sources */,
 				776B01620FB626EE00F0EC94 /* KCValueTransformers.m in Sources */,
+				77B85FC00FC067C300AC2A91 /* KCCookbook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,10 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "KCViewController.h"
 
-@interface KCStatusController : KCViewController {
-	NSString* cookbooks;
-}
-
-@property (retain) NSString *cookbooks;
+@interface KCStatusController : KCViewController
 
 @end

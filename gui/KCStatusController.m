@@ -10,13 +10,6 @@
 
 
 @implementation KCStatusController
-@synthesize cookbooks;
-
--(void)awakeFromNib
-{
-	[self setCookbooks:@"2 (apache2, couchdb)"];
-}
-
 
 -(void)refresh:(id)sender
 {
