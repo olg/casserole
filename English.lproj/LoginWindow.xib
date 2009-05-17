@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
+			<integer value="1" id="9"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -36,7 +36,7 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSWindowTemplate" id="1005">
-				<int key="NSWindowStyleMask">15</int>
+				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{160, 900}, {465, 124}}</string>
 				<int key="NSWTFlags">536870912</int>
@@ -66,7 +66,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<reference key="NSControlView" ref="46080984"/>
-								<object class="NSColor" key="NSBackgroundColor" id="403145242">
+								<object class="NSColor" key="NSBackgroundColor" id="709300278">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">controlColor</string>
@@ -75,7 +75,7 @@
 										<bytes key="NSWhite">MC42NjY2NjY2OQA</bytes>
 									</object>
 								</object>
-								<object class="NSColor" key="NSTextColor" id="786342411">
+								<object class="NSColor" key="NSTextColor" id="356041728">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">controlTextColor</string>
@@ -141,7 +141,7 @@
 								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
-						<object class="NSProgressIndicator" id="250134092">
+						<object class="NSProgressIndicator" id="239885299">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">1292</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
@@ -151,13 +151,13 @@
 							<double key="NSMinValue">1.600000e+01</double>
 							<double key="NSMaxValue">1.000000e+02</double>
 						</object>
-						<object class="NSTextField" id="319067099">
+						<object class="NSTextField" id="338182068">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{41, 22}, {169, 14}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="6456702">
+							<object class="NSTextFieldCell" key="NSCell" id="651129064">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272761856</int>
 								<string key="NSContents">Connecting to Chef Server</string>
@@ -166,9 +166,9 @@
 									<double key="NSSize">1.100000e+01</double>
 									<int key="NSfFlags">3100</int>
 								</object>
-								<reference key="NSControlView" ref="319067099"/>
-								<reference key="NSBackgroundColor" ref="403145242"/>
-								<reference key="NSTextColor" ref="786342411"/>
+								<reference key="NSControlView" ref="338182068"/>
+								<reference key="NSBackgroundColor" ref="709300278"/>
+								<reference key="NSTextColor" ref="356041728"/>
 							</object>
 						</object>
 					</object>
@@ -229,10 +229,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">animate: delegate.queue.operations.@count</string>
-						<reference key="source" ref="250134092"/>
+						<reference key="source" ref="239885299"/>
 						<reference key="destination" ref="1004"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="250134092"/>
+							<reference key="NSSource" ref="239885299"/>
 							<reference key="NSDestination" ref="1004"/>
 							<string key="NSLabel">animate: delegate.queue.operations.@count</string>
 							<string key="NSBinding">animate</string>
@@ -265,10 +265,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: delegate.queue.operations.@count</string>
-						<reference key="source" ref="319067099"/>
+						<reference key="source" ref="338182068"/>
 						<reference key="destination" ref="1004"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="319067099"/>
+							<reference key="NSSource" ref="338182068"/>
 							<reference key="NSDestination" ref="1004"/>
 							<string key="NSLabel">hidden: delegate.queue.operations.@count</string>
 							<string key="NSBinding">hidden</string>
@@ -329,8 +329,8 @@
 							<reference ref="46080984"/>
 							<reference ref="697515764"/>
 							<reference ref="270198673"/>
-							<reference ref="319067099"/>
-							<reference ref="250134092"/>
+							<reference ref="338182068"/>
+							<reference ref="239885299"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -383,22 +383,22 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
-						<reference key="object" ref="250134092"/>
+						<reference key="object" ref="239885299"/>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">27</int>
-						<reference key="object" ref="319067099"/>
+						<reference key="object" ref="338182068"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="6456702"/>
+							<reference ref="651129064"/>
 						</object>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">28</int>
-						<reference key="object" ref="6456702"/>
-						<reference key="parent" ref="319067099"/>
+						<reference key="object" ref="651129064"/>
+						<reference key="parent" ref="338182068"/>
 					</object>
 				</object>
 			</object>
@@ -442,7 +442,7 @@
 					<boolean value="NO" id="6"/>
 					<reference ref="6"/>
 					<string>{{179, 918}, {465, 124}}</string>
-					<integer value="1"/>
+					<reference ref="9"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
 					<reference ref="6"/>
