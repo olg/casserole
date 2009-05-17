@@ -30,7 +30,7 @@
 -(void)refresh:(id)sender;
 
 -(NSString*)iconName;
-
+-(NSIndexPath*)path;
 @end
 
 @interface KCAttributeNode : KCAbstractNode {

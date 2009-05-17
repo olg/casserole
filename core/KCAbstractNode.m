@@ -36,6 +36,21 @@
 	return nodeTitle;
 }
 
+- (NSIndexPath*)path
+{
+	if (parent!=nil)
+	{
+		NSIndexPath* parentPath = [parent path];
+		if (parentPath==nil)
+			return [parentPath indexPathByAddingIndex:[[parent children] indexOfObject:self]];
+		else
+			return [NSIndexPath indexPathWithIndex:[[parent children] indexOfObject:self]];
+	}
+	else
+		return nil;
+}
+
+
 - (void)setIsLeaf:(BOOL)flag;
 {  
 	isLeaf = flag;
