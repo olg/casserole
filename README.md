@@ -3,10 +3,9 @@ Casserole
 
 A Cocoa client for Chef, replicating in a native OS X experience functionality from the Chef Server Web UI.
 
-	http://github.com/fotonauts/casserole
-	http://code.fotonauts.com/software/casserole
-	http://code.fotonauts.com/blog
-
+http://github.com/fotonauts/casserole
+http://code.fotonauts.com/software/casserole
+http://code.fotonauts.com/blog
 
 License
 -------
@@ -31,19 +30,16 @@ Planned for next version
 * Support for the cookbooks role and metadata architecture when it's available
 * Better integration with present and future Chef awesomeness
 
-
 Requirements
 ------------
 
 * Mac OS X 10.5
 * A Chef Server installation somewhere (0.6.2 only)
 
-
 Building from Source
 --------------------
 
 Open Casserole.xcodeproj and build, or use xcodebuild in command-line.
-
 
 Bugs, suggestions
 -----------------
