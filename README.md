@@ -3,9 +3,12 @@ Casserole
 
 A Cocoa client for Chef, replicating in a native OS X experience functionality from the Chef Server Web UI.
 
-http://github.com/fotonauts/casserole
-http://code.fotonauts.com/software/casserole
-http://code.fotonauts.com/blog
+<http://github.com/fotonauts/casserole>
+
+<http://code.fotonauts.com/software/casserole>
+
+<http://code.fotonauts.com/blog>
+
 
 License
 -------
@@ -15,6 +18,7 @@ Apache License v2, see LICENSE.txt file.
 In this first version
 ---------------------
 
+
 * *read-only* access to a chef server. Write access is not far away, but the priority for this initial release was UI polish
 * Exploring nodes, registrations, cookbooks (no template content for now due to a REST API limitation).
 * Access to the search indexes
@@ -22,6 +26,7 @@ In this first version
 
 Planned for next version
 ------------------------
+
 
 * Saving search requests
 * Read/Write support: changing attributes, tags and recipes
@@ -32,6 +37,7 @@ Planned for next version
 
 Requirements
 ------------
+
 
 * Mac OS X 10.5
 * A Chef Server installation somewhere (0.6.2 only)
