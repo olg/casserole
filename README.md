@@ -15,9 +15,10 @@ License
 
 Apache License v2, see LICENSE.txt file.
 
-In this first version
----------------------
+Features
+--------
 
+In this initial version
 
 * *read-only* access to a chef server. Write access is not far away, but the priority for this initial release was UI polish
 * Exploring nodes, registrations, cookbooks (no template content for now due to a REST API limitation).
@@ -25,8 +26,6 @@ In this first version
 * Live filtering / matching in node and search results.
 
 Planned for next version
-------------------------
-
 
 * Saving search requests
 * Read/Write support: changing attributes, tags and recipes
@@ -38,9 +37,7 @@ Planned for next version
 Requirements
 ------------
 
-
-* Mac OS X 10.5
-* A Chef Server installation somewhere (0.6.2 only)
+Mac OS X 10.5 and a Chef Server installation somewhere (0.6.2 only)
 
 Building from Source
 --------------------
