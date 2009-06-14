@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "KCChefConnection.h";
+#import "KCChefConnection.h"
 
 @class KCMainWindowController;
 

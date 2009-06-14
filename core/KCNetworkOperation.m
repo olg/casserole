@@ -37,8 +37,8 @@
 	{
 		[self setData:d];
 
-		SBJSON *parser = [[SBJSON alloc] init];
-		NSString *json_string = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+		SBJSON *parser = [[[SBJSON alloc] init] autorelease];
+		NSString *json_string = [[[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding] autorelease];
 		NSObject* r = [parser objectWithString:json_string error:nil];
 		[self setResult:r];
 	}

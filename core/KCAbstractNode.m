@@ -125,7 +125,7 @@
 		return;
 	[self addObject:object];
 	[self willChangeValueForKey:@"children"];
-	[self.children sortUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"nodeTitle" ascending:YES]]];
+	[self.children sortUsingDescriptors:[NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"nodeTitle" ascending:YES] autorelease]]];
 	[self didChangeValueForKey:@"children"];
 }
 

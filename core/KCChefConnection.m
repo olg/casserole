@@ -33,7 +33,7 @@
 
 -(void)addCookbook:(KCCookbook*)node
 {
-	NSSortDescriptor* sort = [[NSSortDescriptor alloc] initWithKey:@"nodeTitle" ascending:YES];
+	NSSortDescriptor* sort = [[[NSSortDescriptor alloc] initWithKey:@"nodeTitle" ascending:YES] autorelease];
 	[self willChangeValueForKey:@"cookbooks"];
 	[cookbooks addObject:node];
 	[cookbooks sortUsingDescriptors:[NSArray arrayWithObject:sort]];
@@ -42,7 +42,7 @@
 
 -(void)addNode:(KCNode*)node
 {
-	NSSortDescriptor* sort = [[NSSortDescriptor alloc] initWithKey:@"nodeTitle" ascending:YES];
+	NSSortDescriptor* sort = [[[NSSortDescriptor alloc] initWithKey:@"nodeTitle" ascending:YES] autorelease];
 	[self willChangeValueForKey:@"nodes"];
 	[nodes addObject:node];
 	[nodes sortUsingDescriptors:[NSArray arrayWithObject:sort]];
@@ -67,7 +67,7 @@
 	if ([op.type isEqualToString:@"get.registrations"]) {
 		[registrations removeAllObjects];
 		for (NSDictionary *element in array) {
-			KCRegistration* node = [[KCRegistration alloc] init];
+			KCRegistration* node = [[[KCRegistration alloc] init] autorelease];
 			node.nodeTitle = [element objectForKey:@"name"];
 			node.content = element; // We shouldn't duplicate content and nodeTitle, fix this.
 			node.connection = self;
@@ -170,42 +170,42 @@
 
 	NSOperationQueue* queue = [(KCApplicationDelegate*)[NSApp delegate] queue];
 
-	KCNetworkOperation* nodesOp = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* nodesOp = [[[KCNetworkOperation alloc] init] autorelease];
 	nodesOp.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/nodes.json", self.serverURL]];
 	nodesOp.type = @"get.nodes";
 	nodesOp.summary = @"Refreshing nodes list";
 	[nodesOp addObserver:self forKeyPath:@"isFinished" options:0 context:nil];
 	[queue addOperation:nodesOp];
 
-	KCNetworkOperation* registrationsOp = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* registrationsOp = [[[KCNetworkOperation alloc] init] autorelease];
 	registrationsOp.type = @"get.registrations";
 	registrationsOp.summary = @"Refreshing registrations";
 	registrationsOp.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/registrations.json", self.serverURL]];
 	[registrationsOp addObserver:self forKeyPath:@"isFinished" options:0 context:nil];
 	[queue addOperation:registrationsOp];
 
-	KCNetworkOperation* cookbookOp1 = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* cookbookOp1 = [[[KCNetworkOperation alloc] init] autorelease];
 	cookbookOp1.type = @"get.recipes";
 	cookbookOp1.summary = @"Refreshing recipes";
 	cookbookOp1.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/cookbooks/_recipe_files", self.serverURL]];
 	[cookbookOp1 addObserver:self forKeyPath:@"isFinished" options:0 context:nil];
 	[queue addOperation:cookbookOp1];
 
-	KCNetworkOperation* cookbookOp2 = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* cookbookOp2 = [[[KCNetworkOperation alloc] init] autorelease];
 	cookbookOp2.type = @"get.attributes";
 	cookbookOp2.summary = @"Refreshing attribute files";
 	cookbookOp2.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/cookbooks/_attribute_files", self.serverURL]];
 	[cookbookOp2 addObserver:self forKeyPath:@"isFinished" options:0 context:nil];
 	[queue addOperation:cookbookOp2];
 
-	KCNetworkOperation* cookbookOp3 = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* cookbookOp3 = [[[KCNetworkOperation alloc] init] autorelease];
 	cookbookOp3.type = @"get.definitions";
 	cookbookOp3.summary = @"Refreshing definitions";
 	cookbookOp3.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/cookbooks/_definition_files", self.serverURL]];
 	[cookbookOp3 addObserver:self forKeyPath:@"isFinished" options:0 context:nil];
 	[queue addOperation:cookbookOp3];
 
-	KCNetworkOperation* cookbookOp4 = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* cookbookOp4 = [[[KCNetworkOperation alloc] init] autorelease];
 	cookbookOp4.type = @"get.libraries";
 	cookbookOp4.summary = @"Refreshing libraries";
 	cookbookOp4.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/cookbooks/_library_files", self.serverURL]];

@@ -73,7 +73,7 @@
 			{
 				NSFont *font = [NSFont boldSystemFontOfSize:11];
 				NSDictionary *attrsDictionary =	[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [NSColor yellowColor], NSBackgroundColorAttributeName, nil];
-				NSMutableAttributedString* rendering = [[NSMutableAttributedString alloc] initWithString:text];
+				NSMutableAttributedString* rendering = [[[NSMutableAttributedString alloc] initWithString:text] autorelease];
 				while ((location < [text length])&&(location!=NSNotFound)) {
 					NSRange range = [text rangeOfString:searchString options:NSDiacriticInsensitiveSearch range:NSMakeRange(location,([text length]-location))];
 					if (range.location!=NSNotFound) {
@@ -89,7 +89,7 @@
 			if (!rendered && ([matchingAttributes containsObject:attribute]) && [[tableColumn identifier] isEqualToString:@"key"]) {
 				NSFont *font = [NSFont boldSystemFontOfSize:11];
 				NSDictionary *attrsDictionary =	[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [NSColor colorWithCalibratedRed:1 green:1 blue:0.75 alpha:1], NSBackgroundColorAttributeName, nil];
-				NSMutableAttributedString* rendering = [[NSMutableAttributedString alloc] initWithString:text attributes:attrsDictionary];
+				NSMutableAttributedString* rendering = [[[NSMutableAttributedString alloc] initWithString:text attributes:attrsDictionary] autorelease];
 				[cell setAttributedStringValue:rendering];
 			}
 		}

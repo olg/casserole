@@ -45,24 +45,24 @@
 	KCNodesProxy *nodeProxy;
 	KCCookbooksProxy *cookbookProxy;
 	
-	viewNode = [[KCViewControllerNode alloc] init];
+	viewNode = [[[KCViewControllerNode alloc] init] autorelease];
 	viewNode.viewController = statusController;
 	[viewNode setIsLeaf:true];
 	[a addObject:viewNode];
 	
-	nodeProxy = [[KCNodesProxy alloc] init];
+	nodeProxy = [[[KCNodesProxy alloc] init] autorelease];
 	nodeProxy.connection = self.chefConnection;
 	[nodeProxy setNodeTitle:@"Nodes"];
 	[a addObject:nodeProxy];
 	
-	cookbookProxy = [[KCCookbooksProxy alloc] init];
+	cookbookProxy = [[[KCCookbooksProxy alloc] init] autorelease];
 	cookbookProxy.connection = self.chefConnection;
 	[cookbookProxy setNodeTitle:@"Cookbooks"];
 	[a addObject:cookbookProxy];
 
 #if 0
 	KCChefNode *child;
-	viewNode = [[KCViewControllerNode alloc] init];
+	viewNode = [[[KCViewControllerNode alloc] init] autorelease];
 	viewNode.viewController = cookbooksController;
 	[viewNode setIsLeaf:false];
 	child = [[KCChefNode alloc] init];
@@ -72,12 +72,12 @@
 	[a addObject:viewNode];
 #endif
 	
-	viewNode = [[KCViewControllerNode alloc] init];
+	viewNode = [[[KCViewControllerNode alloc] init] autorelease];
 	viewNode.viewController = registrationsController;
 	[viewNode setIsLeaf:true];
 	[a addObject:viewNode];
 	
-	viewNode = [[KCViewControllerNode alloc] init];
+	viewNode = [[[KCViewControllerNode alloc] init] autorelease];
 	((KCViewControllerNode*)viewNode).viewController = searchController;
 	[viewNode setIsLeaf:true];
 	
@@ -100,7 +100,7 @@
 	[self setupViewControllers];
 	
 	NSTableColumn *tableColumn = [sourceView tableColumnWithIdentifier:COLUMNID_NAME];
-	KCImageAndTextCell *imageAndTextCell = [[KCImageAndTextCell alloc] init];
+	KCImageAndTextCell *imageAndTextCell = [[[KCImageAndTextCell alloc] init] autorelease];
 	[imageAndTextCell setEditable:NO];
 	[tableColumn setDataCell:imageAndTextCell];
 

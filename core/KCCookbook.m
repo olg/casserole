@@ -56,7 +56,7 @@
 {
 	KCChefNode* node = [self recipeForName:name];
 	if (node==nil) {
-		node = [[KCChefNode alloc] init];
+		node = [[[KCChefNode alloc] init] autorelease];
 		node.nodeTitle = name;
 		node.nodeType = @"recipe";
 		node.connection = self.connection;
@@ -80,7 +80,7 @@
 {
 	KCChefNode* node = [self attributeForName:name];
 	if (node==nil) {
-		node = [[KCChefNode alloc] init];
+		node = [[[KCChefNode alloc] init] autorelease];
 		node.nodeTitle = name;
 		node.nodeType = @"attribute";
 		node.connection = self.connection;
@@ -104,7 +104,7 @@
 {
 	KCChefNode* node = [self definitionForName:name];
 	if (node==nil) {
-		node = [[KCChefNode alloc] init];
+		node = [[[KCChefNode alloc] init] autorelease];
 		node.nodeTitle = name;
 		node.nodeType = @"definition";
 		node.connection = self.connection;
@@ -128,7 +128,7 @@
 {
 	KCChefNode* node = [self libraryForName:name];
 	if (node==nil) {
-		node = [[KCChefNode alloc] init];
+		node = [[[KCChefNode alloc] init] autorelease];
 		node.nodeTitle = name;
 		node.nodeType = @"library";
 		node.parent = self;

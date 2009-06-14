@@ -128,7 +128,7 @@
 	NSArray* keys = [[d allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 	for (NSString* key in keys)
 	{
-		KCAttributeNode* n = [[KCAttributeNode alloc] init];
+		KCAttributeNode* n = [[[KCAttributeNode alloc] init] autorelease];
 		[n setNodeTitle:key];
 		id value = [d objectForKey:key];
 		if ([value isKindOfClass:[NSArray class]]) {
@@ -156,7 +156,7 @@
 	NSMutableArray* result = [NSMutableArray array];
 	for (id value in array)
 	{
-		KCAttributeNode* n = [[KCAttributeNode alloc] init];
+		KCAttributeNode* n = [[[KCAttributeNode alloc] init] autorelease];
 		[n setNodeTitle:@""];
 		if ([value isKindOfClass:[NSArray class]]) {
 			n.nodeType = @"Array";
@@ -181,7 +181,7 @@
 -(void)refresh:(id)sender
 {
 	NSOperationQueue* queue = [(KCApplicationDelegate*)[NSApp delegate] queue];	
-	KCNetworkOperation* op = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* op = [[[KCNetworkOperation alloc] init] autorelease];
 
 	NSString* urlID = [self.nodeTitle stringByReplacingOccurrencesOfString:@"." withString:@"_"]; 
 	op.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/nodes/%@.json", self.connection.serverURL, urlID]];

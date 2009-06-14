@@ -73,14 +73,15 @@
 		
 	switch ([topLevelPredicate compoundPredicateType])
 	{
-		case NSAndPredicateType:
-			join = @" AND ";
-			break;
 		case NSOrPredicateType:
 			join = @" OR ";
 			break;
 		case NSNotPredicateType:
 			join = @" NOT ";
+			break;
+		case NSAndPredicateType:
+		default:
+			join = @" AND ";
 			break;
 	}
 	NSMutableArray* subexp = [NSMutableArray array];
@@ -111,7 +112,7 @@
 		a = [attributes componentsJoinedByString:@","];
 	
 	NSOperationQueue* queue = [(KCApplicationDelegate*)[NSApp delegate] queue];
-	KCNetworkOperation* op = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* op = [[[KCNetworkOperation alloc] init] autorelease];
 	op.url =  [NSURL URLWithString:[NSString stringWithFormat:@"%@/search/node.json?q=%@&a=%@", self.chefConnection.serverURL, q, a]]; // This is baroque, let's fix it
 	op.type = @"search.node";
 	op.summary = @"Searching index";

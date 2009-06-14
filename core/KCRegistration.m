@@ -36,7 +36,7 @@
 -(void)refresh:(id)sender
 {
 	NSOperationQueue* queue = [(KCApplicationDelegate*)[NSApp delegate] queue];	
-	KCNetworkOperation* op = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* op = [[[KCNetworkOperation alloc] init] autorelease];
 	
 	NSString* urlID = [self.nodeTitle stringByReplacingOccurrencesOfString:@"." withString:@"_"]; 
 	op.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/registrations/%@.json", self.connection.serverURL, urlID]];

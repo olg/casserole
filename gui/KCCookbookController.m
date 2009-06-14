@@ -66,7 +66,7 @@
 				currentOperation = nil;
 			}
 			NSOperationQueue* queue = [(KCApplicationDelegate*)[NSApp delegate] queue];
-			KCNetworkStringOperation* op = [[KCNetworkStringOperation alloc] init];	
+			KCNetworkStringOperation* op = [[[KCNetworkStringOperation alloc] init] autorelease];	
 			op.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", self.chefConnection.serverURL, path]];
 			op.type = [NSString stringWithFormat:@"refresh.%@",category];
 			op.summary = [NSString stringWithFormat:@"Getting %@ file %@", category, title];

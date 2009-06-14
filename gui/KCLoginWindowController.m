@@ -25,12 +25,12 @@
 			[a runModal];
 		}
 		else {
-			KCChefConnection* chef = [[KCChefConnection alloc] init];
+			KCChefConnection* chef = [[[KCChefConnection alloc] init] autorelease];
 			chef.serverURL = [urlField stringValue];
 			[chef refresh:self];
 			[self close];
 
-			KCMainWindowController *c = [[KCMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
+			KCMainWindowController *c = [[[KCMainWindowController alloc] initWithWindowNibName:@"MainWindow"] autorelease];
 			[c setChefConnection:chef];
 			[c showWindow:nil];
 		}
@@ -47,7 +47,7 @@
 		return;
 	
 	NSOperationQueue* queue = [(KCApplicationDelegate*)[NSApp delegate] queue];
-	KCNetworkOperation* op = [[KCNetworkOperation alloc] init];
+	KCNetworkOperation* op = [[[KCNetworkOperation alloc] init] autorelease];
 	op.url =  [NSURL URLWithString:[NSString stringWithFormat:@"%@/nodes.json", [url description]]]; // This is baroque, let's fix it
 	[op addObserver:self forKeyPath:@"isFinished" options:0 context:nil]; 
 	[queue addOperation:op];
